@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Super Basic AA form</title>
+</head>
+<body>
+<form method="GET" action="https://request-inspector.glitch.me/">
+    <div>
+        <label for="oneWay">
+            <input id="oneWay" type="radio" name="flight" value="oneWay" > One way
+        </label>
+        <label for="roundTrip">
+            <input id="roundTrip" type="radio" name="flight" value="roundTrip" >Round trip
+        </label>
+        <label for="miles">
+            <input id="miles" type="checkbox" name="miles" value="yes">Redeem miles
+        </label>
+    </div>
+    <br>
+    <div>
+        <label for="from">
+            From:<input id="from" type="text" name="from">
+        </label>
+        <label for="To">
+            To:<input id="To" type="text" name="To">
+        </label>
+        <label for="numPass">
+            Number of passengers
+            <select name="numPass" id="numPass">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+        </label>
+    </div>
+    <br>
+    <div>
+        <label for="departDate">
+            Depart<input id="departDate" type="date" name="departDate">
+        </label>
+        <label for="returnDate">
+            Return<input id="returnDate" type="date" name="returnDate">
+        </label>
+        <button type="submit">
+            Submit
+        </button>
+    </div>
+    <div>
+        <ul>
+            <li><a href="#">Bag and optional fees >></a></li>
+            <li><a href="#">Changes to checked bag fees and allowances >></a></li>
+            <li><a href="#">ID requirements are changing >></a></li>
+            <li><a href="#">Advanced / Multi-city search >></a></li>
+        </ul>
+    </div>
+</form>
+</body>
+</html>
