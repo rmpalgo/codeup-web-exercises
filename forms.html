@@ -7,43 +7,42 @@
 <body>
     <form method="GET" action="https://request-inspector.glitch.me/">
         <div>
-            <label for="email">
-                E-mail: <input id="email" name="email" type="text">
-            </label>
+            <label for="email">E-mail:</label>
+            <input id="email" name="email" type="text" placeholder="email">
         </div>
         <br>
         <div>
-            <label for="password">
-                Password: <input id="password" name="password" type="password">
-            </label>
+            <label for="password">Password:</label>
+            <input id="password" name="password" type="password" placeholder="password">
         </div>
         <br>
         <div>
-            <label for="bio">
-                Bio: <textarea id="bio" name="bio"></textarea>
-            </label>
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio" cols="40" rows="10"></textarea>
         </div>
         <br>
+        <h3>How did you hear about us?</h3>
         <div>
             <label for="billboard">
-              <input id="billboard" type="radio" name="referral" value="billboard"> Billboard
+                <input id="billboard" type="checkbox" name="source-billboard" value="true">Billboard
             </label>
             <br>
             <label for="radio-advertisement">
-               <input id="radio-advertisement" type="radio" name="referral" value="radio advertisement"> Radio Advertisement
+               <input id="radio-advertisement" type="checkbox" name="source-radio-ad" value="true"> Radio Advertisement
             </label>
             <br>
             <label for="internet-advertisement">
-                <input id="internet-advertisement" type="radio" name="referral" value="internet-advertisement">Internet Advertisement
+                <input id="internet-advertisement" type="checkbox" name="source-internet-ad" value="true">Internet Advertisement
             </label>
             <br>
             <label for="other">
-                <input id="other" type="radio" name="referral" value="other">Other
+                <input id="other" type="checkbox" name="source-other" value="truer">Other
             </label>
         </div>
+
         <br>
         <div>
-            <h3>How did you hear about us?</h3>
+            <label for="browser">What browser are you using?</label>
             <select name="browser" id="browser">
                 <option value="mozilla">Mozilla</option>
                 <option value="chrome">Chrome</option>
