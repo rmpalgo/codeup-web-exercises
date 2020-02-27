@@ -1,15 +1,58 @@
 
 h1 {
     color: purple;
+    text-align: center;
+    text-decoration: underline;
+    color: darkgreen;
+
 }
 
-h2 {
-    color: pink;
+nav {
+    text-align: center;
+    text-decoration: underline;
+    color: blueviolet;
+}
+
+body {
+    background-color: coral;
+    background-image: url("https://images.unsplash.com/photo-1436262513933-a0b06755c784?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80");
+    background-attachment: fixed;
+    background-size: 100%;
+    font-family: 'Oxanium';
 }
 
 li {
-    color: green;
+    list-style: upper-alpha;
 }
+
+table {
+    border: none;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    width: 30%;
+    font-size: 1.3em;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: deeppink;
+}
+
+a:hover {
+    color: orchid;
+}
+
+a:active {
+    color: white;
+}
+
+
 
 
 
