@@ -5,15 +5,10 @@
     padding: 10px;
 }
 
-body {
-    color: blue;
-}
-
-
 /*  selector for all "h1" elements
     that are a descendent of id="container"
     and have a class of "fancy-header" */
-h1#container.fancy-header {
+#container h1.fancy-header {
     color: blue;
     text-decoration: underline;
 }
@@ -30,6 +25,6 @@ em {
 
 /*  selector for all "anchor" elements
     that are a direct child of an element with class="article" */
-.article a {
+.article > a {
     float: right;
 }
