@@ -3,8 +3,14 @@
     padding: 0;
 }
 #main-container {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
+    background-color: #1a1a1d;
+    color: #c3073f;
+}
+
+body {
+    background-color: #1a1a1d;
 }
 
 ul {
@@ -13,16 +19,16 @@ ul {
 
 li {
     list-style-type: none;
-    color: white;
     font-size: 2em;
 
 }
 
 nav {
     position: fixed;
-    background-color: black;
+    background-color: #4e4e50;
     width: 100%;
     height: 55px;
+    opacity: 0.9;
 }
 
 nav ul li {
@@ -32,8 +38,26 @@ nav ul li {
     padding: 10px 10px 0 10px
 }
 
+img {
+    max-width: 30%;
+    height: auto;
+}
+
+a {
+    color: #6f2232;
+    text-decoration: none;
+}
+
 #box1 {
-    width: 250px;
-    height: 250px;
-    border: 1px dashed darkslategrey ;
+    width: 150px;
+    height: 150px;
+    padding: 50px;
+    float: left;
+    border: 1px dashed pink;
+
+}
+
+#box2 {
+    float: right;
+    border: 1px dashed pink;
 }
