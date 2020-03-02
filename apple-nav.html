@@ -3,51 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Apple Navbar</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        .main-container {
-            display: absolute;
-            right: 20px;
-        }
-
-        #container1 {
-            width: 40%;
-            float: left;
-        }
-
-        #container2 {
-            width: 40%;
-            float: left;
-        }
-
-      #main-footer {
-          width: 80%
-
-      }
-
-        nav {
-            background-color: black;
-            width: 100%;
-            color: #4e4e50;
-            text-align: center;
-            padding: 0.75em;
-        }
-
-        nav ul li {
-            display: inline-block;
-            padding: 0 2em;
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/apple.css">
 </head>
 <body>
 
@@ -63,33 +19,23 @@
     </ul>
 </nav>
 
-<main class="main-container">
+<div id="wrap">
     <div id="container1">
-        <div>
+        <div id="box1">
             <h1>Apple Music Student Plan now comes with Apple TV+ for free. <sup>3</sup></h1>
         </div>
-        <div>
+        <div id="button">
             <button>Try it free</button>
         </div>
-        <div>
+        <div id="learnMore">
             <a href="#">Learn more about Apple TV+ ></a>
         </div>
     </div>
     <div id="container2">
-        <img src="imgs/business-pic1.jpeg" alt="">
     </div>
-</main>
+</div>
 
-<footer id="main-footer">
-    <a href="#">Hello</a>
-    <a href="#">Hello</a>
-    <a href="#">Hello</a>
-    <a href="#">Hello</a>
-    <a href="#">Hello</a>
-    <a href="#">Hello</a>
-    <a href="#">Hello</a>
-    <a href="#">Hello</a>
-    <a href="#">Hello</a>
-</footer>
+
+
 </body>
 </html>
