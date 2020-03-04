@@ -154,3 +154,8 @@ section:nth-of-type(6) {
     height: 4em;
 }
 
+img {
+    height: 10em;
+    width: ;
+    text-align: center;
+}
