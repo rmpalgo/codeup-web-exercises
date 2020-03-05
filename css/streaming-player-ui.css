@@ -42,7 +42,7 @@ nav {
 
 main {
     /* TODO: define the grid area of main such that it takes up the columns 3 and 4 of the second row  */
-    grid-area: 2 / 3 / 5 / 6;
+    grid-area: 2 / 3 / 3 / 5;
     /* TODO: make main a grid container as well */
     display: grid;
     /* TODO: define main to contain three columns that together take up equally the full width of main and have a 1em gap between grid items */
