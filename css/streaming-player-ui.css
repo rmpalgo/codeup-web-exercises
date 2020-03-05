@@ -32,7 +32,7 @@ ul {
 header {
     background: purple;
     /* TODO: define the grid area of header such that it takes up the first row and middle three columns */
-    grid-area: 1 / 2 / 1 / 6;
+    grid-area: 1 / 2 / 2 / 5;
 }
 
 nav {
@@ -120,7 +120,7 @@ nav a:hover {
     border-radius: 10px;
     position: relative;
     /* TODO: add a property that causes a transition of the border from lightgrey to near black in .2 seconds */
-    transition: lightgray 0.2s ease;
+    transition: border 0.2s;
 }
 
 .card:hover {
