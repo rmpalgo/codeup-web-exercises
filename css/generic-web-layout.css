@@ -2,12 +2,148 @@
     box-sizing: border-box;
 }
 
-.wrapper {
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
     display: grid;
-    hei
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 15% 1fr 25%;
+    grid-template-rows: 5% 1fr 10% 10% 5%;
 
 }
 
-.wrapper > div:nth-of-type(odd) {
-    background: darkgray;
+.nav {
+    display: grid;
+    grid-area: 1 / 1 / 2 / 4;
 }
+
+.nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: black;
+    color: white;
+    list-style-type: none;
+}
+
+.nav ul a {
+    text-decoration: none;
+    color: white;
+    padding: 0 0.5em;
+    font-size: 1.2em;
+}
+
+ul a:hover {
+    background: gray;
+    padding: 0.3em;
+    opacity: 0.9;
+}
+
+.menu ul {
+    list-style-type: none;
+    position: relative;
+    padding-left: .75em;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#menu-link {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.center {
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h2 {
+    color: #0fb784;
+}
+
+.ads div > div {
+    width: 90%;
+    margin: 1.5em 0;
+    border: 1px solid lightgrey;
+    text-align: center;
+
+}
+
+.large-box {
+    padding: 3em;
+}
+
+.small-box {
+    padding: 2em;
+}
+
+.ads {
+    padding-left: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer {
+    grid-area: 4 / 2 / 5 / -1;
+    background: #666666;
+    padding: 1em 0.75em;
+    color: white;
+}
+
+.next-page {
+    grid-area: 3 / 2 / 4 / 3;
+    background: white;
+    margin: auto;
+}
+
+.next-page ul {
+    list-style-type: none;
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+
+}
+
+.next-page ul li a {
+    text-decoration: none;
+    color: black;
+    margin: 1em;
+}
+
+#number-page a:hover {
+    background: black;
+    opacity: 0.9;
+    color: white;
+}
+
+
+
+
+
+.powered {
+    grid-area: 5 / 2 / 6 / -1;
+    background: #333;
+    padding: 1em 0.75em;
+    color: white;
+}
+
+span {
+    text-decoration: underline;
+}
+

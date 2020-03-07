@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #202e38;
+}
+
+header {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    padding-top: 3em;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.5em;
+
+}
+
+.box {
+    color: white;
+    font-size: 2em;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+    height: 800px
+    padding: 2em;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.li {
+    grid-area: 1 / 1 / 2 / 2;
+
+}
+
+.fb {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.db {
+    grid-area: 1 / 7 / 2 /8;
+}
+
+.ct {
+    grid-area: 1 / 8 / 2 /9;
+}
+
+.si {
+    grid-area: 1 / 9 / 2 / 10;
+}
+
+.wk {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.st {
+    grid-area: 4 / 8 / 5 / 9;
+
+}
+
+.no {
+    grid-area: 4 / 9 / 5 / 10;
+}
+
+.rd {
+    grid-area: 4 / 7 / 5 / 8;
+}
+
+.re {
+    grid-area: 4 / 6 / 5 / 7;
+}
+
+.tc {
+    grid-area: 4 / 5 / 5 / 6;
+}
+
+.sp {
+    grid-area: 4 / 4 / 5 / 5;
+}
+
+.tw {
+    grid-area: 4 / 3 / 5 / 4;
+}
+
+.gt {
+    grid-area: 4 / 2 / 5 / 3;
+}
+
+.yn {
+    grid-area: 3 / 6 / 4 / 7;
+}
+
+.wu {
+    grid-area: 3 / 5 / 4 / 6;
+}
+
+.te {
+    grid-area: 3 / 4 / 4 / 5;
+}
+
+.il {
+    grid-area: 3 / 3 / 4 / 4;
+}
+
+.cv {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+.dg {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.tg {
+    grid-area: 3 / 9 / 4 / 10;
+}
+
+.gg {
+    grid-area: 2 / 9 / 3 / 10;
+}
+
+.ex {
+    grid-area: 2 / 8 / 3 / 9;
+}
+
+.so {
+    grid-area: 2 / 7 / 3 / 8;
+}
+
+.cd {
+    grid-area: 2 / 6 / 3 / 7;
+}
+
+.cp {
+    grid-area: 2 / 4 / 3 / 5;
+}
+
+.tr {
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+.in {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.me {
+    grid-area: 2 / 5 / 3 / 6;
+}
+
+.mu {
+    grid-area: 3 / 7 / 4 / 8;
+}
+
+.ad {
+    grid-area: 3 / 8 / 4 / 9;
+}
+
+.box1 {
+   border: 6px solid #FFB7B2;
+
+}
+
+.box2 {
+    border: 6px solid #F22459;
+}
+
+.box3 {
+    border: 6px solid #FFBD00;
+}
+
+div a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 1em 1em;
+}
+
+
+.box1 a:hover {
+    color: #FFB7B2;
+    text-decoration: underline;
+    font-size: 1em;
+    opacity: 0.9;
+    border: none;
+    transform: rotate(-45deg);
+    transition: 0.2s;
+}
+
+.box2 a:hover {
+    color: #F22459;
+    text-decoration: underline;
+    font-size: 1em;
+    opacity: 0.8;
+    transform: rotate(360deg);
+    transition: 0.5s;
+
+}
+
+.box3 a:hover {
+    color: #FFBD00;
+    text-decoration: underline;
+    font-size: 1em;
+    opacity: 0.8;
+    transform: rotate(45deg);
+    transition: 0.2s;
+}
+
+footer {
+    text-align: center;
+    padding-top: 1em;
+    font-size: 1.5em;
+    color: white;
+}
+
+
+
