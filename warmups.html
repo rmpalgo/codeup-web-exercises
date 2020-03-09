@@ -9,49 +9,64 @@
 
 <script>
 
-// Exercise 1
+    // Exercise 1
     // On the line below, create a variable
     var onMarsRightNow = false;
     console.log(onMarsRightNow == false);
     console.log(onMarsRightNow == true);
-
-//    Exercise 2: create arrays of 5 favorite food.
-
-var favFood = ["pizza", "burgers", "pasta", "ramen", "sushi"];
-console.log(favFood);
-
-//    Exercise 3: create an array of numbers from 1 to 10;
+    //============================================================>
+    //    Exercise 2: create arrays of 5 favorite food.
+    //============================================================>
+    var favFood = ["pizza", "burgers", "pasta", "ramen", "sushi"];
+    console.log(favFood);
+    //============================================================>
+    //    Exercise 3: create an array of numbers from 1 to 10;
     var num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     console.log(num);
 
-//    Exercise 4:  Add 1 item to the end of your favorite food array.
+    //    Exercise 4:  Add 1 item to the end of your favorite food array.
     favFood.push('pho');
-//    Exercise 5 Reverse the favorite foods array.
-//     favFood.reverse();
+    //============================================================>
+    //    Exercise 5 Reverse the favorite foods array.
+    //     favFood.reverse();
     console.log(favFood);
 
-//    Ex 6: Sort the favorite food array in alphabetical order.
-     favFood.sort();
-     console.log(favFood);
-//    Ex 7: Sort the favorite foods array in reverse alphabetical order.
+    //    Ex 6: Sort the favorite food array in alphabetical order.
+    favFood.sort();
+    console.log(favFood);
+    //============================================================>
+    //    Ex 7: Sort the favorite foods array in reverse alphabetical order.
     favFood.reverse();
     console.log(favFood);
-//    Ex 8: Create a new array of fruits and add that array to the end of your favorite foods array.
+    //============================================================>
+    //    Ex 8: Create a new array of fruits and add that array to the end of your favorite foods array.
     var favFruits = ["apple", "banana", "orange", "avocado", "mango"]
     var newFavFood = favFood.concat(favFruits);
     console.log(newFavFood);
-// Exercise 9: Write a javascript function called sayHello that, when sent name like "Douglas",
-//    returns the string "Hello Douglas!"
-function sayHello(name) {
-    return "Hello, " + name + "!";
-}
+    //============================================================>
+    // Exercise 9: Write a javascript function called sayHello that, when sent name like "Douglas",
+    //    returns the string "Hello Douglas!"
+    function sayHello(name) {
+        return "Hello, " + name + "!";
+    }
+    //============================================================>
+    //    Exercise 10: Write a function called firsItem that takes in an array and returns the first item in the array.
+    function firstItem(arr) {
+        return arr[0];
+    }
 
-//    Exercise 10: Write a function called firsItem that takes in an array and returns the first item in the array.
-function firstItem(arr) {
-    return arr[0];
-}
-firstItem('Return first item, ' + favFruits);
-sayHello("Ron");
+    firstItem('Return first item, ' + favFruits);
+    sayHello("Ron");
+    //============================================================>
+    //Exercise 11 Creat a function that returns the type of the value you enter in the input parameter of the function.
+    function checkType(input) {
+        return typeof(input)
+    }
+
+    console.log('checkType(1) is: ' + checkType(1));
+    console.log('checkType("Apex") is: ' + checkType('Apex'));
+    console.log('checkType(true) is: ' + checkType(true));
+
 </script>
 </body>
 </html>
