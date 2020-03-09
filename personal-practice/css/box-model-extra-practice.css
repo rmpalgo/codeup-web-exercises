@@ -13,7 +13,6 @@ body {
 h1 {
     color: white;
     width: 500px;
-    color: white;
     text-align: center;
     padding: 20px;
     border: 15px solid #7DA0CC;
@@ -27,7 +26,8 @@ div.container {
 
 .box {
     float: left;
-    width: 33.333%;
+    width: 33.33%;
+    text-align: center;
     padding: 20px;
     border: 10px solid lightgray;
     color: lightgray;
