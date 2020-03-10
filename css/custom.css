@@ -30,7 +30,7 @@ a:hover {
 }
 
 .jumbotron-fluid {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 20px;
     padding: 0;
@@ -38,9 +38,10 @@ a:hover {
 }
 
 .container {
-    padding: 4em;
+    padding: 5em;
     background-image: url("../imgs/pizza.png");
     color: white;
+    margin-bottom: 2em;
 }
 
 h1 {
@@ -49,6 +50,27 @@ h1 {
     color: black;
     text-align: center;
 }
+
+.wrapper {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.choose-size-crust {
+    color: white;
+}
+
+.inner-header{
+    color: black;
+}
+.card-body {
+    width: 100%;
+}
+
+.card-inner {
+    margin: 15px;
+}
+
 
 
 

@@ -18,7 +18,8 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Pizza world</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -30,51 +31,148 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Menu</a>
                 </li>
-<!--                DROPDOWN LINK NOT NEEDED ==========================   ====== -->
-<!--                <li class="nav-item dropdown">-->
-<!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--                        Dropdown-->
-<!--                    </a>-->
-<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--                        <a class="dropdown-item" href="#">Action</a>-->
-<!--                        <a class="dropdown-item" href="#">Another action</a>-->
-<!--                        <div class="dropdown-divider"></div>-->
-<!--                        <a class="dropdown-item" href="#">Something else here</a>-->
-<!--                    </div>-->
-<!--                </li>-->
+                <!--                DROPDOWN LINK NOT NEEDED ==========================   ====== -->
+                <!--                <li class="nav-item dropdown">-->
+                <!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                <!--                        Dropdown-->
+                <!--                    </a>-->
+                <!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+                <!--                        <a class="dropdown-item" href="#">Action</a>-->
+                <!--                        <a class="dropdown-item" href="#">Another action</a>-->
+                <!--                        <div class="dropdown-divider"></div>-->
+                <!--                        <a class="dropdown-item" href="#">Something else here</a>-->
+                <!--                    </div>-->
+                <!--                </li>-->
                 <!--              DROPDOWN LINK NOT NEEDED ==========================   ====== -->
 
                 <!--              DISABLED LINK NOT NEEDED ==========================   ====== -->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
-<!--                </li>-->
+                <!--                <li class="nav-item">-->
+                <!--                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
+                <!--                </li>-->
                 <!--              DISABLED LINK NOT NEEDED ==========================   ====== -->
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
-                    <button class="btn btn-search-stores btn-outline-secondary my-2 my-sm-0" type="submit">Search stores near you</button>
+                    <button class="btn btn-search-stores btn-outline-secondary my-2 my-sm-0" type="submit">Search stores
+                        near you
+                    </button>
                 </form>
             </ul>
 
             <li class="nav-item sign-up">
                 <a class="nav-link" href="#"><i class="fas fa-user"></i> Sign Up</a>
             </li>
-<!--            Reposition inside the ul on the left side-->
-<!--            <form class="form-inline my-2 my-lg-0">-->
-<!--                <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">-->
-<!--                <button class="btn btn-search-stores btn-outline-secondary my-2 my-sm-0" type="submit">Search stores near you</button>-->
-<!--            </form>-->
+            <!--            Reposition inside the ul on the left side-->
+            <!--            <form class="form-inline my-2 my-lg-0">-->
+            <!--                <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">-->
+            <!--                <button class="btn btn-search-stores btn-outline-secondary my-2 my-sm-0" type="submit">Search stores near you</button>-->
+            <!--            </form>-->
             <!--            Reposition inside the ul on the left side-->
         </div>
     </nav>
 </header>
 
-<main class=>
+<main class="wrapper">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Welcome to Pizza World!</h1>
         </div>
     </div>
 
+    <h2>Build your own pizza!</h2>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+    </ul>
+    <div class="card bg-light mb-3" style="max-width: 100%;">
+        <div class="card-header bg-primary choose-size-crust">Choose size and crust</div>
+        <!--        <div class="card-body">-->
+        <!--            <h5 class="card-title">Light card title</h5>-->
+        <!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+        <!--        </div>-->
+        <div class="card bg-light mb-3 card-inner" style="max-width: 100%;">
+            <div class="card-header">Hand Tossed</div>
+            <div class="card-body">
+                <p class="card-text">Garlic seasoned crust with a rich, buttery taste.</p>
+
+                <form class="list-group" action="">
+                    <div class="list-group-item">
+                        <input id="hand-tossed-small" name="hand-tossed" type="radio">
+                        <label for="hand-tossed-small">Small (10")</label>
+                    </div>
+
+                    <div class="list-group-item">
+                        <input id="hand-tossed-medium" type="radio" name="hand-tossed">
+                        <label for="hand-tossed-medium">Medium (12") </label>
+                    </div>
+
+                </form>
+<!--          LIST ITEM ==== === == = = = == =  == == == = = = == =========== =-->
+<!--                <ul class="list-group">-->
+<!--                    <li class="list-group-item">-->
+<!--                        <div class="custom-control custom-radio">-->
+<!--                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">-->
+<!--                            <label class="custom-control-label" for="customRadio1">Small (10")</label>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                    <li class="list-group-item">-->
+<!--                        <div class="custom-control custom-radio">-->
+<!--                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">-->
+<!--                            <label class="custom-control-label" for="customRadio1">Medium (12")</label>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--          LIST ITEM ==== === == = = = == =  == == == = = = == =========== =-->
+            </div>
+        </div>
+        <div class="card bg-light mb-3 card-inner" style="max-width: 100%;">
+            <div class="card-header">Crispy Thin</div>
+            <div class="card-body">
+                <p class="card-text">Thin enough for optimum crispy to crunchy ratio.</p>
+
+                <form class="list-group" action="">
+                    <div class="list-group-item">
+                        <input id="crispy-large" type="radio" name="crispy-thin-pizza">
+                        <label for="crispy-large">Medium (12")</label>
+                    </div>
+
+                    <div class="list-group-item">
+                        <input id="crispy-large" type="radio" name="crispy-thin-pizza">
+                        <label for="crispy-large">Large (14")</label>
+                    </div>
+
+                </form>
+<!--                LIST ITEM ==== === == = = = == =  == == == = = = == =========== =-->
+<!--                <form action="">-->
+<!--                <ul class="list-group">-->
+<!--                    <li class="list-group-item">-->
+<!--                        <div class="custom-control custom-radio">-->
+<!--                            <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">-->
+<!--                            <label class="custom-control-label" for="customRadio1">Medium (12")</label>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                    <li class="list-group-item">-->
+<!--                        <div class="custom-control custom-radio">-->
+<!--                            <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">-->
+<!--                            <label class="custom-control-label" for="customRadio1">Large (14")</label>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--                </form>-->
+<!--                LIST ITEM ==== === == = = = == =  == == == = = = == =========== =&ndash;&gt;-->
+            </div>
+        </div>
+
+    </div>
 </main>
 
 
