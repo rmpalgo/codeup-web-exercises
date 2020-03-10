@@ -13,7 +13,6 @@ header nav {
 .sign-up a {
     display: block;
     text-decoration: none;
-    color: lightgray;
 }
 
 i {
@@ -30,23 +29,23 @@ a:hover {
 }
 
 .jumbotron-fluid {
-    width: 100%;
     margin: 0 auto;
     margin-top: 20px;
     padding: 0;
 
 }
 
-.container {
-    padding: 5em;
+.jumbotron-fluid {
+    padding: 5em 0em;
     background-image: url("../imgs/pizza.png");
+    background-size: cover;
     color: white;
     margin-bottom: 2em;
 }
 
 h1 {
     background: white;
-    opacity: 0.5;
+    opacity: 0.7;
     color: black;
     text-align: center;
 }
@@ -56,9 +55,7 @@ h1 {
     width: 90%;
 }
 
-.choose-size-crust {
-    color: white;
-}
+
 
 .inner-header{
     color: black;
@@ -70,6 +67,11 @@ h1 {
 .card-inner {
     margin: 15px;
 }
+
+.header-white {
+    color: white;
+}
+
 
 
 

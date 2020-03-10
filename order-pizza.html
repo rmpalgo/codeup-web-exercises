@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto ul-navbar">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Order online<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Menu</a>
@@ -53,14 +53,16 @@
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
                     <button class="btn btn-search-stores btn-outline-secondary my-2 my-sm-0" type="submit">Search stores
-                        near you
+                        near you!
                     </button>
                 </form>
             </ul>
 
-            <li class="nav-item sign-up">
+            <ul class="navbar-nav ml-auto ul-navbar">
+            <li class="nav-item sign-up active">
                 <a class="nav-link" href="#"><i class="fas fa-user"></i> Sign Up</a>
             </li>
+            </ul>
             <!--            Reposition inside the ul on the left side-->
             <!--            <form class="form-inline my-2 my-lg-0">-->
             <!--                <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">-->
@@ -73,28 +75,34 @@
 
 <main class="wrapper">
     <div class="jumbotron jumbotron-fluid">
-        <div class="container">
+<!--        <div class="container">-->
             <h1 class="display-4">Welcome to Pizza World!</h1>
-        </div>
+<!--        </div>-->
     </div>
 
     <h2>Build your own pizza!</h2>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" href="#">Active</a>
+            <a class="nav-link active" href="#">
+                <span class="badge badge-dark">4</span> Size and Crust
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">
+                <span class="badge badge-dark">2</span>Cheese and Sauce
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">
+                <span class="badge badge-dark">1</span> Toppings
+            </a>
         </li>
         <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
     </ul>
     <div class="card bg-light mb-3" style="max-width: 100%;">
-        <div class="card-header bg-primary choose-size-crust">Choose size and crust</div>
+        <div class="card-header bg-primary header-white">Choose size and crust</div>
         <!--        <div class="card-body">-->
         <!--            <h5 class="card-title">Light card title</h5>-->
         <!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
@@ -106,15 +114,14 @@
 
                 <form class="list-group" action="">
                     <div class="list-group-item">
-                        <input id="hand-tossed-small" name="hand-tossed" type="radio">
+                        <input id="hand-tossed-small" name="pizza-size" type="radio">
                         <label for="hand-tossed-small">Small (10")</label>
                     </div>
 
                     <div class="list-group-item">
-                        <input id="hand-tossed-medium" type="radio" name="hand-tossed">
+                        <input id="hand-tossed-medium" type="radio" name="pizza-size">
                         <label for="hand-tossed-medium">Medium (12") </label>
                     </div>
-
                 </form>
 <!--          LIST ITEM ==== === == = = = == =  == == == = = = == =========== =-->
 <!--                <ul class="list-group">-->
@@ -141,12 +148,12 @@
 
                 <form class="list-group" action="">
                     <div class="list-group-item">
-                        <input id="crispy-large" type="radio" name="crispy-thin-pizza">
+                        <input id="crispy-large" type="radio" name="pizza-size">
                         <label for="crispy-large">Medium (12")</label>
                     </div>
 
                     <div class="list-group-item">
-                        <input id="crispy-large" type="radio" name="crispy-thin-pizza">
+                        <input id="crispy-large" type="radio" name="pizza-size">
                         <label for="crispy-large">Large (14")</label>
                     </div>
 
@@ -172,6 +179,22 @@
             </div>
         </div>
 
+    </div>
+
+<!--    CHOOSE CHEESE AND SAUCE-->
+    <div class="card bg-light mb-3" style="max-width: 100%;">
+        <div class="card-header bg-primary header-white">Choose Cheese and Sauce</div>
+        <div class="card-body">
+<!--            CHEESE CHOICE-->
+            <div class="card bg-light mb-3" style="max-width: 100%;">
+                <div class="card-header">Cheese</div>
+                <div class="card-body">
+                    <h5 class="card-title">Light card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+<!--            CHEESE CHOICE-->
+        </div>
     </div>
 </main>
 
