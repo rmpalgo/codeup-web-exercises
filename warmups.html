@@ -49,6 +49,7 @@
     function sayHello(name) {
         return "Hello, " + name + "!";
     }
+
     //============================================================>
     //    Exercise 10: Write a function called firsItem that takes in an array and returns the first item in the array.
     function firstItem(arr) {
@@ -60,7 +61,7 @@
     //============================================================>
     //Exercise 11 Creat a function that returns the type of the value you enter in the input parameter of the function.
     function checkType(input) {
-        return typeof(input)
+        return typeof (input)
     }
 
     console.log('checkType(1) is: ' + checkType(1));
@@ -71,12 +72,40 @@
 
     // Exercise 12 Create a function that takes in an array of values and console.logs the data type of each.
     function checkTypes(input) {
-        for( var i = 0; i < input.length; i++) {
+        for (var i = 0; i < input.length; i++) {
             console.log(checkType(input[i]));
         }
     }
+
     checkTypes([2, 'Fer', false]);
 
+    //    Exercise 13: Write a function called isString that accepts a single input, and returns true if the data type is a string or false if it is not a string
+
+    function isString(input) {
+        var x = typeof(input)
+        if ( x === "string") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+console.log(isString(true));
+    console.log(isString("hello"));
+    //    Exercise 14
+    //    Write a function called isNumber that accepts a single input, and returns true if the data type is a number or false if it is not a number
+
+    function isNumber(input) {
+        if(isNaN(input) === true) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
+    console.log(isNumber("Hi"));
+    console.log(isNumber(42));
 </script>
 </body>
 </html>
