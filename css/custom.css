@@ -10,22 +10,9 @@ header nav {
     list-style-type: none;
 }
 
-.sign-up a {
-    display: block;
-    text-decoration: none;
-}
 
 i {
     padding: 0 3px;
-}
-
-a:hover {
-    background: lightgrey;
-}
-
-.sign-up a:hover {
-    background: lightgray;
-    color: black;
 }
 
 .jumbotron-fluid {
