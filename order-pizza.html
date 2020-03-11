@@ -31,25 +31,6 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Menu</a>
                 </li>
-                <!--                DROPDOWN LINK NOT NEEDED ==========================   ====== -->
-                <!--                <li class="nav-item dropdown">-->
-                <!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                <!--                        Dropdown-->
-                <!--                    </a>-->
-                <!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-                <!--                        <a class="dropdown-item" href="#">Action</a>-->
-                <!--                        <a class="dropdown-item" href="#">Another action</a>-->
-                <!--                        <div class="dropdown-divider"></div>-->
-                <!--                        <a class="dropdown-item" href="#">Something else here</a>-->
-                <!--                    </div>-->
-                <!--                </li>-->
-                <!--              DROPDOWN LINK NOT NEEDED ==========================   ====== -->
-
-                <!--              DISABLED LINK NOT NEEDED ==========================   ====== -->
-                <!--                <li class="nav-item">-->
-                <!--                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
-                <!--                </li>-->
-                <!--              DISABLED LINK NOT NEEDED ==========================   ====== -->
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
                     <button class="btn btn-search-stores btn-outline-secondary my-2 my-sm-0" type="submit">Search stores
@@ -63,12 +44,6 @@
                 <a class="nav-link" href="#"><i class="fas fa-user"></i> Sign Up</a>
             </li>
             </ul>
-            <!--            Reposition inside the ul on the left side-->
-            <!--            <form class="form-inline my-2 my-lg-0">-->
-            <!--                <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">-->
-            <!--                <button class="btn btn-search-stores btn-outline-secondary my-2 my-sm-0" type="submit">Search stores near you</button>-->
-            <!--            </form>-->
-            <!--            Reposition inside the ul on the left side-->
         </div>
     </nav>
 </header>
@@ -81,39 +56,21 @@
     </div>
 
     <h2>Build your own pizza!</h2>
-<!--    TABS-->
-<!--    <ul class="nav nav-tabs">-->
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link active" href="#">-->
-<!--                <span class="badge badge-dark">4</span> Size and Crust-->
-<!--            </a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" href="#">-->
-<!--                <span class="badge badge-dark">2</span>Cheese and Sauce-->
-<!--            </a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" href="#">-->
-<!--                <span class="badge badge-dark">1</span> Toppings-->
-<!--            </a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
-<!--        </li>-->
-<!--    </ul>-->
-<!--    TABS-->
-
-<!--    ACTIVATED TABS-->
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Size and Crust</a>
-            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Cheese and Sauce</a>
-            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Toppings</a>
+            <a class="nav-item nav-link active" id="pizza-size" data-toggle="tab" href="#pizza-slice" role="tab" aria-controls="nav-home" aria-selected="true">
+                <span class="badge badge-pill badge-dark">1</span> Size and Crust
+            </a>
+            <a class="nav-item nav-link" id="cheese-and-sauce" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
+                <span class="badge badge-pill badge-dark">2</span> Cheese and Sauce
+            </a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+                <span class="badge badge-pill badge-dark">3</span> Toppings
+            </a>
         </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="tab-pane fade show active" id="pizza-slice" role="tabpanel" aria-labelledby="pizza-size">
             <form class="list-group" action="#">
                 <div class="card bg-light mb-3" style="max-width: 100%;">
                     <div class="card-header bg-primary header-white">
@@ -125,14 +82,14 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">Garlic seasoned crust with a rich, buttery taste.</p>
-                            <div class="list-group-item">
+                            <div class="list-group-item box border-top-0">
                                 <input id="hand-tossed-small" name="pizza-size" type="radio">
                                 <label for="hand-tossed-small">
                                     Small (10")
                                 </label>
                             </div>
 
-                            <div class="list-group-item">
+                            <div class="list-group-item box border">
                                 <input id="hand-tossed-medium" type="radio" name="pizza-size">
                                 <label for="hand-tossed-medium">
                                     Medium (12")
@@ -164,7 +121,8 @@
                 </div>
             </form>
         </div>
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="cheese-and-sauce">
             <form action="#">
 
                 <div class="card bg-light mb-3">
@@ -317,210 +275,6 @@
             </form>
         </div>
     </div>
-<!--    ACTIVATED TABS-->
-
-
-<!--    <form class="list-group" action="#">-->
-<!--        <div class="card bg-light mb-3" style="max-width: 100%;">-->
-<!--            <div class="card-header bg-primary header-white">-->
-<!--                Choose size and crust-->
-<!--            </div>-->
-<!--                <div class="card bg-light mb-3 card-inner" style="max-width: 100%;">-->
-<!--                    <div class="card-header">-->
-<!--                        Hand Tossed-->
-<!--                    </div>-->
-<!--                    <div class="card-body">-->
-<!--                        <p class="card-text">Garlic seasoned crust with a rich, buttery taste.</p>-->
-<!--                            <div class="list-group-item">-->
-<!--                                <input id="hand-tossed-small" name="pizza-size" type="radio">-->
-<!--                                <label for="hand-tossed-small">-->
-<!--                                    Small (10")-->
-<!--                                </label>-->
-<!--                            </div>-->
-
-<!--                            <div class="list-group-item">-->
-<!--                                <input id="hand-tossed-medium" type="radio" name="pizza-size">-->
-<!--                                <label for="hand-tossed-medium">-->
-<!--                                    Medium (12")-->
-<!--                                </label>-->
-<!--                            </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                <div class="card bg-light mb-3 card-inner" style="max-width: 100%;">-->
-<!--                    <div class="card-header">Crispy Thin</div>-->
-<!--                    <div class="card-body">-->
-<!--                        <p class="card-text">Thin enough for optimum crispy to crunchy ratio.</p>-->
-
-
-<!--                            <div class="list-group-item">-->
-<!--                                <input id="crispy-large" type="radio" name="pizza-size">-->
-<!--                                <label for="crispy-large">Medium (12")</label>-->
-<!--                            </div>-->
-
-<!--                            <div class="list-group-item">-->
-<!--                                <input id="crispy-large" type="radio" name="pizza-size">-->
-<!--                                <label for="crispy-large">Large (14")</label>-->
-<!--                            </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            <div class="card-body d-flex justify-content-end">-->
-<!--                <a href="#" class="btn btn-primary">Next</a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </form>-->
-
-<!--    CHOOSE CHEESE AND SAUCE-->
-<!--    <form action="#">-->
-
-<!--    <div class="card bg-light mb-3">-->
-<!--        <div class="card-header bg-primary header-white">Choose Cheese and Sauce</div>-->
-<!--        <div class="card-body">-->
-<!--&lt;!&ndash;            CHEESE CHOICE&ndash;&gt;-->
-<!--                <div class="card bg-light mb-3">-->
-<!--                    <div class="card-header card border">Cheese</div>-->
-<!--                    <div class="card-body card border">-->
-<!--                        <div class="form-group">-->
-<!--                            <label for="how-much-cheese">How much cheese?</label>-->
-<!--                            <select class="form-control" name="how-much-cheese" id="how-much-cheese">-->
-<!--                                <option value="light">Light</option>-->
-<!--                                <option value="normal">Normal</option>-->
-<!--                                <option value="extra">Extra</option>-->
-<!--                                <option value="double">Double</option>-->
-<!--                            </select>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--            &lt;!&ndash;            CHEESE CHOICE&ndash;&gt;-->
-
-<!--            &lt;!&ndash;            SAUCE OPTIONS&ndash;&gt;-->
-<!--                <div class="card">-->
-<!--                    <div class="card-header card border ">-->
-<!--                        Sauce-->
-<!--                    </div>-->
-<!--                    <div class="card-body border">-->
-<!--                        <div class="form-group">-->
-<!--                            <label for="typeOfSauce">What type?</label>-->
-<!--                            <select class="form-control" id="typeOfSauce" name="typeOfSauce">-->
-<!--                                <option value="tomato-sauce">Tomato sauce</option>-->
-<!--                                <option value="marinara-sauce">Marinara sauce</option>-->
-<!--                                <option value="bbq-sauce">BBQ sauce</option>-->
-<!--                                <option value="alfredo-sauce">Alfredo sauce</option>-->
-<!--                            </select>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="card border">-->
-<!--                        <div class="card-body">-->
-<!--                            <div class="form-group">-->
-<!--                                <label for="sauceAmount">How much?</label>-->
-<!--                                <select class="form-control" id="sauceAmount" name="sauceAmount">-->
-<!--                                    <option value="light">Light</option>-->
-<!--                                    <option value="normal">Normal</option>-->
-<!--                                    <option value="extra">Extra</option>-->
-<!--                                </select>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--&lt;!&ndash;            SAUCE OPTIONS&ndash;&gt;-->
-<!--        </div>-->
-<!--        <div class="card-body d-flex justify-content-end">-->
-<!--            <a href="#" class="btn btn-primary">Next</a>-->
-<!--            <a href="#" class="btn btn-primary">Back</a>-->
-<!--        </div>-->
-<!--    </form>-->
-<!--    </div>-->
-
-<!--    NEXT TAB CHOOSE TOPPINGS-->
-<!--    <form action="#">-->
-<!--        <div class="card bg-light mb-3">-->
-<!--            <div class="card-header bg-primary text-white">-->
-<!--                Choose Toppings-->
-<!--            </div>-->
-<!--                <div class="card-body">-->
-
-<!--                        <div class="card mb-3">-->
-<!--                            <div class="card-header">-->
-<!--                                Choose Meats-->
-<!--                            </div>-->
-
-<!--                            <div class="card-body">-->
-
-<!--                                <div class="form-check">-->
-<!--                                    <input class="form-check-input" type="checkbox" value="beef" id="beef" name="meatOption">-->
-<!--                                    <label class="form-check-label" for="beef">-->
-<!--                                        Beef-->
-<!--                                    </label>-->
-<!--                                </div>-->
-
-<!--                                <div class="form-check">-->
-<!--                                    <input class="form-check-input" type="checkbox" value="ham" id="ham" name="meatOption">-->
-<!--                                    <label class="form-check-label" for="ham">-->
-<!--                                        Ham-->
-<!--                                    </label>-->
-<!--                                </div>-->
-
-<!--                                <div class="form-check">-->
-<!--                                    <input class="form-check-input" type="checkbox" value="philly-steak" id="philly-steak" name="meatOption">-->
-<!--                                    <label class="form-check-label" for="philly-steak">-->
-<!--                                        Philly Steak-->
-<!--                                    </label>-->
-<!--                                </div>-->
-
-<!--                                <div class="form-check">-->
-<!--                                    <input class="form-check-input" type="checkbox" value="" id="bacon" name="meatOption">-->
-<!--                                    <label class="form-check-label" for="bacon">-->
-<!--                                        Bacon-->
-<!--                                    </label>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div class="card border">-->
-<!--                            <div class="card-header border">-->
-<!--                                Choose Non-meats-->
-<!--                            </div>-->
-<!--                                <div class="card-body border">-->
-<!--                                    <div class="form-check">-->
-<!--                                        <input class="form-check-input" type="checkbox" value="" id="green-peppers" name="non-meat-option">-->
-<!--                                        <label class="form-check-label" for="green-peppers">-->
-<!--                                            Green Peppers-->
-<!--                                        </label>-->
-<!--                                    </div>-->
-
-<!--                                    <div class="form-check">-->
-<!--                                        <input class="form-check-input" type="checkbox" value="mushrooms" id="mushrooms" name="non-meat-option">-->
-<!--                                        <label class="form-check-label" for="mushrooms">-->
-<!--                                            Mushrooms-->
-<!--                                        </label>-->
-<!--                                    </div>-->
-
-<!--                                    <div class="form-check">-->
-<!--                                        <input class="form-check-input" type="checkbox" value="onions" id="onions" name="non-meat-option">-->
-<!--                                        <label class="form-check-label" for="onions">-->
-<!--                                            Onions-->
-<!--                                        </label>-->
-<!--                                    </div>-->
-
-<!--                                    <div class="form-check">-->
-<!--                                        <input class="form-check-input" type="checkbox" value="jalapenos" id="jalapenos" name="non-meat-option">-->
-<!--                                        <label class="form-check-label" for="jalapenos">-->
-<!--                                            Jalapenos-->
-<!--                                        </label>-->
-<!--                                    </div>-->
-
-<!--                                </div>-->
-<!--                        </div>-->
-<!--                </div>-->
-<!--            <div class="card-body d-flex justify-content-end">-->
-<!--                <a href="#" class="btn btn-primary">Next</a>-->
-<!--                <a href="#" class="btn btn-primary">Back</a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </form>-->
-
 </main>
 
 
