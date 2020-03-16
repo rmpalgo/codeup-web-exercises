@@ -140,6 +140,12 @@
     //         do not enroll in class;
     //     }
 
+    var classIsFull = false;
+    var classConflictsWithSchedule = false;
+
+    var canEnroll = !classIsFull && !classConflictsWithSchedule;
+    console.log(canEnroll);
+
     //Exercise 3.4;
 
     // if (premium && codeValid) {
@@ -150,24 +156,34 @@
     //     coupon not applied;
     // }
 
+    //need to work on this. ======= ======= =====
+    var numberOfItemsBought = 2;
+    var hasOfferExpired = false;
+    var isPremiumMember = true;
+
+    var isOfferValid = (!isPremiumMember && !hasOfferExpired) || (numberOfItemsBought >= 2 && !hasOfferExpired);
+    numberOfItemsBought = 1;
+    console.log(isOfferValid);
+
     // Exercise 4;
 
     var username = 'Codeup';
     var password = 'notastrongpassword';
 
-    var is5Char = password.length > 5;
+    var is5Char = password.length >= 5;
     console.log(is5Char);
 
-    var notIncludeUsername = password.indexOf("notasstrongpassword");
-    console.log(notIncludeUsername);
+    var notIncludeUsername = password.indexOf('strong');
+    var passwordContainsUsername = password.indexOf(username) >= 0;
+    console.log(passwordContainsUsername);
 
-    var notMoreThan20 = username.length < 20;
+    var notMoreThan20 = username.length <= 20;
     console.log(notMoreThan20);
 
-    var noWhiteSpaceUser = username.trim();
-    var noWhiteSpacePass = password.trim();
-
-
+    var isUsernameBeginOrEndWithWhiteSpace = (username[0] === ' ') || (username[username.length - 1] === ' ');
+    var isPasswordBeginOrEndWithWhiteSpace = (password[0] === ' ') || (password[password.length - 1] === ' ');
+    var isUsernameAndPasswordValid = !isUsernameBeginOrEndWithWhiteSpace && !isPasswordBeginOrEndWithWhiteSpace;
+    console.log(isUsernameAndPasswordValid);
 
 </script>
 </body>
