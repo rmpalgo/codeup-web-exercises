@@ -16,12 +16,157 @@
     console.log(a);
     console.log(b);
     console.log(c);
+    //
 
     var d = "hello";
     var e = false;
 
     d++;
     e++;
+    //
+    var perplexed; // perplexed is undefined (no value is assigned)
+    perplexed + 2;
+
+    //
+    var price = 2.7;
+    price.toFixed(2);
+    //
+
+    // var price = "2.7";
+    // price.toFixed(2);
+
+    //
+
+    isNaN(0)
+
+    isNaN(1)
+
+    isNaN("")
+
+    isNaN("string")
+
+    isNaN("0")
+
+    isNaN("1")
+
+    isNaN("3.145")
+
+    isNaN(Number.MAX_VALUE)
+
+    isNaN(Infinity)
+
+    isNaN("true")
+
+    isNaN(true)
+
+    isNaN("false")
+
+    isNaN(false)
+
+    NaN == NaN
+
+    //
+
+    !true
+
+    !false
+
+    !!true
+
+    !!false
+
+    !!0
+
+    !!-0
+
+    !!1
+
+    !!-1
+
+    !!0.1
+
+    !!"hello"
+
+    !!""
+
+    !!''
+
+    !!"false"
+
+    !!"0"
+
+    //
+
+    var sample = "Hello Codeup";
+    console.log(sample.length);
+    console.log(sample.toUpperCase());
+    console.log(sample.toLowerCase());
+    var concat = sample + " " + "Students.";
+    console.log(concat);
+    var rep = concat.replace("Students", "Class");
+    console.log(rep);
+
+    var ind = rep.indexOf("c");
+    var indUpper = rep.indexOf('C');
+    console.log(ind);
+    console.log(indUpper);
+
+    console.log(rep.indexOf("C"));
+    console.log(rep.substring(6, 12));
+
+    //
+
+    //Exercise 3.1
+    var littleMermaid = 3, brotherBear = 5, hercules = 1;
+
+    var sum = littleMermaid + brotherBear + hercules;
+    var totalRental = sum * 3;
+    console.log(totalRental);
+
+    //Exercise 3.2
+    var googleRate = 400;
+    var facebookRate = 350;
+    var amazonRate = 380;
+
+    var weekSum = (googleRate * 6) + (facebookRate * 10) + (amazonRate * 4);
+    console.log(weekSum);
+
+    //Exercise 3.3;
+
+    // if ((class === not full) && (schedule === not conflict with current schedule) {
+    //     go ahead and enroll class;
+    // }
+    //     else {
+    //         do not enroll in class;
+    //     }
+
+    //Exercise 3.4;
+
+    // if (premium && codeValid) {
+    //     apply Coupon;
+    // } else if(more than 2x && codeValid) {
+    //     apply Coupon;
+    // }   else {
+    //     coupon not applied;
+    // }
+
+    // Exercise 4;
+
+    var username = 'Codeup';
+    var password = 'notastrongpassword';
+
+    var is5Char = password.length > 5;
+    console.log(is5Char);
+
+    var notIncludeUsername = password.indexOf("notasstrongpassword");
+    console.log(notIncludeUsername);
+
+    var notMoreThan20 = username.length < 20;
+    console.log(notMoreThan20);
+
+    var noWhiteSpaceUser = username.trim();
+    var noWhiteSpacePass = password.trim();
+
 
 
 </script>
