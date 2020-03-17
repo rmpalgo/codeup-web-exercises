@@ -10,10 +10,19 @@
 <!--Do NOT recommend to have inline script, this is just for lecture purposes as I follow
 along-->
 <script>
+"use strict";
+
+// Immediately-Invoked Function Expression (IIFE)
+// IIFE, to get rid of global scope because you do not want to expose any info to the global scope
+
+    (function(){
+       var globalCohortName = 'Apex';
+    })();
+
 
 // Global scope vars is available to every functions and variables...
 
-    var globalCohortName = 'Apex';
+    // var globalCohortName = 'Apex';
 
     //Sensitive information should not be in global scope!
     // var ccNumber = 401923453;
@@ -25,6 +34,10 @@ along-->
         console.log('dry yourself');
         console.log('Inside console.log inside a function', globalCohortName)
     }
+
+
+
+
 
     console.log('Outside console.log', globalCohortName);
 
@@ -69,6 +82,26 @@ along-->
     }
 
     sellCake(100.56, "Fernando");
+
+</script>
+
+<script>
+    "use strict";
+    (function(){
+
+        function makePayment(){
+            var cc = prompt("What's your CC number?");
+
+
+            // var expDate = prompt("What's your Expiration Date number? MM/YY");
+            // var cvc = prompt("What's your cvc number?");
+
+            return cc.length != 0;
+        }
+
+        console.log('makePayment', makePayment());
+
+    })();
 
 </script>
 </body>
