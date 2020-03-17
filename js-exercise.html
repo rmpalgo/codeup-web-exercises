@@ -157,13 +157,13 @@
     // }
 
     //need to work on this. ======= ======= =====
-    //Revisited this exercise, now understand what I did not understand earlier.git
     var numberOfItemsBought = 2;
     var hasOfferExpired = false;
     var isPremiumMember = true;
-    numberOfItemsBought = 1;
+
     var isOfferValid = (!isPremiumMember && !hasOfferExpired) || (numberOfItemsBought >= 2 && !hasOfferExpired);
-    console.log("Is coupon valid: " + isOfferValid);
+    numberOfItemsBought = 1;
+    console.log(isOfferValid);
 
     // Exercise 4;
 
