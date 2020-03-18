@@ -66,8 +66,7 @@ var random = Math.floor((Math.random() * 3) + 1);
  */
 
 function isTwo(num) {
-    var isTestTwo = num === 2;
-    return isTestTwo;
+     return num === 2;
 }
 
 console.log(isTwo(random));
@@ -92,7 +91,7 @@ function calculateTip (tipPercent, bill) {
     return tipPercent * bill;
 }
 
-// console.log(calculateTip(.25, 50));
+console.log(calculateTip(.25, 50));
 
 
 /**
@@ -103,7 +102,8 @@ function calculateTip (tipPercent, bill) {
  */
 
 var tipPercent = Number(prompt('What percent would you like to tip?'));
-var bill = parseInt(prompt('What is the total of your bill?'));
+tipPercent = tipPercent / 100;
+var bill = Number(prompt('What is the total of your bill?'));
 
 
 console.log(tipPercent);
