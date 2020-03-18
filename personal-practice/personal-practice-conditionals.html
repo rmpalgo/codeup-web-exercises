@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Practice Conditionals</title>
+</head>
+<body>
+
+
+<script>
+    "user strict";
+
+    var num = prompt('Enter a number.');
+
+    // if (num > 0) {
+    //     console.log('The number is a positive.');
+    //     // console.log('THis is just another line.');
+    // }
+    //
+    // if (num < 0) {
+    //     console.log('This number is a negative');
+    // }
+
+    //IF and ELSE statements and ELSE IF statements
+
+    if (num > 0) {
+        console.log('The number is a positive.');
+        // console.log('THis is just another line.');
+    } else if (num < 0) {
+        console.log('This number is a negative');
+    } else {
+        //    Since 0 is neither negative or positive, do another
+        //    or second condition
+        console.log('This number is a zero.')
+    }
+
+
+/***************************************************************/
+
+    var isRaining = prompt('Is it raning?');
+
+    console.log(isRaining);
+
+    if (isRaining === 'yes') {
+        console.log('Go grab an umbrella!')
+    } else if (isRaining === 'no') {
+        console.log("It's ok. You don't need anything.")
+    } else {
+        console.log("I can't help you.")
+    }
+
+
+//    JOB APPLICATION
+
+    var name = 'Lexi';
+    var age = prompt('How old are you?');
+    var highSchoolDiploma = confirm('Do you have a High School Degree?');
+
+//    JOB at APPLE Requirements: over 18 and High School Degree
+
+    if (age >= 18 && highSchoolDiploma === true) {
+        console.log('You are qualified to apply for this job.');
+    } else {
+        console.log('You are not qualified to apply for this job.');
+    }
+
+</script>
+</body>
+</html>
