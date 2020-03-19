@@ -151,3 +151,15 @@ var success = false;
 message = (success) ? "Operation was successful." : "Oops, something went wrong. ¯\\_(ツ)_/¯";
 
 console.log(message);
+
+//
+var weather = 'sunny';
+var weatherMessage;
+
+if(weather === 'rainy') {
+    weatherMessage = "It's raining!";
+} else {
+    weatherMessage = 'Have a nice day!';
+}
+
+weatherMessage = (weather === 'rainy') ? "it's raning" : "Have a nice day!";
