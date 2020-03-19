@@ -163,3 +163,27 @@ if(weather === 'rainy') {
 }
 
 weatherMessage = (weather === 'rainy') ? "it's raning" : "Have a nice day!";
+
+// As a switch statement:
+var pizzaPreference = prompt("What kind of pizza do you like?").toLowerCase();
+var pizzaConfirmation;
+
+switch (pizzaPreference) {
+    case "pepperoni":
+        pizzaConfirmation = "What a coincidence, I love that one too.";
+        break;
+    case "pineapple and hot sauce":
+        pizzaConfirmation = "That is a spicy pizza.";
+        break;
+    case "steak":
+        pizzaConfirmation = "Steak is great!";
+        break;
+    case "cheese":
+        pizzaConfirmation = "Plain cheese is okay!";
+        break;
+    default:
+        pizzaConfirmation = pizzaPreference + " isn't my favorite, but let's order some.";
+        break;
+}
+
+console.log(pizzaConfirmation);
