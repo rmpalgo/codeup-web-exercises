@@ -37,39 +37,40 @@
 // } else {
 //     alert('Ok.');
 // }
-(function(){
-    var answer = confirm("Would you like to enter a number?");
-    if (answer) {
-        var number = prompt('What is the number?');
-        number = Number(number);
-        if (isNaN(number)) {
-            alert("We can't show you anything.");
-        } else {
-            askNumber(number);
-        }
-    } else {
-        alert('ok.');
-    }
-})();
 
-function askNumber (num) {
-    if (num) {
-        if (num % 2 === 0) {
-            alert('Number is even.');
-        } else if (num % 2 !== 0) {
-            alert('Number is odd.')
-        }
-
-        alert(Number(num) + 100);
-
-        if (num > 0) {
-            alert('Number is positive.');
-        } else {
-            alert('Number is negative.');
-        }
-
-    }
-}
+// (function(){
+//     var answer = confirm("Would you like to enter a number?");
+//     if (answer) {
+//         var number = prompt('What is the number?');
+//         number = Number(number);
+//         if (isNaN(number)) {
+//             alert("We can't show you anything.");
+//         } else {
+//             askNumber(number);
+//         }
+//     } else {
+//         alert('ok.');
+//     }
+// })();
+//
+// function askNumber (num) {
+//     if (num) {
+//         if (num % 2 === 0) {
+//             alert('Number is even.');
+//         } else if (num % 2 !== 0) {
+//             alert('Number is odd.')
+//         }
+//
+//         alert(Number(num) + 100);
+//
+//         if (num > 0) {
+//             alert('Number is positive.');
+//         } else {
+//             alert('Number is negative.');
+//         }
+//
+//     }
+// }
 
 /* ########################################################################## */
 
@@ -91,6 +92,24 @@ function askNumber (num) {
  * console.logging the function's return value
  */
 
+// function analyzeColor(str) {
+//     if (str === 'blue') {
+//         return 'blue is the color of the sky';
+//     } else if (str === 'red') {
+//         return 'Strawberries are red';
+//     } else if (str === 'cyan') {
+//         return "I don't know anything about cyan";
+//     } else {
+//         return "I'm not familiar with that color.";
+//     }
+// }
+// console.log(analyzeColor('blue'));
+// console.log(analyzeColor('red'));
+// console.log(analyzeColor('cyan'));
+// console.log(analyzeColor('orange'));
+
+
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -103,11 +122,28 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-
+// console.log(analyzeColor(randomColor));
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+// function analyzeColor (str) {
+//     switch (str) {
+//         case 'blue':
+//             alert('blue is the color of the sky');
+//             break;
+//         case 'red':
+//             alert('Strawberries are red');
+//             break;
+//         case 'cyan':
+//             alert("I don't know anything about cyan.");
+//             break;
+//         default:
+//             alert(str + ' is a color I am not familiar with.')
+//     }
+// }
+//
+// console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
@@ -115,6 +151,25 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+(function () {
+    var str = prompt('What is your favorite color?');
+    switch (str) {
+        case 'blue':
+            alert('blue is the color of the sky');
+            break;
+        case 'red':
+            alert('Strawberries are red');
+            break;
+        case 'cyan':
+            alert("I don't know anything about cyan.");
+            break;
+        default:
+            alert(str + ' is a color I am not familiar with.')
+    }
+})();
+
+
 
 /* ########################################################################## */
 
