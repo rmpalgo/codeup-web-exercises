@@ -152,25 +152,22 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * function to show it to the user.
  */
 
-(function () {
-    var str = prompt('What is your favorite color?');
-    switch (str) {
-        case 'blue':
-            alert('blue is the color of the sky');
-            break;
-        case 'red':
-            alert('Strawberries are red');
-            break;
-        case 'cyan':
-            alert("I don't know anything about cyan.");
-            break;
-        default:
-            alert(str + ' is a color I am not familiar with.')
-    }
-})();
-
-
-
+// (function () {
+//     var str = prompt('What is your favorite color?');
+//     switch (str) {
+//         case 'blue':
+//             alert('blue is the color of the sky');
+//             break;
+//         case 'red':
+//             alert('Strawberries are red');
+//             break;
+//         case 'cyan':
+//             alert("I don't know anything about cyan.");
+//             break;
+//         default:
+//             alert(str + ' is a color I am not familiar with.')
+//     }
+// })();
 /* ########################################################################## */
 
 /**
@@ -192,6 +189,21 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+var bill = prompt('How much is your bill?');
+function calculateTotal(luckyNumber, bill) {
+    if (luckyNumber === 0) {
+    } else if (luckyNumber === 1) {
+        alert(bill * 0.8);
+    } else if (luckyNumber === 2) {
+        alert(bill * 0.7);
+    } else if (luckyNumber === 3) {
+        alert(bill * 0.6);
+    } else if (luckyNumber === 4) {
+        alert(bill * 0.5);
+    } else if (luckyNumber === 5) {
+        alert(0);
+    }
+}
 
 /**
  * TODO:
@@ -201,4 +213,5 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+console.log(calculateTotal(luckyNumber, bill));
