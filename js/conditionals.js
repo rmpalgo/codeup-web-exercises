@@ -38,39 +38,39 @@
 //     alert('Ok.');
 // }
 
-// (function(){
-//     var answer = confirm("Would you like to enter a number?");
-//     if (answer) {
-//         var number = prompt('What is the number?');
-//         number = Number(number);
-//         if (isNaN(number)) {
-//             alert("We can't show you anything.");
-//         } else {
-//             askNumber(number);
-//         }
-//     } else {
-//         alert('ok.');
-//     }
-// })();
+(function(){
+    var answer = confirm("Would you like to enter a number?");
+    if (answer) {
+        var number = prompt('What is the number?');
+        number = Number(number);
+        if (isNaN(number)) {
+            alert("We can't show you anything.");
+        } else {
+            askNumber(number);
+        }
+    } else {
+        alert('ok.');
+    }
+})();
 //
-// function askNumber (num) {
-//     if (num) {
-//         if (num % 2 === 0) {
-//             alert('Number is even.');
-//         } else if (num % 2 !== 0) {
-//             alert('Number is odd.')
-//         }
-//
-//         alert(Number(num) + 100);
-//
-//         if (num > 0) {
-//             alert('Number is positive.');
-//         } else {
-//             alert('Number is negative.');
-//         }
-//
-//     }
-// }
+function askNumber (num) {
+    if (num) {
+        if (num % 2 === 0) {
+            alert('Number is even.');
+        } else if (num % 2 !== 0) {
+            alert('Number is odd.')
+        }
+
+        alert(Number(num) + 100);
+
+        if (num > 0) {
+            alert('Number is positive.');
+        } else {
+            alert('Number is negative.');
+        }
+
+    }
+}
 
 /* ########################################################################## */
 
@@ -189,21 +189,21 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-var bill = prompt('How much is your bill?');
-function calculateTotal(luckyNumber, bill) {
-    if (luckyNumber === 0) {
-    } else if (luckyNumber === 1) {
-        alert(bill * 0.8);
-    } else if (luckyNumber === 2) {
-        alert(bill * 0.7);
-    } else if (luckyNumber === 3) {
-        alert(bill * 0.6);
-    } else if (luckyNumber === 4) {
-        alert(bill * 0.5);
-    } else if (luckyNumber === 5) {
-        alert(0);
-    }
-}
+// var bill = prompt('How much is your bill?');
+// function calculateTotal(luckyNumber, bill) {
+//     if (luckyNumber === 0) {
+//     } else if (luckyNumber === 1) {
+//         alert(bill * 0.8);
+//     } else if (luckyNumber === 2) {
+//         alert(bill * 0.7);
+//     } else if (luckyNumber === 3) {
+//         alert(bill * 0.6);
+//     } else if (luckyNumber === 4) {
+//         alert(bill * 0.5);
+//     } else if (luckyNumber === 5) {
+//         alert(0);
+//     }
+// }
 
 /**
  * TODO:
@@ -213,5 +213,5 @@ function calculateTotal(luckyNumber, bill) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-var luckyNumber = Math.floor(Math.random() * 6);
-console.log(calculateTotal(luckyNumber, bill));
+// var luckyNumber = Math.floor(Math.random() * 6);
+// console.log(calculateTotal(luckyNumber, bill));
