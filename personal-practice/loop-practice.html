@@ -6,24 +6,26 @@
     <style>
 
         .container {
-           height: 300px;
-            width: 300px;
+            display: flex;
+            justify-content: center;
             background: lightgray;
             text-align: center;
         }
+
+
 
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div id="box"></div>
+    <div id="box"><span id="box-border"></span></div>
 </div>
 
 
 <script>
     "user strict";
-    var element = document.getElementById('box');
+    var element = document.getElementById('box-border');
 
     (function howManyQuestions () {
 
@@ -36,7 +38,11 @@
         }
         while (n < 1);
         for (var i = 0; i < n; i++) {
-            total = total + "?";
+            if (n < 200) {
+                total = total + "?";
+            } else if (n > 200) {
+                total = 'TOO MUCH';
+            }
         }
         element.innerHTML = total;
     })();
