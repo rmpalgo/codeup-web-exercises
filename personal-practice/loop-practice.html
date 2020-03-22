@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loop practice</title>
+    <style>
+
+        .container {
+           height: 300px;
+            width: 300px;
+            background: lightgray;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="box"></div>
+</div>
+
+
+<script>
+    "user strict";
+    var element = document.getElementById('box');
+
+    (function howManyQuestions () {
+
+        var n;
+        var total = "";
+
+
+        do {
+            n = prompt('How many "?" ?');
+        }
+        while (n < 1);
+        for (var i = 0; i < n; i++) {
+            total = total + "?";
+        }
+        element.innerHTML = total;
+    })();
+
+
+</script>
+</body>
+</html>

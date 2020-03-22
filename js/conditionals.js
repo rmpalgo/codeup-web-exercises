@@ -15,6 +15,7 @@
  *
  * Can you refactor your code to use functions?
  */
+//TODO ===========================Initial=======================================
 
 // var enterNumber = confirm("Would you like to enter a number?");
 //
@@ -38,39 +39,92 @@
 //     alert('Ok.');
 // }
 
-(function(){
-    var answer = confirm("Would you like to enter a number?");
-    if (answer) {
-        var number = prompt('What is the number?');
-        number = Number(number);
-        if (isNaN(number)) {
-            alert("We can't show you anything.");
-        } else {
-            askNumber(number);
-        }
-    } else {
-        alert('ok.');
-    }
-})();
+
+
+
+
+//TODO ===========================Initial=======================================
+
+// (function(){
+//     var answer = confirm("Would you like to enter a number?");
+//     if (answer) {
+//         var number = prompt('What is the number?');
+//         number = Number(number);
+//         if (isNaN(number)) {
+//             alert("We can't show you anything.");
+//         } else {
+//             askNumber(number);
+//         }
+//     } else {
+//         alert('ok.');
+//     }
+// })();
+// //
+// function askNumber (num) {
+//     if (num) {
+//         if (num % 2 === 0) {
+//             alert('Number is even.');
+//         } else if (num % 2 !== 0) {
+//             alert('Number is odd.')
+//         }
 //
-function askNumber (num) {
-    if (num) {
-        if (num % 2 === 0) {
-            alert('Number is even.');
-        } else if (num % 2 !== 0) {
-            alert('Number is odd.')
-        }
+//         alert(Number(num) + 100);
+//
+//         if (num > 0) {
+//             alert('Number is positive.');
+//         } else {
+//             alert('Number is negative.');
+//         }
+//
+//     }
+// }
 
-        alert(Number(num) + 100);
+// TODO ===================Refactored==================================
+/*
+function promptForNumber() {
+    var numberInput = prompt('Please enter a number.');
+    return parseInt(numberInput);
+}
 
-        if (num > 0) {
-            alert('Number is positive.');
-        } else {
-            alert('Number is negative.');
-        }
-
+// Takes a number and returns the text "even" or "odd" depending on the number.
+function evenOrOdd(aNumber) {
+    if (aNumber % 2 === 0) {
+        return "even";
+    } else {
+        return "odd";
     }
 }
+
+function plus100(aNumber) {
+    return aNumber + 100;
+}
+
+//Take a number and return the text "positive" or "negative" depending on the number.
+function negativeOrPositive(aNumber) {
+    return (aNumber >= 0) ? "positive" : "negative";
+}
+
+var isEnteringNumber = confirm('Would you like to enter a number?');
+
+if (isEnteringNumber) {
+    //console.log('Entering a number.');
+    var parsedNumber = promptForNumber();
+
+    //console.log(parsedNumber, isNaN(parsedNumber));
+
+    if(isNaN(parsedNumber)) {
+        alert("You didn't enter a number");
+    } else {
+        //alert("You entered a number.");
+        // * - whether the number is even or odd.
+        alert('The number is ' + evenOrOdd(parsedNumber));
+        // * - what the number plus 100 is
+        alert('The number plus 100 is ' + plus100(parsedNumber));
+        // * - if the number is negative or positive
+        alert('The number is ' + negativeOrPositive(parsedNumber));
+    }
+}
+*/
 
 /* ########################################################################## */
 
@@ -92,22 +146,24 @@ function askNumber (num) {
  * console.logging the function's return value
  */
 
-// function analyzeColor(str) {
-//     if (str === 'blue') {
-//         return 'blue is the color of the sky';
-//     } else if (str === 'red') {
-//         return 'Strawberries are red';
-//     } else if (str === 'cyan') {
-//         return "I don't know anything about cyan";
-//     } else {
-//         return "I'm not familiar with that color.";
-//     }
-// }
-// console.log(analyzeColor('blue'));
-// console.log(analyzeColor('red'));
-// console.log(analyzeColor('cyan'));
-// console.log(analyzeColor('orange'));
-
+//TODO ===========================Initial=======================================
+/*
+function analyzeColor(str) {
+    if (str === 'blue') {
+        return 'blue is the color of the sky';
+    } else if (str === 'red') {
+        return 'Strawberries are red';
+    } else if (str === 'cyan') {
+        return "I don't know anything about cyan";
+    } else {
+        return "I'm not familiar with that color.";
+    }
+}
+console.log(analyzeColor('blue'));
+console.log(analyzeColor('red'));
+console.log(analyzeColor('cyan'));
+console.log(analyzeColor('orange'));
+*/
 
 
 // Don't change the next two lines!
@@ -143,7 +199,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 //     }
 // }
 //
-// console.log(analyzeColor(randomColor));
+// console.log('The color should be different', analyzeColor(randomColor));
 
 /**
  * TODO:
@@ -152,7 +208,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * function to show it to the user.
  */
 
-// (function () {
+// function analyzeColor(str) {
 //     var str = prompt('What is your favorite color?');
 //     switch (str) {
 //         case 'blue':
@@ -167,7 +223,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 //         default:
 //             alert(str + ' is a color I am not familiar with.')
 //     }
-// })();
+//IIFE are not used for individual functions but the whole set of functions to protect against global
 /* ########################################################################## */
 
 /**
@@ -189,21 +245,23 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-// var bill = prompt('How much is your bill?');
-// function calculateTotal(luckyNumber, bill) {
-//     if (luckyNumber === 0) {
-//     } else if (luckyNumber === 1) {
-//         alert(bill * 0.8);
-//     } else if (luckyNumber === 2) {
-//         alert(bill * 0.7);
-//     } else if (luckyNumber === 3) {
-//         alert(bill * 0.6);
-//     } else if (luckyNumber === 4) {
-//         alert(bill * 0.5);
-//     } else if (luckyNumber === 5) {
-//         alert(0);
-//     }
-// }
+var bill = prompt('How much is your bill?');
+function calculateTotal(luckyNumber, bill) {
+    if (luckyNumber === 0) {
+    } else if (luckyNumber === 1) {
+        alert('Your discounted price is: ' + (bill * 0.9));
+    } else if (luckyNumber === 2) {
+        alert('Your discounted price is: ' + (bill * 0.75));
+    } else if (luckyNumber === 3) {
+        alert('Your discounted price is: ' + (bill * 0.65));
+    } else if (luckyNumber === 4) {
+        alert('Your discounted price is: ' + (bill * 0.5));
+    } else if (luckyNumber === 5) {
+        //I previously used 0, where I thought this was to show the discount price,
+        //but actually you want to show the full bill.
+        alert(bill);
+    }
+}
 
 /**
  * TODO:
@@ -213,5 +271,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
-// console.log(calculateTotal(luckyNumber, bill));
+var luckyNumber = Math.floor(Math.random() * 6);
+console.log(calculateTotal(luckyNumber, bill));
+
+
