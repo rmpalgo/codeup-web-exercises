@@ -21,5 +21,6 @@ do {
     } else if (boughtEachTime > conesTally) {
         console.log('I cannot sell you ' + boughtEachTime + ' I only have ' + conesTally + ' left.')
     }
-        console.log('Yay, I sold them all.');
+
 } while (conesTally > 0);
+console.log('Yay. sold them all.');
