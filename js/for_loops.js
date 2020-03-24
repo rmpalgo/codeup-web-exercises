@@ -17,3 +17,8 @@ for(var i = 1; i <= 10; i++) {
         console.log('Number is odd: ' + num);
     }
 }
+
+for (var i = 1; i <= 9; i++) {
+    var stringToRepeat = "" + i;
+    console.log(stringToRepeat.repeat(i));
+}
