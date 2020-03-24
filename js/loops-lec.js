@@ -47,7 +47,7 @@ while (i <= 20) {
 var i = 0;
 
 while (i <= 100) {
-    console.log(i);
+    console.log('Count to 100 by 10s: ' + i);
     i += 10;
 }
 
@@ -60,7 +60,7 @@ while (i <= 100) {
 var i = 50;
 
 while(i > 0) {
-    console.log(i);
+    console.log('Count down from 50 to 1 (inclusive): ' + i);
     i--;
 }
 
@@ -87,18 +87,24 @@ while(i > 0) {
 
 // TODO TOGETHER: Why doesnt the example above run?
 
+//The condition is already true so it does not run
 
 // TODO TOGETHER: Refactor the example above using a do-while loop. What behavior do we notice?
 
 
+var i = 10;
 
-
-
+do {
+    console.log("while loop iteration #" + i);
+    i++;
+} while (i < 10);
 
 
 //TODO TOGETHER: Create a do-while loop that asks the user to confirm: "Would you like to exit?"
 
-
+// do {
+//     var userConfirm = confirm('Would you like to exit?');
+// } while(userConfirm === false);
 
 
 
@@ -106,14 +112,19 @@ while(i > 0) {
 //TODO TOGETHER: Create a do-while loop that counts up to 20 (inclusive) by 2s (0, 2, 4...)
 // (0, 2, 4...20)
 
+var i = 0;
 
-
-
+do {
+    console.log("Do while loop counting by 2's " + i)
+    i += 2;
+} while (i <= 20)
 
 
 //TODO: Create a do-while loop that prompts the user for a color and continues to prompt until the string passed is "blue"
 
-
+do {
+    var color = prompt('Pick a color.');
+} while (color !== 'blue')
 
 
 
