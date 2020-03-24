@@ -7,3 +7,13 @@ function showMultiplicationTable (num) {
 }
 
 showMultiplicationTable(7);
+
+
+for(var i = 1; i <= 10; i++) {
+    var num = Math.floor(Math.random() * 180) + 20;
+    if (num % 2 === 0) {
+        console.log('Number is even: ' + num);
+    } else if (num % 2 !== 0) {
+        console.log('Number is odd: ' + num);
+    }
+}
