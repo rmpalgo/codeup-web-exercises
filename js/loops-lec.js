@@ -115,16 +115,18 @@ do {
 var i = 0;
 
 do {
-    console.log("Do while loop counting by 2's " + i)
+    console.log("Do while loop counting by 2's " + i);
     i += 2;
 } while (i <= 20)
 
 
 //TODO: Create a do-while loop that prompts the user for a color and continues to prompt until the string passed is "blue"
 
-do {
-    var color = prompt('Pick a color.');
-} while (color !== 'blue')
+// do {
+//     var color = prompt('Pick a color.').toLowerCase();
+//     console.log('userPrompt: ' + color);
+//
+// } while (color !== 'blue');
 
 
 
@@ -143,7 +145,9 @@ do {
 
 //TODO TOGETHER: Explore basic for loop syntax
 
-
+for (var i = 0; i < 10; i++) {
+    console.log('for loop iteration #' + i);
+}
 
 
 
@@ -151,8 +155,17 @@ do {
 // TODO TOGETHER: Write a for loop that loops through numbers 0 - 5 (inclusive);
 
 
+for (var i = 0; i <= 5; i++) {
+    console.log('Count from 0 to 5 (inclusive). : ' + i);
+}
 
+//while loop comparison
 
+// i = 0;
+// while( i <= 5) {
+//     console.log('Count from 0 to 5 (inclusive). : ' + i);
+//     i++;
+// }
 
 // TODO TOGETHER: Why are loops beneficial?
 
@@ -161,15 +174,35 @@ do {
 var randomColors = ["red","orange", "yellow", "blue", "green"]
 
 // Without using loops.
-
+console.log('randomColors[0] ' + randomColors[0]);
+console.log('randomColors[1] ' + randomColors[1]);
+console.log('randomColors[2] ' + randomColors[2]);
+console.log('randomColors[3] ' + randomColors[3]);
+console.log('randomColors[4] ' + randomColors[4]);
 // Using a for loop.
 
+for(var i = 0; i < randomColors.length; i++) {
+    console.log('Using a for loop to iterate through colors: ' + randomColors[i]);
+}
 
 
 // TODO TOGETHER: Using a for loop, log all even numbers 0 - 100;
 
+for (var i = 0; i <= 101; i++) {
+    if (i % 2 === 0) {
+        console.log('Loogin all even numbers between 0 - 100: ' + i)
+    }
+    //if we wanted to do even and odd then you would not use the i+=2
+    // else {
+    //     console.log('Loogin all odd numbers between 0 - 100: ' + i)
+    // }
 
+}
 
+for (var i = 0; i <= 101; i+=2) {
+        console.log('Loogin all even numbers between using +=2 0 - 100: ' + i);
+
+}
 
 
 
