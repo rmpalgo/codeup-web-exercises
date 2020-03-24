@@ -209,10 +209,11 @@ for (var i = 0; i <= 101; i+=2) {
 
 // TODO: Using a for loop, log all numbers divisible by 5, from 0 - 100;
 
-
-
-
-
+for (var i = 0; i <= 100; i++) {
+    if (i % 5 === 0) {
+        console.log('Log all numbers divisible by 5 up to 100: ' + i);
+    }
+}
 
 // TODO: Using a for loop, complete the FizzBuzz challenge:
 //  Your program should count up to 100.
@@ -220,7 +221,6 @@ for (var i = 0; i <= 101; i+=2) {
 //  For numbers divisible by 5, log "Buzz"
 //  If divisible by 3 and 5, log "FizzBuzz"
 //  All other cases, just log the number.
-
 
 
 
