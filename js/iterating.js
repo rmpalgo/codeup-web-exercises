@@ -22,6 +22,10 @@
      * accessing each element's index.
      */
 
+    names.forEach( (index) => {
+        console.log('items, ', index);
+    });
+
     /**
      * TODO:
      * Write some code that uses a for loop to log every item in the names
