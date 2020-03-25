@@ -12,21 +12,21 @@ while (true) {
     var input = promptInput;
     console.log(typeof input);
     console.log(isNaN(input))
-    if (input !== '0' && input % 2 !== 0 && isNaN(input) === false) {
+    if (input < 50 && input % 2 !== 0 && isNaN(input) === false) {
         theChoice = input;
         break;
     }
 }
+console.log(theChoice);
 
 
 
 
-//
-// for (var i = 0; i < 50; i++) {
-//     if (theChoice === i) {
-//         console.log('Skipping number ' + i)
-//         continue;
-//     } else if (i % 2 !== 0) {
-//         console.log(i)
-//     }
-// }
+for (var i = 0; i < 50; i++) {
+    if (theChoice === i) {
+        console.log('Skipping number ' + i)
+        continue;
+    } else if (i % 2 !== 0) {
+        console.log(i)
+    }
+}
