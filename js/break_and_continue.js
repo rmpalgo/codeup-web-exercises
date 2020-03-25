@@ -9,10 +9,7 @@ var theChoice;
 //
 while (true) {
     var input = parseInt(prompt('Choose an odd number between 1 and 50.'));
-    // var input = promptInput;
-    console.log(typeof input);
-    console.log(isNaN(input))
-    if (input < 50 && input % 2 !== 0 && isNaN(input) === false) {
+    if (input < 50 && input % 2 !== 0 && !Number.isNaN(input)) {
         theChoice = input;
         break;
     }
