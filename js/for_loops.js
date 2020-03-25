@@ -23,6 +23,17 @@ for (var i = 1; i <= 9; i++) {
     console.log(stringToRepeat.repeat(i));
 }
 
+/*
+console.log(i.toString().repeat(i));
+for (var outer = 1; outer <= 9; outer ++) {
+    var output = "";
+    for(var inner = i; inner <= outer; inner++) {
+        output += outer;
+    }
+    console.log(output);
+}
+ */
+
 for(var i = 100; i > 0; i-=5) {
     console.log(i);
 }
