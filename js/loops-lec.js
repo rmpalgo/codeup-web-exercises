@@ -241,10 +241,47 @@ for (var i = 0; i <= 100; i++) {
 /*********************************************
  *              BREAKS & CONTINUES
  *********************************************/
-// We can get a loop to stop using break;
+var numberToStopAt = 5;
 
+for (var i = 1; i < 100; i++) {
 
+    console.log('Loop counter is: ' + i);
+
+    if (i === numberToStopAt) {
+        console.log('We have reached the stopping point: break!');
+        // use the break keyword to exit from the while loop
+        break;
+        // nothing after the break will get processed
+        console.log('You will never see this line.');
+    }
+}
+
+// Using a for loop get the first 5 even number when counting from 0 to 100.
+var numberOfEvenNumbersFound = 0;
+
+for (var i = 0; i <= 100000; i++) {
+    console.log('Iteration ' + i);
+    if (i % 2 === 0){
+        console.log('First five even numbers. ' + i);
+        numberOfEvenNumbersFound++;
+    }
+    if (numberOfEvenNumbersFound >= 5) {
+        break;
+    }
+}
 
 
 // We can get an iteration to skip using continue;
+'use strict';
 
+for (var i = 1; i < 100; i++) {
+
+    if (i % 2 !== 0) {
+        // number isn't even
+        // odd numbers aren't as cool
+        // skip the rest of the loop and continue with the next iteration
+        continue;
+    }
+
+    console.log('Here is a lovely even number: ' + i);
+}
