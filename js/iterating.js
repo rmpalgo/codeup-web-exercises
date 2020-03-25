@@ -31,15 +31,15 @@
      * array.
      */
     for (var index = 0; index < names.length; index++) {
-        console.log('items using forloop ', names[index]);
+        console.log('items using forloop, ', names[index]);
     }
 
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
-    names.forEach( index => {
-        console.log('items using forEach, ', index);
+    names.forEach( item => {
+        console.log('items using forEach, ', item);
     });
 
     /**
@@ -55,23 +55,39 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-
+    console.log('first() ================================');
+    var numbers = [1, 2, 3, 4, 5];
     var first = (arr) => {
         return arr[0];
     };
 
+    //Test-Driven-Development:
+    var result = first(numbers);
+    console.log('1: test first() ', result === 1);
+    result = first(names);
+    //this is a way to show red error on console intentionally
+    // console.error('error: first()' , result !== 1 );
+    console.log('2: test first() ', result === 'Jaclyn');
+
+    console.log('second() ================================');
     var second = (arr) => {
         return arr[1];
     };
+    //TDD
+    result = second(numbers);
+    console.log('1: test second() ', result === 2);
+    result = second(names);
+    console.log('2: test second() ', result === 'Ron');
 
+    console.log('third() ================================');
     var third = (arr) => {
-        return arr[names.length - 1];
+        return arr[arr.length - 1];
     };
-
-    console.log(first(names));
-    console.log(second(names));
-    console.log(third(names));
-
-
+    //TDD:
+    result = third(numbers);
+    console.log('1: test third() ', result === 5);
+    result = third(names);
+    console.log('2: test third() ', result === 'Mia');
+    console.log('================================');
 
 })();
