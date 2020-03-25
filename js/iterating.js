@@ -38,7 +38,7 @@
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
-    names.forEach( (index) => {
+    names.forEach( index => {
         console.log('items using forEach, ', index);
     });
 
@@ -55,5 +55,23 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
+
+    var first = (arr) => {
+        return arr[0];
+    };
+
+    var second = (arr) => {
+        return arr[1];
+    };
+
+    var third = (arr) => {
+        return arr[names.length - 1];
+    };
+
+    console.log(first(names));
+    console.log(second(names));
+    console.log(third(names));
+
+
 
 })();
