@@ -30,13 +30,16 @@
      * Write some code that uses a for loop to log every item in the names
      * array.
      */
+    for (var index = 0; index < names.length; index++) {
+        console.log('items using forloop ', names[index]);
+    }
 
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
     names.forEach( (index) => {
-        console.log('items, ', index);
+        console.log('items using forEach, ', index);
     });
 
     /**
