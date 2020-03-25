@@ -23,12 +23,13 @@ console.log(theChoice);
 
 
 for (var i = 0; i < 50; i++) {
-    if (theChoice === i) {
-        console.log('Skipping number ' + i)
-        // continue;
-    }
     if (i % 2 !== 0) {
         console.log(i)
+        // continue;
+    } else if (theChoice === i) {
+        console.log('Skipping number ' + i)
+
     }
+
 }
 
