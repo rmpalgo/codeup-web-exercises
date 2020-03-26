@@ -34,11 +34,16 @@
 
     var planetUl = '<ul>'
     var planetList = arr => {
-        arr.forEach((item) => {
-            planetUl = planetUl + '<li>' + item + '</li>';
+        arr.forEach((item, index) => {
+            if (index === (arr.length - 1)) {
+                planetUl = planetUl + '<li>' + item + '</ul></li>';
+            } else {
+                planetUl = planetUl + '<li>' + item + '</li>';
+            }
         })
     };
     planetList(planetsArray);
-    console.log(planetUl + '</ul>');
+    console.log(planetUl);
+    // console.log(planetUl + '</ul>');
 
 })();
