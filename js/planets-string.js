@@ -36,7 +36,7 @@
     var planetList = arr => {
         arr.forEach((item, index) => {
             if (index === (arr.length - 1)) {
-                planetUl = planetUl + '<li>' + item + '</ul></li>';
+                planetUl = planetUl + '<li>' + item + '</li></ul>';
             } else {
                 planetUl = planetUl + '<li>' + item + '</li>';
             }
