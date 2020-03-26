@@ -2,7 +2,8 @@
     "use strict";
 
     var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
-    var planetsArray;
+    //by initializing the [] then you are intentional
+    var planetsArray = [];
 
     /**
      * TODO:
@@ -42,8 +43,10 @@
             }
         })
     };
+    var listOfPlanets = document.getElementById('list');
     planetList(planetsArray);
     console.log(planetUl);
+    listOfPlanets.innerHTML = planetUl;
     // console.log(planetUl + '</ul>');
 
 })();
