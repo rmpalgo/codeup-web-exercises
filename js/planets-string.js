@@ -24,7 +24,12 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
-   // the <br> will give a new line for each item
+   // the <br> will give a new line for each item if you want to show on HTML page
+    var planetsStringWithBr = planetsArray.join('<br>');
+    console.log(planetsStringWithBr);
+
+//    BONUS
+    var listPlanets =
 
 
 
