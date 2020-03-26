@@ -32,4 +32,13 @@
     var listPlanets = '<ul><li>' + planetsArray.join('</li><li>') + '</li></ul>';
     console.log(listPlanets);
 
+    var planetUl = '<ul>'
+    var planetList = arr => {
+        arr.forEach((item) => {
+            planetUl = planetUl + '<li>' + item + '</li>';
+        })
+    };
+    planetList(planetsArray);
+    console.log(planetUl + '</ul>');
+
 })();
