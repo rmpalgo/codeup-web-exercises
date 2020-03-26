@@ -40,8 +40,11 @@
     console.log(indexOfEarth);
 
     console.log("Reversing the order of the planets array.");
+    planets.reverse();
     console.log(planets);
 
     console.log("Sorting the planets array.");
+    //based off of string alphabetical letters
+    planets.sort();
     console.log(planets);
 })();
