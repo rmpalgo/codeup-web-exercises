@@ -29,9 +29,7 @@
     console.log(planetsStringWithBr);
 
 //    BONUS
-    var listPlanets =
-
-
-
+    var listPlanets = '<ul><li>' + planetsArray.join('</li><li>') + '</li></ul>';
+    console.log(listPlanets);
 
 })();
