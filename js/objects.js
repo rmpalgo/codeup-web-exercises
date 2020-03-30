@@ -184,12 +184,18 @@ console.log(books[4].author.lastName);
   var newBooks = new CreateBook ('Ascendant: Book 1', 'Craig', 'Alanson');
   console.log(newBooks);
 
-  function showBookInfo (obj) {
-     console.log(`
-        Title: ${obj.title}
-        Author: ${obj.author.firstName} ${obj.author.lastName}
-     `)
-  }
+ const showBookInfo = (arr) => {
+     arr.forEach( (book, index) => {
+         console.log(`
+               Book # ${index + 1}
+               Title: ${book.title}
+               Author: ${book.author.firstName} ${book.author.lastName}
+               ---
+        `);
+     });
+ };
 
-  showBookInfo(newBooks);
+
+
+  showBookInfo(books);
 })();
