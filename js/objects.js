@@ -182,5 +182,14 @@ console.log(books[4].author.lastName);
     }
 
   var newBooks = new CreateBook ('Ascendant: Book 1', 'Craig', 'Alanson');
-  console.log(newBooks) ;
+  console.log(newBooks);
+
+  function showBookInfo (obj) {
+     console.log(`
+        Title: ${obj.title}
+        Author: ${obj.author.firstName} ${obj.author.lastName}
+     `)
+  }
+
+  showBookInfo(newBooks);
 })();
