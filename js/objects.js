@@ -173,4 +173,14 @@ console.log(books[4].author.lastName);
      *   `showBookInfo` function.
      */
 
+    function CreateBook (title, firstName, lastName) {
+        this.title = title;
+        this.author = {
+            firstName: firstName,
+            lastName: lastName
+        };
+    }
+
+  var newBooks = new CreateBook ('Ascendant: Book 1', 'Craig', 'Alanson');
+  console.log(newBooks) ;
 })();
