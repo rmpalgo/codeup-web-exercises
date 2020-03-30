@@ -195,7 +195,7 @@ console.log(books[4].author.lastName);
      });
  };
 
-
+books.push(newBooks);
 
   showBookInfo(books);
 })();
