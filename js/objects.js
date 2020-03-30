@@ -83,6 +83,49 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    var books = [{
+        title: "Leaders Eat Last",
+        author: {
+            firsName: "Simon",
+            lastName: "Sinek"
+        }
+    },
+        {
+            title: "Columbus Day",
+            author: {
+                firstName: 'Craig',
+                lastName: 'Alanson'
+            }
+        },
+        {
+            title: "Creative Selection",
+            author: {
+                firstName: "Ken",
+                lastName: "Kocienda"
+            }
+        },
+        {
+            title: "The Alchemist",
+            author: {
+                firstName: "Paulo",
+                lastName: "Coelho"
+            }
+        }
+    ];
+
+    books[4] = {};
+    books[4].title = 'Into The Magic Shop';
+    books[4].author = {
+        firstName: 'James',
+        lastName: 'Doty'
+    };
+
+console.log(books);
+console.log(books[0].title)
+
+
+
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
