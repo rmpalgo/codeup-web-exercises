@@ -121,7 +121,9 @@
     };
 
 console.log(books);
-console.log(books[0].title)
+console.log(books[0].title);
+console.log(books[1].author.firstName);
+console.log(books[4].author.lastName);
 
 
 
@@ -150,6 +152,15 @@ console.log(books[0].title)
      *      ---
      *      ...
      */
+
+    books.forEach( (item, index) => {
+        console.log(`
+               Book # ${index + 1}
+               Title: ${item.title}
+               Author: ${item.author.firstName} ${item.author.lastName}
+               ---
+        `);
+    });
 
     /**
      * Bonus:
