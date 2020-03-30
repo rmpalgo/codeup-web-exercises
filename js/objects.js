@@ -86,7 +86,7 @@
     var books = [{
         title: "Leaders Eat Last",
         author: {
-            firsName: "Simon",
+            firstName: "Simon",
             lastName: "Sinek"
         }
     },
