@@ -16,13 +16,12 @@
         firstName: "Ron",
         lastName: 'Palencia',
         sayHello:  function () {
-            console.log(`Hello ${this.firstName} ${this.lastName}!`)
+            return `Hello ${this.firstName} ${this.lastName}!`;
         }
     };
 
     console.log(person.firstName);
     console.log(person.lastName);
-    person.sayHello();
 
 
 
@@ -36,9 +35,7 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
-
-
-
+    console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -54,11 +51,24 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    // name + beforeDiscount + discount + amountAfterDiscount
+
+    shoppers.forEach( (item) => {
+        if (item.amount < 200) {
+            console.log(`Shopper ${item.name}'s total is $${item.amount} and their discount is $${0} and their final total is $${item.amount}`);
+        } else {
+            let itemDiscount = item.amount * .12;
+            let finalPrice = item.amount - itemDiscount;
+            console.log(`Shopper ${item.name}'s total is $${item.amount} and their discount is $${itemDiscount} and their final total is $${finalPrice}`)
+        }
+    });
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
