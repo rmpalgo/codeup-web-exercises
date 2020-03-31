@@ -6,18 +6,16 @@
         radius: 3,
 
         getArea: function () {
-            // TODO: complete this method
-            return Math.PI * Math.pow(this.radius, 2); // TODO: return the proper value
+            return Math.PI * Math.pow(this.radius, 2);
         },
 
         logInfo: function (doRounding) {
-            // TODO: complete this method.
+
             let round = this.getArea();
+
             if (doRounding === true) {
                 round = Math.round(this.getArea());
             }
-            // If doRounding is true, round the result to the nearest integer.
-            // Otherwise, output the complete value
 
             console.log(`Area of a circle with radius: ${this.radius}, is: ${round}`);
         }
