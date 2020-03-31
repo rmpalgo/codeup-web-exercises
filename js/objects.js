@@ -60,13 +60,15 @@
     // name + beforeDiscount + discount + amountAfterDiscount
 
     shoppers.forEach( (shopper) => {
-        if (shopper.amount < 200) {
-            console.log(`Shopper ${shopper.name}'s total is $${shopper.amount} and their discount is $${0} and their final total is $${shopper.amount.toFixed(2)}`);
-        } else {
-            let shopperDiscount = shopper.amount * .12;
-            let finalPrice = shopper.amount - shopperDiscount;
-            console.log(`Shopper ${shopper.name}'s total is $${shopper.amount} and their discount is $${shopperDiscount} and their final total is $${finalPrice.toFixed(2)}`);
+
+        var finalPrice = shopper.amount;
+        var shopperDiscount = 0;
+
+        if (shopper.amount > 200) {
+            shopperDiscount = shopper.amount * .12;
+            finalPrice = shopper.amount - shopperDiscount;
         }
+        console.log(`Shopper ${shopper.name}'s total is $${shopper.amount} and their discount is $${shopperDiscount.toFixed(2)} and their final total is $${finalPrice.toFixed(2)}`);
     });
 
 
