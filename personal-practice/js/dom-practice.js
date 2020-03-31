@@ -69,15 +69,67 @@
 
 //QUERY SELECTOR ALL [grabs a NodeList of things]
 
-var titles = document.querySelectorAll('.title');
-console.log(titles);
-titles[0].textContent = 'Hello';
+// var titles = document.querySelectorAll('.title');
+// console.log(titles);
+// titles[0].textContent = 'Hello';
+//
+// var odd = document.querySelectorAll('li:nth-child(odd)');
+// var even = document.querySelectorAll('li:nth-child(even)');
+//
+// for (var i = 0; i < odd.length; i++) {
+//     odd[i].style.backgroundColor = 'lightgray';
+//     even[i].style.backgroundColor = 'darkgray';
+// }
 
-var odd = document.querySelectorAll('li:nth-child(odd)');
-var even = document.querySelectorAll('li:nth-child(even)');
+ // TRAVERSING THE DOM //
 
-for (var i = 0; i < odd.length; i++) {
-    odd[i].style.backgroundColor = 'lightgray';
-    even[i].style.backgroundColor = 'darkgray';
-}
+var itemList = document.querySelector('#items');
+//parentNode
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.backgroundColor = 'lightgray';
+// console.log(itemList.parentNode.parentNode.parentNode);
 
+//parentElement
+// console.log(itemList.parentElement);
+// itemList.parentElement.style.backgroundColor = 'lightgray';
+// console.log(itemList.parentElement.parentElement.parentElement);
+
+// childNodes **using childnodes will give you whitespace as text nodes, <li></li> <li></li>,
+//the space between the li tags will become its own text node, suggest not using childNodes
+//**DO NOT USE**
+// console.log(itemList.childNodes);
+
+// //use children **does not account for white space **USE THIS**
+// console.log(itemList.children);
+// console.log(itemList.children[1]);
+// itemList.children[1].style.backgroundColor = 'yellow';
+//
+// // firstChild **does same thing and takes account of whitespace **DO NOT USE**
+// console.log(itemList.firstChild);
+//
+// //firstElementChild **does not account for white space **USE THIS** instead**
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent = 'Hello 1';
+//
+// //lastElementChild **does not account for white space **USE THIS** instead**
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent = 'Hello 4';
+
+// // nextSibling **DO NOT USE** takes the text node in account //
+// console.log(itemList.nextSibling);
+//
+// // nextElementSibling **USE THIS**
+// console.log(itemList.nextElementSibling);
+
+// // previousSibling **DO NOT USE**
+// console.log(itemList.previousSibling);
+//
+// // previousElementSibling **USE THIS**
+// console.log(itemList.previousElementSibling);
+// itemList.previousElementSibling.style.color = 'green';
+
+// createElement
+
+// Create a div
+var newDiv = document.createElement('div');
+console.log(newDiv);
