@@ -174,16 +174,20 @@ console.log(books[4].author.lastName);
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-
-    function CreateBook (title, firstName, lastName) {
+    //Create new object of book
+    function CreateBook (title, author) {
+        let firstLast = author.split(' ');
         this.title = title;
         this.author = {
-            firstName: firstName,
-            lastName: lastName
+            firstName: firstLast[0],
+            lastName: firstLast[1]
         };
     }
 
-  var newBooks = new CreateBook ('Ascendant: Book 1', 'Craig', 'Alanson');
+
+  //  Creating new Book using function CreateBook
+  var newBooks = new CreateBook ('Ascendant: Book 1', 'Craig Alanson');
+  var newBook1 = new CreateBook ('Ascendant: Book 2', 'Craig Alanson');
   console.log(newBooks);
 
  const showBookInfo = (arr) => {
@@ -197,7 +201,8 @@ console.log(books[4].author.lastName);
      });
  };
 
+// Add books into the Book Array
 books.push(newBooks);
-
-  showBookInfo(books);
+books.push(newBook1);
+showBookInfo(books);
 })();
