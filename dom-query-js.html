@@ -95,12 +95,15 @@
             }, 1200)
         }
 
-        var reset = document.querySelector('#reset');
+
         var resetAll = () => {
             subPar.removeEventListener('click', subParagraph);
+            subHead.removeEventListener('click', subHeading);
+            changeList.removeEventListener('click', changeLists);
+            mainHead.removeEventListener('click', mainHeading);
         }
 
-        reset.addEventListener('click', resetAll);
+
 
         var mainHead = document.getElementById("mainHead");
         mainHead.addEventListener('click', mainHeading);
@@ -110,6 +113,8 @@
         changeList.addEventListener('click', changeLists);
         var subPar = document.getElementById('subPar');
         subPar.addEventListener('click', subParagraph);
+        var reset = document.querySelector('#reset');
+        reset.addEventListener('click', resetAll);
 
 
 
