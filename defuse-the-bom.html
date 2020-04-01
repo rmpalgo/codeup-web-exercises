@@ -17,7 +17,7 @@
     var detonationTimer = 5;
 
     // TODO: This function needs to be called once every second
-   var bomTimer = setInterval(function updateTimer() {
+    function updateTimer() {
         if (detonationTimer == 0) {
             alert('EXTERMINATE!');
             document.body.innerHTML = '';
@@ -26,12 +26,13 @@
         }
 
         detonationTimer--;
-    }, 1000);
+    }
+    var interval = setInterval(updateTimer, 1000);
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
-        clearInterval(bomTimer);
+        clearInterval(interval);
         let success = document.getElementById('success');
         success.style['color'] = 'green';
         success.innerText = 'Success!! Bom was defused!';
