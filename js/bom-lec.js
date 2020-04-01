@@ -43,5 +43,6 @@ myForEach(names, processElement);
 
 setTimeout(intervalFunction, 5000);
 
-setTimeout(function(){
+setTimeout(function() {
     console.log('Hello one second from the page load.');
+}, 1000);
