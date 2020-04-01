@@ -132,4 +132,28 @@ var itemList = document.querySelector('#items');
 
 // Create a div
 var newDiv = document.createElement('div');
+
+// add class
+newDiv.className = 'hello';
+
+// add id
+newDiv.id = 'hello1';
+
+// add attr
+newDiv.setAttribute('title', 'Hello Div');
+
+// create a text node
+var newDivText = document.createTextNode('Hello World');
+
+// Add text to div
+newDiv.appendChild(newDivText);
+
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+
 console.log(newDiv);
+
+newDiv.style['font-size'] = '30px';
+newDiv.style.color = 'blue';
+
+container.insertBefore(newDiv, h1);

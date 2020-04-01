@@ -8,6 +8,7 @@
 
 <h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
 <button id="defuser">Defuse the BOM</button>
+<h1 id="success"></h1>
 
 <script>
 (function() {
@@ -31,6 +32,9 @@
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
         clearInterval(bomTimer);
+        let success = document.getElementById('success');
+        success.style['color'] = 'green';
+        success.innerText = 'Success!! Bom was defused!';
     }
 
     // Don't modify anything below this line!
