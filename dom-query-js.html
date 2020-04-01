@@ -25,6 +25,11 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button id="mainHead">Main Header</button>
+<button id="subHead">Sub Header</button>
+<button id="changeList">Change List</button>
+<button id="subPar">Sub Paragraph</button>
+
 <script>
     (function() {
         "use strict";
@@ -32,32 +37,58 @@
         var mainHeader = document.getElementById('main-header');
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = '<p>JavaScript is Cool</p>';
+        function mainHeading () {
+            mainHeader.innerHTML = '<p>JavaScript is Cool</p>';
+        }
+
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById('sub-header');
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = 'blue';
+        function subHeading() {
+            subHeader.style.color = 'blue';
+        }
+
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
         console.log(listItems);
 
         // TODO: Set text color on every other list item to grey
-        for (let i = 0; i < listItems.length; i++) {
-            if (i % 2 !== 0) {
-                listItems[i].style.color = 'grey';
+        function changeLists () {
+            listItems[0].style['color'] = 'blue';
+            for (let i = 0; i < listItems.length; i++) {
+                if (i % 2 !== 0) {
+                    listItems[i].style.color = 'grey';
+                }
             }
         }
+
         // TODO: Set text color of li with dbid = 1 to blue
-        listItems[0].style['color'] = 'blue';
+        // listItems[0].style['color'] = 'blue';
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
         console.log(subParagraphs);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = 'Mission Accomplished!';
+        function subParagraph () {
+            subParagraphs[0].innerText = 'Mission Accomplished!';
+        }
+
+        var mainHead = document.getElementById("mainHead");
+        mainHead.addEventListener('click', mainHeading);
+        var subHead = document.getElementById('subHead');
+        subHead.addEventListener('click', subHeading);
+        var changeList = document.getElementById('changeList');
+        changeList.addEventListener('click', changeLists);
+        var subPar = document.getElementById('subPar');
+        subPar.addEventListener('click', subParagraph);
+
+
+
     })();
+
+
 </script>
 </body>
 </html>
