@@ -30,6 +30,7 @@
 <button id="subHead">Sub Header</button>
 <button id="changeList">Change List</button>
 <button id="subPar">Sub Paragraph</button>
+<button id="reset">Reset</button>
 
 <script>
     (function() {
@@ -86,13 +87,20 @@
             circle.style['height'] = '15px';
             circle.style['position'] = 'absolute';
             circle.style['z-index'] = '1000';
-            circle.style['top'] = '300px';
+            circle.style['top'] = '350px';
             subParagraphs[0].innerText = 'Mission Accomplished!';
 
             setTimeout( () => {
                     circle.style.left = 330 + 'px';
             }, 1200)
         }
+
+        var reset = document.querySelector('#reset');
+        var resetAll = () => {
+            subPar.removeEventListener('click', subParagraph);
+        }
+
+        reset.addEventListener('click', resetAll);
 
         var mainHead = document.getElementById("mainHead");
         mainHead.addEventListener('click', mainHeading);
