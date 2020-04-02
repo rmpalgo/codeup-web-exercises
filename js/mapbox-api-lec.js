@@ -44,17 +44,19 @@ map.addControl(nav, 'top-left');
 // TODO TOGETHER: Change the color of the marker
     //object for options for marker
 var markerOptions = {
-        color: 'red',
+        color: 'teal',
         draggable: true
 
-    }
+    };
 var marker = new mapboxgl.Marker(markerOptions)
         .setLngLat([-96.8057, 32.7787])
         .addTo(map);
 
-var marker2 = new mapboxgl.Marker()
+var markerMuseum = new mapboxgl.Marker(markerOptions)
     .setLngLat([-96.8084, 32.7799])
     .addTo(map);
+
+
 
 
 
@@ -71,8 +73,21 @@ var marker2 = new mapboxgl.Marker()
 
 // TODO TOGETHER: Add a popup to the map over codeup. Set the html as a paragraph that says "Codeup Rocks!"
 
+   // adding popup on the map
+var popup = new mapboxgl.Popup()
+    .setHTML('<h1>Codeup Rocks!</h1>')
+    .addTo(map);
 
+//attach popup to marker
+marker.setPopup(popup);
 
+//adding popup into map
+var popupMuseum = new mapboxgl.Popup()
+    .setHTML('<h1>Sixth floor Museum!</h1>')
+    .addTo(map);
+
+//adding popup into marker
+markerMuseum.setPopup(popupMuseum);
 
 // TODO TOGETHER: Comment out the popup we just added. Add a popup to the Sixth Floor Musume marker.
 
