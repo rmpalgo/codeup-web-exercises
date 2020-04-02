@@ -35,21 +35,7 @@
 
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
-<script>
-
-    mapboxgl.accessToken = mapboxToken;
-
-    geocode('2438 W Anderson Ln ste 100 Austin, TX', mapboxToken).then(result => {
-        console.log(result);
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v9',
-            zoom: 16
-        });
-        map.setCenter(result);
-    });
-
-</script>
+<script src="js/mapbox_maps_api.js"></script>
 
 </body>
 </html>
