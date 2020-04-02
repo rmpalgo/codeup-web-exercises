@@ -13,10 +13,20 @@
 // Zoom levels range from 0 up to 24, with 0 being a global view and 24 being the most detailed at street level (the max zoom level depends on the location).
 
 //TODO TOGETHER: Set map to Dallas area using the coordinates [-96.8057, 32.7787]
+//mapboxToken is a variable in the keys.js, where is hidden
+mapboxgl.accessToken = mapboxToken;
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    center: [-96.8057, 32.7787],
+    zoom: 16,
+    showCompass: true
+
+});
 
 
-
-
+var nav = new mapboxgl.NavigationControl();
+map.addControl(nav, 'top-left');
 
 
 //TODO: Experiment with different map styles, zoom levels, and centers. You will need to reference the mapbox docs. (~15 minutes)
@@ -32,9 +42,19 @@
 
 // TODO TOGETHER: Add a marker to the map using the following coordinates [-96.8084, 32.7799]. This marker will mark the Sixth Floor Muesume on our map.
 // TODO TOGETHER: Change the color of the marker
+    //object for options for marker
+var markerOptions = {
+        color: 'red',
+        draggable: true
 
+    }
+var marker = new mapboxgl.Marker(markerOptions)
+        .setLngLat([-96.8057, 32.7787])
+        .addTo(map);
 
-
+var marker2 = new mapboxgl.Marker()
+    .setLngLat([-96.8084, 32.7799])
+    .addTo(map);
 
 
 
