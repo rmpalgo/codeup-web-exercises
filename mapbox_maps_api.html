@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Maps API</title>
+
+<!--    MAPBOX API-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+
+        body {
+            background: #2f447a;
+        }
+
+        div#map {
+            margin: 0 auto;
+            margin-top: 3em;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: sans-serif;
+            border: 1px solid #000;
+            background: #000;
+            color: #fff;
+        }
+    </style>
+
+</head>
+<body>
+
+<h2>My favorite restaurant</h2>
+<div id='map' style='width: 800px; height: 600px;'></div>
+
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script>
+
+    mapboxgl.accessToken = mapboxToken;
+
+    geocode('2438 W Anderson Ln ste 100 Austin, TX', mapboxToken).then(result => {
+        console.log(result);
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 16
+        });
+        map.setCenter(result);
+    });
+
+</script>
+
+</body>
+</html>
