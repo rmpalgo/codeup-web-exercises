@@ -281,15 +281,16 @@ function addItem(e) {
 
     //append li to list
     itemList.appendChild(li);
+
+    form.reset();
 }
 
 // Function to remove Item
 function removeItem(e) {
     if(e.target.classList.contains('delete')) {
-        if(confirm('Are you sure?')) {
             var li = e.target.parentElement;
             itemList.removeChild(li);
-        }
+
     }
 }
 
