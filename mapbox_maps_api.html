@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Mapbox Maps API</title>
 
-<!--    MAPBOX API-->
+    <!--    MAPBOX API-->
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css' rel='stylesheet' />
     <style>
 
         body {
             background: #2f447a;
+            color: #000;
         }
 
         div#map {
@@ -25,12 +26,41 @@
             background: #000;
             color: #fff;
         }
+
+        #select-container #zoom-level {
+            width: 90px;
+            margin-left: 30px;
+
+        }
+
+        #select-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
     </style>
 
 </head>
 <body>
 
 <h2>My favorite restaurants</h2>
+<div id="select-container">
+    <label for="zoom-level">Choose your zoom:</label>
+    <select id="zoom-level">
+        <option class="opt">5</option>
+        <option class="opt">15</option>
+        <option class="opt">20</option>
+    </select>
+    <input id='address' type="text">
+    <input id='submit' type="submit">
+</div>
+
 <div id='map' style='width: 800px; height: 600px;'></div>
 
 <script src="js/keys.js"></script>
