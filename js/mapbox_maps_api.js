@@ -49,7 +49,7 @@ restaurants.forEach( (restaurant, index) => {
 function geoRestaurant(result, restaurant) {
 
     var popup = new mapboxgl.Popup()
-        .setHTML(`<h3>${restaurant.name}<br>${restaurant.address}<br> ${restaurant.description} <em>${restaurant.address.split(',')[1]}</em></h3>`)
+        .setHTML(`<h3>${restaurant.name}<br>${restaurant.address}<br><hr> ${restaurant.description} <em>${restaurant.address.split(',')[1]}</em></h3>`)
         .addTo(map);
 
     new mapboxgl.Marker()

@@ -83,7 +83,7 @@
 
  // TRAVERSING THE DOM //
 
-var itemList = document.querySelector('#items');
+// var itemList = document.querySelector('#items');
 //parentNode
 // console.log(itemList.parentNode);
 // itemList.parentNode.style.backgroundColor = 'lightgray';
@@ -160,7 +160,7 @@ var itemList = document.querySelector('#items');
 
 // EVENTS //
 
-var buttonClick = (e) => {
+// var buttonClick = (e) => {
     // console.log('Button Clicked');
     // document.getElementById('header-title').textContent = 'Changed';
     // document.querySelector('#main').style.backgroundColor = 'lightgray';
@@ -186,29 +186,29 @@ var buttonClick = (e) => {
     // console.log(e.shiftKey)
 
 
-}
+// }
 
 // var button = document.getElementById('button').addEventListener('click', buttonClick);
-var button = document.getElementById('button');
-
-// button.addEventListener('click', runEvent);
-// button.addEventListener('dblclick', runEvent);
-// button.addEventListener('mousedown', runEvent);
-// button.addEventListener('mouseup', runEvent);
-
-var box = document.getElementById('box');
-
-// box.addEventListener('mouseenter', runEvent);
-// box.addEventListener('mouseleave', runEvent);
-
-// box.addEventListener('mouseover', runEvent);
-// box.addEventListener('mouseout', runEvent);
-
-// box.addEventListener('mousemove', runEvent);
-
-var itemInput = document.querySelector('input[type="text"]');
-var form = document.querySelector('form');
-var select = document.querySelector('select');
+// var button = document.getElementById('button');
+//
+// // button.addEventListener('click', runEvent);
+// // button.addEventListener('dblclick', runEvent);
+// // button.addEventListener('mousedown', runEvent);
+// // button.addEventListener('mouseup', runEvent);
+//
+// var box = document.getElementById('box');
+//
+// // box.addEventListener('mouseenter', runEvent);
+// // box.addEventListener('mouseleave', runEvent);
+//
+// // box.addEventListener('mouseover', runEvent);
+// // box.addEventListener('mouseout', runEvent);
+//
+// // box.addEventListener('mousemove', runEvent);
+//
+// var itemInput = document.querySelector('input[type="text"]');
+// var form = document.querySelector('form');
+// var select = document.querySelector('select');
 
 // itemInput.addEventListener('keydown', runEvent);
 // itemInput.addEventListener('keyup', runEvent);
@@ -224,21 +224,90 @@ var select = document.querySelector('select');
 
 // select.addEventListener('change', runEvent);
 // select.addEventListener('input', runEvent);
+//
+// form.addEventListener('submit', runEvent);
+//
+//
+// function runEvent(e) {
+//     e.preventDefault();
+//     console.log('EVENT TYPE: ' + e.type);
+//
+//     console.log(e.target.value);
+//     // document.getElementById('output').innerHTML = '<h3>' + e.target.value + '</h3>';
+//
+//     // output.innerHTML = '<h3>MouseX: ' + e.offsetX + ' </h3><h3>MouseY: ' + e.offsetY + ' </h3>';
+//
+//     // document.body.style.backgroundColor = "rgb("+e.offsetX+","+e.offsetY+", 40)";
+//
+//
+//
+// }
 
-form.addEventListener('submit', runEvent);
+var form = document.getElementById("addForm");
+var itemList = document.getElementById('items');
+var filter = document.getElementById('filter');
 
+//Form submit event
+form.addEventListener('submit', addItem);
+// Delete Event
+itemList.addEventListener('click', removeItem);
+// Filter Event
+filter.addEventListener('keyup', filterItems);
 
-function runEvent(e) {
+//add item
+function addItem(e) {
     e.preventDefault();
-    console.log('EVENT TYPE: ' + e.type);
 
-    console.log(e.target.value);
-    // document.getElementById('output').innerHTML = '<h3>' + e.target.value + '</h3>';
+//    Get input value
+    var newItem = document.getElementById('item').value;
+//    Create new li element
+    var li = document.createElement('li');
+//    Add class
+    li.className = 'list-group-item';
+//    add text node with input value
+    li.appendChild(document.createTextNode(newItem));
 
-    // output.innerHTML = '<h3>MouseX: ' + e.offsetX + ' </h3><h3>MouseY: ' + e.offsetY + ' </h3>';
+    //Create delete button element
+    var deleteBtn = document.createElement('button');
 
-    // document.body.style.backgroundColor = "rgb("+e.offsetX+","+e.offsetY+", 40)";
+    // Add classes to delete button
+    deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
+    //Append text node
+    deleteBtn.appendChild(document.createTextNode('X'));
+
+    //Append button to li
+    li.appendChild(deleteBtn)
 
 
+    //append li to list
+    itemList.appendChild(li);
+}
 
+// Function to remove Item
+function removeItem(e) {
+    if(e.target.classList.contains('delete')) {
+        if(confirm('Are you sure?')) {
+            var li = e.target.parentElement;
+            itemList.removeChild(li);
+        }
+    }
+}
+
+// Filter Items
+
+function filterItems(e) {
+    // convert text to lowercase
+    var text = e.target.value.toLowerCase();
+    // Get lists
+    var items = itemList.getElementsByTagName('li');
+    console.log(items);
+    // Convert to an array
+    Array.from(items).forEach((item) => {
+        var itemName = item.firstChild.textContent;
+        if (itemName.toLowerCase().indexOf(text) !== -1) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
 }
