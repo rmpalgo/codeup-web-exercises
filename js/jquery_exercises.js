@@ -15,5 +15,6 @@ $(document).ready(function() {
 
     //Class Selectors
 
+    $('.codeup').css('border', '1px solid red');
 
 });
