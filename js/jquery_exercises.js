@@ -20,5 +20,7 @@ $(document).ready(function() {
     // Element selectors
 
     $('li').css('font-size', '20px');
+    //mulitiple selectors
     $('h1, p, li').css('background', 'yellow')
+    console.log($('h1').html());
 });
