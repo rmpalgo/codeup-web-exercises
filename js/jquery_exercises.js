@@ -7,5 +7,6 @@ $(document).ready(function() {
 
     var contents = $('#message').html();
     console.log(contents);
+    console.log($('#one').html());
 
 });
