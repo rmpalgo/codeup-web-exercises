@@ -21,6 +21,7 @@ $(document).ready(function() {
 
     $('li').css('font-size', '20px');
     //mulitiple selectors
-    $('h1, p, li').css('background', 'yellow')
-    console.log($('h1').html());
+    $('h1, p, li').css('background', 'yellow');
+    // Get the html or text all of the h1,
+    console.log($('h1').text());
 });
