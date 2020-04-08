@@ -6,15 +6,39 @@
 </head>
 <body>
 
-
-
+<h1 id="codeup">Hello Codeup</h1>
+<h1>Example Page</h1>
+<div class="important">
+    <h3>NOTICE</h3>
+    <p>This is an important message!</p>
+</div>
+<div class="not-important">
+    <h2>Lorem Ipsum</h2>
+    <p>
+        Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.
+    </p>
+</div>
+<p class="important">This is also very important.</p>
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function () {
         console.log('We are ready for selectors.')
-    })
+
+        console.log($('#codeup')[0]);
+        $('.important').css('background-color', 'yellow');
+
+        // select elements and using css to style
+        $('p').css('font-size', '2em');
+        $('h3').css('background-color', 'red');
+
+        // mulitple selectors
+        $('.important, p').css('background-color', 'green');
+
+        //all selectors
+        $('*').css('border', '1px solid blue');
+    });
 </script>
 </body>
 </html>
