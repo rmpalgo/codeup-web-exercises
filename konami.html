@@ -37,7 +37,7 @@
 <body>
 <h1>Konami Code</h1>
 <audio id="activatedAudio">
-    <source src="media/cry.mp3" type="audio/mp3">
+    <source src="media/morse-sound.mp3" type="audio/mp3">
     Your browser does not support the audio element.
 </audio>
 <div id="background" style="display: none;"></div>
@@ -72,16 +72,16 @@
                 $('#activatedAudio')[0].play();
                 // alert('YAY');
                 $('#background').css('display', 'block');
-                $('#background').html('<img src="https://media.giphy.com/media/l22ysLe54hZP0wubek/giphy.gif" id="image">');
-                $('body').css('background-color', 'violet');
-                $('body').css('transition', 'background-color 2s');
+                $('#background').html('<img src="https://media.giphy.com/media/MC6eSuC3yypCU/giphy.gif" id="image">');
+                $('body').css('background', '#003B00');
+                $('body').css('transition', 'background url 1s');
                 setTimeout( function() {
                     $('#background').css('display', 'none');
                     $('#background').html('<img>');
                     $('body').css('background-color', 'white');
-                    $('body').css('transition', 'background-color 2s');
+                    $('body').css('transition', 'background 1s');
                     buffer = [];
-                }, 6000);
+                }, 2000);
                 buffer = [];
             }
         });
