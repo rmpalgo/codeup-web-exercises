@@ -12,6 +12,8 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque molestias, nostrum? Atque commodi dolores magni, nulla quae repellat suscipit veritatis!</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque molestias, nostrum? Atque commodi dolores magni, nulla quae repellat suscipit veritatis!</p>
 
+<input type="text" id="name">
+
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
@@ -61,6 +63,42 @@
         };
 
         $('p').hover(inParagraphHandler, outParagraphHandler);
+
+        // Keydown notifies when any key is pressed down.
+        $('#name').keydown(function () {
+            console.log('Keydown');
+        });
+
+        // Keypress only notifies us when a non-modifier (cmd, control, shift, shift,) key is pressed.
+        $('#name').keypress(function () {
+            console.log('Keypress');
+        });
+
+        // Keyup triggers whenever any key on the keyboard is released.
+        $('#name').keyup( function () {
+            console.log('Keyup');
+        });
+
+        // On event handler similar to addeventlistener
+
+        $('p').on('click', function () {
+            console.log('Using on to add a click event handler.');
+        });
+
+        $('#name').on('keyup', function () {
+            console.log('Keyup event created with the on method.');
+        });
+
+        // off() example removing events
+        /*
+        $('#name').off();
+        $('p').off();
+        */
+
+        //Examples of keypresses
+
+
+
 
 
     });
