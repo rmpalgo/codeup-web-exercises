@@ -23,10 +23,30 @@
         //     console.log(KeyboardEvent.code);
         // });
 
+        let buffer = [];
+        let sequence = [38, 38, 38];
+        let lastKeyTime = Date.now();
+
         $(document).on('keydown', function (e) {
-            const key = e.key.toLowerCase();
-            console.log(key);
+            // var charList = [38, 40, 37, 39, 65, 66, 13];
+            var charList = [38, 38, 38];
+            const key = e.which;
+
+            if (charList.indexOf(key) !== -1) {
+             const currentTime = Date.now();
+             console.log(key);
+
+             if (currentTime - lastKeyTime > 1000) {
+                    buffer = [];
+                }
+
+                buffer.push(key);
+                lastKeyTime = currentTime;
+            }
+            console.log('Sequence is equal to buffer', buffer === sequence);
+            console.log('buffer', buffer);
         });
+
     });
 </script>
 </body>
