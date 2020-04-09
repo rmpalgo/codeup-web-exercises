@@ -24,12 +24,11 @@
         // });
 
         let buffer = [];
-        let sequence = '38,38,38';
+        let sequence = '38,38,40,40,37,39,37,39,65,66,13';
         let lastKeyTime = Date.now();
 
         $(document).on('keydown', function (e) {
-            // var charList = [38, 40, 37, 39, 65, 66, 13];
-            var charList = [38, 38, 38];
+            var charList = [38, 40, 37, 39, 65, 66, 13];
             const key = e.which;
 
             if (charList.indexOf(key) !== -1) {
@@ -47,7 +46,7 @@
             console.log('buffer', buffer);
 
             if (buffer.toString().indexOf(sequence) >= 0) {
-                console.log('YAY')
+                alert('YAY');
             }
         });
 
