@@ -33,4 +33,14 @@ $(document).ready(function() {
         $('p').css('font-size', '18px');
     });
 
+   var onHoverHandler = function () {
+       $('li').css('color', 'red');
+   };
+
+   var outHoverHandler = function () {
+       $('li').css('color', '#000');
+   };
+
+   $('li').hover(onHoverHandler, outHoverHandler);
+
 });
