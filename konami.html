@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <title>Konami Exercise</title>
 </head>
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
-    h1 {
-        text-align: center;
+    body {
+        background: url('https://media.giphy.com/media/10zxDv7Hv5RF9C/giphy.gif');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 100vh;
+
     }
-    #background {
-        height: 400px;
-        width: 800px;
-        background: #0fb784;
-        margin: 0 auto;
+    h1 {
+        font-size: 4em;
+        color: #FFFFFF;
+        text-align: center;
+        font-family: 'Press Start 2P', cursive;
     }
 
     #image {
@@ -24,6 +31,10 @@
         margin: auto;
         width: 50%;
         height: 50%;
+    }
+
+    img {
+        padding-top: 250px;
     }
 
 </style>
@@ -73,12 +84,10 @@
                 // alert('YAY');
                 $('#background').css('display', 'block');
                 $('#background').html('<img src="https://media.giphy.com/media/MC6eSuC3yypCU/giphy.gif" id="image">');
-                $('body').css('background', '#003B00');
                 $('body').css('transition', 'background url 1s');
                 setTimeout( function() {
                     $('#background').css('display', 'none');
                     $('#background').html('<img>');
-                    $('body').css('background-color', 'white');
                     $('body').css('transition', 'background 1s');
                     buffer = [];
                 }, 2000);
