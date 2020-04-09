@@ -43,4 +43,14 @@ $(document).ready(function() {
 
    $('li').hover(onHoverHandler, outHoverHandler);
 
+    // Different way of doing hover by inlining it----//
+    /*
+    $('li').hover(function () {
+        $('li').css('color', 'red');
+    }, function () {
+        $('li').css('color', '#000');
+    });
+     */
+    //------------------------------------------------//
+
 });
