@@ -24,7 +24,7 @@
         // });
 
         let buffer = [];
-        let sequence = [38, 38, 38];
+        let sequence = '38,38,38';
         let lastKeyTime = Date.now();
 
         $(document).on('keydown', function (e) {
@@ -45,9 +45,14 @@
             }
             console.log('Sequence is equal to buffer', buffer === sequence);
             console.log('buffer', buffer);
+
+            if (buffer.toString().indexOf(sequence) >= 0) {
+                console.log('YAY')
+            }
         });
 
     });
+
 </script>
 </body>
 </html>
