@@ -11,7 +11,7 @@
         width: 50px;
         text-align: center;
         background: #C38D9E;
-        opacity: .5;
+        opacity: .1;
         padding: 25px 25px;
         position: absolute;
         z-index: 900;
@@ -29,7 +29,10 @@
         $('#box').on('click', function () {
 
             $('#box').animate({
-                left: '650px'
+                left: '650px',
+                opacity: '1',
+                width: '100px',
+                height: '100px'
 
 
             }, 2000);
