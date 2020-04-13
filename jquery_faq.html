@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <title>jquery FAQ Exercise</title>
 </head>
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 <style>
     body {
         margin: auto 75px;
         background: lightgray;
-        font-family: 'Roboto', sans-serif;
         font-size: 15px;
     }
 
@@ -34,9 +32,9 @@
         margin-bottom: 30px;
     }
 
-
-
-
+    .bold {
+        font-weight: bold;
+    }
 
 </style>
 <body>
@@ -133,10 +131,13 @@
         });
 
         $('#button-park').click(function() {
-            console.log($('ul').children());
             $('ul').each(function (index, item) {
-                $(item).children().last().css('background-color', 'yellow');
+                $(item).children().last().toggleClass('highlight');
             });
+        });
+
+        $('h3').click(function() {
+            $(this).next().children().toggleClass('bold');
         });
 
     });
