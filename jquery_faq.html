@@ -140,6 +140,10 @@
             $(this).next().children().toggleClass('bold');
         });
 
+        $('li').click( function () {
+            $(this).parent().children().first().css('color', 'blue');
+        });
+
     });
 
 
