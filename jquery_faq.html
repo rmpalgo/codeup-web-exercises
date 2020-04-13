@@ -30,6 +30,10 @@
         background: yellow;
     }
 
+    button {
+        margin-bottom: 30px;
+    }
+
 
 
 
@@ -80,7 +84,7 @@
             <li>There are more than 10,000 hydrothermal features</li>
             <li>Has more than 500 active geysers</li>
             <li>The park is 96% in Wyoming</li>
-            <li>Yellowstone was established on March 1, 1872.</li>
+            <li> Last: Yellowstone was established on March 1, 1872.</li>
         </ul>
     </li>
     <li>
@@ -89,7 +93,7 @@
             <li>It was home to the country's first park guardian</li>
             <li>One of the parks waterfall glows.</li>
             <li>This park is revered as the birth place of rock climbing as sport.</li>
-            <li>Buffalo soldiers were some of the park's first protectors.</li>
+            <li>Last: Buffalo soldiers were some of the park's first protectors.</li>
         </ul>
     </li>
     <li>
@@ -98,10 +102,12 @@
             <li>Big Bend was made on June 20, 1935.</li>
             <li>The name Big Bend comes from a large bend in Rio Grande River along the park boundary.</li>
             <li>Floating the Rio Grande River is a popular activity.</li>
-            <li>The highest elevation in Big Bend is 7.832 feet on Emory Peak.</li>
+            <li>Last: The highest elevation in Big Bend is 7.832 feet on Emory Peak.</li>
         </ul>
     </li>
 </ul>
+
+<button id="button-park">Click</button>
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -124,6 +130,13 @@
         $('dt').click(function() {
             $(this).toggleClass('highlight');
             $(this).next().toggleClass('invisible');
+        });
+
+        $('#button-park').click(function() {
+            console.log($('ul').children());
+            $('ul').each(function (index, item) {
+                $(item).children().last().css('background-color', 'yellow');
+            });
         });
 
     });
