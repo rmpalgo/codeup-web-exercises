@@ -116,22 +116,24 @@
         </ul>
     </li>
 </ul>
+
+<button id="button-park">Click</button>
+
+<!--BONUS-->
 <div id="img-container">
     <div>
         <img src="imgs/bird1.jpg" alt="">
+        <button id="btn-left" class="btn-img">Swap Right</button>
     </div>
     <div>
         <img src="imgs/bird2.jpg" alt="">
+        <button id="btn-center" class="btn-img">Left or Right</button>
     </div>
     <div>
         <img src="imgs/bird3.jpg" alt="">
+        <button id="btn-right" class="btn-img">Swap Left</button>
     </div>
-
 </div>
-
-
-
-<button id="button-park">Click</button>
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -168,6 +170,13 @@
 
         $('li').click( function () {
             $(this).parent().children().first().css('color', 'blue');
+        });
+
+        //BONUS
+
+        $('.btn-img').click(function() {
+            console.log($(this).parent().next().children().first());
+            $(this).parent().next().children().first()
         });
 
     });
