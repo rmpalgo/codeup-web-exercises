@@ -15,6 +15,7 @@
 
     dl dt {
         font-size: 1.3em;
+        cursor: pointer;
     }
 
     dd {
@@ -70,7 +71,7 @@
     <dd>Fishing and other activities require permits.</dd>
 </dl>
 
-<button id="toggle">Toggle</button>
+<button id="toggle">Show Defintions</button>
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -83,6 +84,11 @@
 
         $('#toggle').click( function () {
             $('dd').toggleClass('invisible');
+            if($('dd')[0].className !== 'invisible') {
+                $(this).text('Hide definitions');
+            } else {
+                $(this).text('Show definitions');
+            }
         });
 
         $('dt').click(function() {
