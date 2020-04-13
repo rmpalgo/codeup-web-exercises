@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery FAQ Exercise</title>
+</head>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: auto 75px;
+        background: lightgray;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+    }
+
+    dl dt {
+        font-size: 1.3em;
+    }
+
+    dd {
+        padding: 10px 0;
+    }
+
+    .invisible {
+        visibility: hidden;
+    }
+
+    .highlight {
+        background: yellow;
+    }
+
+
+
+
+
+</style>
+<body>
+
+<h1>10 FAQs Yellow Stone National Park</h1>
+
+<dl id="list">
+    <dt>How do I get there?</dt>
+    <dd>There are five entrances, they can be accessed in Montana Yellowstone country, West Yellowstone, Gardiner, and Cookie City, MT.</dd>
+
+    <dt>Is the park open-year round?</dt>
+    <dd>Yes, the park is open all year!</dd>
+
+    <dt>What animals can you expect to see?</dt>
+    <dd>There are  300 species of birds, 16 species of fish, five species of amphibians and six species of reptiles. There are 67 species of mammals, including black bear and grizzly bears.</dd>
+
+    <dt>Can you stay in the park?</dt>
+    <dd>Yes, there are lodging options and campsites.</dd>
+
+    <dt>What else can I do?</dt>
+    <dd>A lot!</dd>
+
+    <dt>Can I get food, gas, and supplies inside the park?</dt>
+    <dd>Gas, snacks, and restaurants are all available within the park.</dd>
+
+    <dt>Does the park have cell and internet connections?</dt>
+    <dd>Cell phone service is limited, wireless connections can be purchased in area lodges.</dd>
+
+    <dt>Can I bring pets?</dt>
+    <dd>Yes, you can bring your pet.</dd>
+
+    <dt>What kind of clothes should I bring?</dt>
+    <dd>Plan to bring a variety of layers.</dd>
+
+    <dt>Do I need special license or permits?</dt>
+    <dd>Fishing and other activities require permits.</dd>
+</dl>
+
+<button id="toggle">Toggle</button>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $('dd').addClass('invisible');
+
+        $('#toggle').click( function () {
+            $('dd').toggleClass('invisible');
+        });
+
+        $('dt').click(function() {
+            $(this).toggleClass('highlight');
+        });
+
+
+    });
+
+
+</script>
+</body>
+</html>
