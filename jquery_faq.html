@@ -25,6 +25,10 @@
         visibility: hidden;
     }
 
+    .highlight {
+        background: yellow;
+    }
+
 
 
 
@@ -78,9 +82,11 @@
         $('dd').addClass('invisible');
 
         $('#toggle').click( function () {
-
             $('dd').toggleClass('invisible');
+        });
 
+        $('dt').click(function() {
+            $(this).toggleClass('highlight');
         });
 
 
