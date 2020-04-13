@@ -87,8 +87,9 @@
 
         $('dt').click(function() {
             $(this).toggleClass('highlight');
+            $(this).addClass('highlight');
+            $(this).next().toggleClass('invisible');
         });
-
 
     });
 
