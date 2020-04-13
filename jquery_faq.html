@@ -21,6 +21,10 @@
         padding: 10px 0;
     }
 
+    .invisible {
+        visibility: hidden;
+    }
+
 
 
 
@@ -29,7 +33,7 @@
 
 <h1>10 FAQs Yellow Stone National Park</h1>
 
-<dl>
+<dl id="list">
     <dt>How do I get there?</dt>
     <dd>There are five entrances, they can be accessed in Montana Yellowstone country, West Yellowstone, Gardiner, and Cookie City, MT.</dd>
 
@@ -68,6 +72,7 @@
 
     $(document).ready(function () {
 
+        $('dd').addClass('invisible');
 
 
     });
