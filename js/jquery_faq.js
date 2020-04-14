@@ -3,6 +3,7 @@ $(document).ready(function(){
 
     $('dd').addClass('invisible');
     $('#three-parks h3').next().hide();
+    $('#sign-up').hide();
 
     $('#toggle').click( function () {
         $('dd').toggleClass('invisible');
@@ -46,5 +47,16 @@ $(document).ready(function(){
     $('#x-message').click(function() {
         $('div#message-container').hide();
     });
+
+    setTimeout( function() {
+        $('#sign-up').fadeIn();
+    }, 8000);
+
+
+
+
+
+
+
 
 });
