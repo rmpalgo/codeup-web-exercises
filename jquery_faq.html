@@ -48,12 +48,14 @@
             justify-content: space-around;
         }
 
-        span {
-            cursor: pointer;
+        #sign-up {
+            position: absolute;
+            z-index: 900;
+            top: 500px;
         }
 
-        #message-container {
-            background: #fff;
+        span {
+            cursor: pointer;
         }
 
         h3 {
@@ -64,12 +66,13 @@
 </head>
 
 <body>
-<div id="sign-up" class="alert alert-info">
+<div id="sign-up" class="alert alert-primary position-relative ">
     <span id="fade-x">X</span>
     <h2>Would you like to register?</h2>
 </div>
+<main>
 
-<div id="message-container" class="alert alert-info" role="alert">
+<div id="message-container" class="alert alert-warning" role="alert">
     <span id="x-message">X</span>
     <h1>Would you like to sign up for our newsletter?</h1>
 </div>
@@ -136,7 +139,7 @@
             <li>Last: The highest elevation in Big Bend is 7.832 feet on Emory Peak.</li>
         </ul>
 
-    <button id="button-park">Click</button>
+    <button id="button-park">Highlight</button>
 </div>
 
 <!--BONUS-->
@@ -154,6 +157,7 @@
         <button id="btn-right" class="btn-img">Swap Left</button>
     </div>
 </div>
+</main>
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>

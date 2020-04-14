@@ -50,7 +50,15 @@ $(document).ready(function(){
 
     setTimeout( function() {
         $('#sign-up').fadeIn();
+        $('main').css('opacity', '0.1');
+        $('#sign-up').css('opacity', '1');
     }, 8000);
+
+    $('#fade-x').click(function() {
+        $('#sign-up').hide();
+        $('main').css('opacity', '1');
+    });
+
 
 
 
