@@ -33,7 +33,9 @@
     $('#updateList').click(updateInventory);
 
     function updateInventory(event) {
-        event.preventDefault();
+        if(event) {
+            event.preventDefault();
+        }
         $.get("data/inventory.json").done(function (inventory) {
             console.log(inventory);
             productListing(inventory);
@@ -41,6 +43,7 @@
             console.error(error);
         });
     }
+    updateInventory();
 
     function productListing (inventory) {
         for(var i = 0; i < inventory.length; i++) {
