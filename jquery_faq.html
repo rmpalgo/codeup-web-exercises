@@ -66,10 +66,30 @@
 </head>
 
 <body>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3>Hello! Please register for an account to access more content!</h3>
+            </div>
+                <button type="button" class="close block d-flex justify-content-start pl-3" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+
+<!--Non-modal Register -->
+<!--
 <div id="sign-up" class="alert alert-primary position-relative ">
     <span id="fade-x">X</span>
     <h2>Would you like to register?</h2>
 </div>
+-->
+<!--Non-modal Register-->
+
 <main>
 
 <div id="message-container" class="alert alert-warning" role="alert">
@@ -128,32 +148,36 @@
 <button id="toggle">Show Defintions</button>
 
 <div id="three-parks">
-        <h3>Yellowstone National Park</h3>
-        <ul>
-            <li>There are more than 10,000 hydrothermal features</li>
-            <li>Has more than 500 active geysers</li>
-            <li>The park is 96% in Wyoming</li>
-            <li> Last: Yellowstone was established on March 1, 1872.</li>
+    <div class="card mt-3" style="width: 48rem;">
+        <h3 class="card-header">Yellowstone National Park</h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">There are more than 10,000 hydrothermal features</li>
+            <li class="list-group-item">Has more than 500 active geysers</li>
+            <li class="list-group-item">The park is 96% in Wyoming</li>
+            <li class="list-group-item"> Last: Yellowstone was established on March 1, 1872.</li>
         </ul>
+    </div>
 
-        <h3>Yosemite National Park</h3>
-        <ul>
-            <li>It was home to the country's first park guardian</li>
-            <li>One of the parks waterfall glows.</li>
-            <li>This park is revered as the birth place of rock climbing as sport.</li>
-            <li>Last: Buffalo soldiers were some of the park's first protectors.</li>
+    <div class="card mt-3" style="width: 48rem;">
+        <h3 class="card-header">Yosemite National Park</h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">It was home to the country's first park guardian</li>
+            <li class="list-group-item">One of the parks waterfall glows.</li>
+            <li class="list-group-item">This park is revered as the birth place of rock climbing as sport.</li>
+            <li class="list-group-item">Last: Buffalo soldiers were some of the park's first protectors.</li>
         </ul>
+    </div>
 
-
-        <h3>Big Bend National Park</h3>
-        <ul>
-            <li>Big Bend was made on June 20, 1935.</li>
-            <li>The name Big Bend comes from a large bend in Rio Grande River along the park boundary.</li>
-            <li>Floating the Rio Grande River is a popular activity.</li>
-            <li>Last: The highest elevation in Big Bend is 7.832 feet on Emory Peak.</li>
+    <div class="card mt-3" style="width: 48rem;">
+        <h3 class="card-header">Big Bend National Park</h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Big Bend was made on June 20, 1935.</li>
+            <li class="list-group-item">The name Big Bend comes from a large bend in Rio Grande River along the park boundary.</li>
+            <li class="list-group-item">Floating the Rio Grande River is a popular activity.</li>
+            <li class="list-group-item">Last: The highest elevation in Big Bend is 7.832 feet on Emory Peak.</li>
         </ul>
-
-    <button id="button-park">Highlight</button>
+    </div>
+    <button id="button-park" class="mt-3">Highlight</button>
 </div>
 
 <!--BONUS-->

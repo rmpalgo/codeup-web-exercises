@@ -41,7 +41,6 @@ $(document).ready(function(){
     $('.btn-img').click(function() {
         console.log($(this).parent().next().children().first());
         console.log($(this).prev());
-
     });
 
     //jQuery Effects Exercise
@@ -50,6 +49,8 @@ $(document).ready(function(){
         $(this).parent().hide();
     });
 
+    // Non-modal method for register account
+    /*
     setTimeout( function() {
         $('#sign-up').fadeIn();
         $('main').css('opacity', '0.1');
@@ -60,6 +61,15 @@ $(document).ready(function(){
         $('#sign-up').hide();
         $('main').css('opacity', '1');
     });
+    */
+    //---------------------------------------->
+
+    //Bonus
+
+    setTimeout(function() {
+        $('#myModal').modal();
+    }, 8000);
+
 
 
 
