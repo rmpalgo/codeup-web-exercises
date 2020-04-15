@@ -5,12 +5,14 @@ $(document).ready(function(){
     $('#three-parks h3').next().hide();
     $('#sign-up').hide();
 
-    $('#toggle').click( function () {
+    $('#toggle').click(function(event){
+        event.preventDefault();
         $('dd').toggleClass('invisible');
-        if($('dd')[0].className !== 'invisible') {
-            $(this).text('Hide definitions');
-        } else {
-            $(this).text('Show definitions');
+        // console.log($('dd')[0].attr('class'));
+        if($('dd')[0].className.indexOf('invisible') === -1){
+            $(this).text('Hide definitions')
+        }else{
+            $(this).text('Show definitions')
         }
     });
 
@@ -45,7 +47,7 @@ $(document).ready(function(){
     //jQuery Effects Exercise
 
     $('#x-message').click(function() {
-        $('div#message-container').hide();
+        $(this).parent().hide();
     });
 
     setTimeout( function() {
