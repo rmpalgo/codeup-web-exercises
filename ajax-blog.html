@@ -37,11 +37,15 @@
         function renderHTML (blogArr) {
             var HTML = ``;
             blogArr.forEach( function(blog) {
+                var cat = "";
+                blog.categories.forEach(function (item) {
+                  cat += `<span class="badge badge-primary m-2">${item}</span>`;
+                });
                 HTML = `<img src="${blog.image}" class="mr-3 mt-5" alt="...">
                         <div class="media-body">
                              <h5 class="mt-0">${blog.title}</h5>
                              <p>${blog.content}</p>
-                             <p>Categories: ${blog.categories};</p>
+                             <p>Categories: ${cat}</p>
                              <p>Date: ${blog.date}</p>
                          </div>`;
                 $('#posts').append(HTML);
