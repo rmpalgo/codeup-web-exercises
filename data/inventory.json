@@ -1,0 +1,86 @@
+[
+    {
+        "title": "Hammer",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 20,
+        "image": "https://images.homedepot-static.com/productImages/68b14234-d12e-4716-9fb8-c7f0f6b9ecae/svn/hdx-claw-hammers-n-g16chd-64_1000.jpg"
+    }, {
+        "title": "Drill",
+        "quantity": 5,
+        "categories": [
+            "tool",
+            "powered"
+        ],
+        "price": 100,
+        "image": "https://images.homedepot-static.com/productImages/77f2b3ae-e4f5-475e-af86-b16c724f207c/svn/ryobi-power-drills-d43k-64_1000.jpg"
+    }, {
+        "title": "Mower",
+        "quantity": 5,
+        "categories": [
+            "tool",
+            "gas",
+            "outdoor"
+        ],
+        "price": 200,
+        "image": "https://images.homedepot-static.com/productImages/81d4a7c9-975d-4122-ab95-74a3e1df5a7d/svn/troy-bilt-push-lawn-mowers-tb160-64_1000.jpg"
+    }, {
+        "title": "Screwdrivers",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 10,
+        "image": "https://images.homedepot-static.com/productImages/0e641da4-052e-4167-bf58-cee314137762/svn/dewalt-multi-bit-screwdrivers-dwht66567-64_1000.jpg"
+    }, {
+    "title": "Small moving boxes",
+    "quantity": 100,
+    "categories": [
+        "boxes", "moving supplies", "Small boxes"
+    ],
+    "price": 0.98,
+    "image": "https://images.homedepot-static.com/productImages/fd864ccf-2701-4e47-927c-835a1597d420/svn/the-home-depot-moving-boxes-mdmvebx-64_1000.jpg"
+}, {
+    "title": "Medium moving boxes",
+    "quantity": 300,
+    "categories": [
+        "boxes", "moving supplies", "Medium boxes"
+    ],
+    "price": 1.48,
+    "image": "https://images.homedepot-static.com/productImages/fd864ccf-2701-4e47-927c-835a1597d420/svn/the-home-depot-moving-boxes-mdmvebx-64_1000.jpg"
+}, {
+    "title": "Large moving boxes",
+    "quantity": 200,
+    "categories": [
+        "boxes", "moving supplies", "Large boxes"
+    ],
+    "price": 1.78,
+    "image": "https://images.homedepot-static.com/productImages/fd864ccf-2701-4e47-927c-835a1597d420/svn/the-home-depot-moving-boxes-mdmvebx-64_1000.jpg"
+}, {
+    "title": "Extra Large moving boxes",
+    "quantity": 200,
+    "categories": [
+        "boxes", "moving supplies", "Extra Large boxes"
+    ],
+    "price": 2.78,
+    "image": "https://images.homedepot-static.com/productImages/fd864ccf-2701-4e47-927c-835a1597d420/svn/the-home-depot-moving-boxes-mdmvebx-64_1000.jpg"
+}, {
+    "title": " Super Large moving boxes",
+    "quantity": 200,
+    "categories": [
+        "boxes", "moving supplies", "Super Large boxes"
+    ],
+    "price": 3.78,
+    "image": "https://images.homedepot-static.com/productImages/fd864ccf-2701-4e47-927c-835a1597d420/svn/the-home-depot-moving-boxes-mdmvebx-64_1000.jpg"
+}, {
+    "title": "Hammer",
+    "quantity": 25,
+    "categories": [
+        "tool"
+    ],
+    "price": 20,
+    "image": "https://images.homedepot-static.com/productImages/68b14234-d12e-4716-9fb8-c7f0f6b9ecae/svn/hdx-claw-hammers-n-g16chd-64_1000.jpg"
+}
+]
