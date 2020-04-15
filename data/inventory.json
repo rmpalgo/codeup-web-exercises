@@ -30,5 +30,26 @@
             "tool"
         ],
         "price": 10
-    }
+    }, {
+    "title": "Small moving boxes",
+    "quantity": 100,
+    "categories": [
+        "boxes", "moving supplies", "Small boxes"
+    ],
+    "price": 0.98
+}, {
+    "title": "Medium moving boxes",
+    "quantity": 300,
+    "categories": [
+        "boxes", "moving supplies", "Medium boxes"
+    ],
+    "price": 1.48
+}, {
+    "title": "Large moving boxes",
+    "quantity": 200,
+    "categories": [
+        "boxes", "moving supplies", "Large boxes"
+    ],
+    "price": 1.78
+}
 ]
