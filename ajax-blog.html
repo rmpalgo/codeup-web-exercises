@@ -6,7 +6,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 <body>
-<div id="posts" class="media d-flex flex-column m-4"></div>
+<main>
+    <div id="posts" class="media d-flex flex-column m-4"></div>
+    <button id="refresh">Refresh</button>
+</main>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
@@ -15,16 +19,23 @@
 
     $(document).ready(function() {
 
-        var url = "data/blog.json"
-        $.get(url).done(function (data) {
-            renderHTML(data);
-        }).fail(function (error) {
-            console.error(error);
-        });
+        function blogPost(event) {
+            $('#posts').empty();
+            if(event) {
+                event.preventDefault();
+            }
+            var url = "data/blog.json"
+            $.get(url).done(function (data) {
+                renderHTML(data);
+            }).fail(function (error) {
+                console.error(error);
+            });
+        }
+
+        blogPost();
 
         function renderHTML (blogArr) {
             var HTML = ``;
-
             blogArr.forEach( function(blog) {
                 HTML = `<img src="${blog.image}" class="mr-3 mt-5" alt="...">
                         <div class="media-body">
@@ -36,6 +47,8 @@
                 $('#posts').append(HTML);
             });
         }
+
+        $('#refresh').click(blogPost);
 
     });
 
