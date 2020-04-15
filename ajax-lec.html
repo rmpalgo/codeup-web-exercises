@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Intro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+<body>
+
+<div class="mt-5 d-flex justify-content-center">
+    <div class="card" style="width: 18rem;">
+        <img id="avatar" src="imgs/bird1.jpg" class="card-img-top" alt="username picture">
+        <div class="card-body">
+            <p id="username" lass="card-text">Github Bio and username information.</p>
+        </div>
+    </div>
+</div>
+
+<div class="m-5">
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Username search</label>
+        <input type="text" name="username" id="search-term" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="username">
+    </div>
+    <button id="do-search" type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script>
+    "use strict";
+
+    $(document).ready(function () {
+        var $username = $('#username');
+        var $avatarImg = $('#avatar');
+
+        $('#do-search').click(function (event) {
+            event.preventDefault();
+            var username = $('#search-term').val();
+
+            var url = "https://api.github.com/users/" + username;
+
+            $.ajax(url, {
+                type: "GET"
+            }).done(function(data, status) {
+                console.log(data);
+                if(data.bio) {
+                    $username.text(data.login + ": " + data.bio);
+                } else {
+                    $username.text(data.login);
+                }
+                $avatarImg.attr('src', data.avatar_url)
+            }).fail(function(error) {
+                // There is a console error that logs error, similar to console log but red.
+                console.error(error);
+            }).always(function () {
+                // Always will always run after a response even if error.
+                console.log('Will always run once you get a response.')
+            });
+        });
+    });
+
+
+</script>
+
+</body>
+</html>
