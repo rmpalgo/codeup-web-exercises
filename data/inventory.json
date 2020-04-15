@@ -74,5 +74,13 @@
     ],
     "price": 3.78,
     "image": "https://images.homedepot-static.com/productImages/fd864ccf-2701-4e47-927c-835a1597d420/svn/the-home-depot-moving-boxes-mdmvebx-64_1000.jpg"
+}, {
+    "title": "Hammer",
+    "quantity": 25,
+    "categories": [
+        "tool"
+    ],
+    "price": 20,
+    "image": "https://images.homedepot-static.com/productImages/68b14234-d12e-4716-9fb8-c7f0f6b9ecae/svn/hdx-claw-hammers-n-g16chd-64_1000.jpg"
 }
 ]

@@ -33,6 +33,10 @@
     $('#updateList').click(updateInventory);
 
     function updateInventory(event) {
+        if($('#main-container').has("div")) {
+            $('div#listUpdated').remove();
+        }
+
         if(event) {
             event.preventDefault();
         }
@@ -48,7 +52,7 @@
     function productListing (inventory) {
         for(var i = 0; i < inventory.length; i++) {
             var image = inventory[i].image;
-            var inventoryHTML = `<div class="card" style="width: 18rem;">
+            var inventoryHTML = `<div id="listUpdated" class="card" style="width: 18rem;">
                 <img src="${image}" class="card-img-top" alt="...">
                 <div class="card-body">
                 <p class="card-text">Title: ${inventory[i].title}<br>
