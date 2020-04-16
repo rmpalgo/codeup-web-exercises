@@ -1,7 +1,6 @@
 "use strict";
 (function(){
     $(document).ready(function() {
-
         function locationExecution (latValue, longValue) {
             let lat = latValue;
             let long = longValue;
@@ -27,6 +26,7 @@
                 console.error(error);
             });
         }
+        locationExecution(32.79, -96.79 );
 
         /**
          *
@@ -135,20 +135,15 @@
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
-            center: [0, 0],
-            zoom: 2
+            center: [-96.79, 32.79],
+            zoom: 5
         });
 
         var marker = new mapboxgl.Marker({
             draggable: true
         })
-            .setLngLat([0, 0])
+            .setLngLat([-96.79, 32.79])
             .addTo(map);
-
-        /**
-         *
-         * @returns {number[]}
-         */
 
         function onDragEnd() {
             let lngLat = marker.getLngLat();
