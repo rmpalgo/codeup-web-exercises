@@ -2,25 +2,31 @@
 (function(){
     $(document).ready(function() {
 
-        $.ajax({
-            "url": "https://api.openweathermap.org/data/2.5/forecast",
-            "type": "GET",
-            "data": {
-                "APPID": OWM_KEY,
-                "q": "Dallas, USA",
-                "units": "Imperial"
-            }
-        }).done(function (data) {
-            console.log(data);
-            let dataArr = data.list;
-            dataArr.forEach( (item, index) => {
-                if(index % 8 === 0) {
-                    makeForecast(item);
+        function locationExecution (latValue, longValue) {
+            let lat = latValue;
+            let long = longValue;
+            $.ajax({
+                "url": "https://api.openweathermap.org/data/2.5/forecast",
+                "type": "GET",
+                "data": {
+                    "APPID": OWM_KEY,
+                    "lat":    lat,
+                    "lon":   long,
+                    "units": "Imperial"
                 }
+            }).done(function (data) {
+                $('#forecast').empty();
+                console.log(data);
+                let dataArr = data.list;
+                dataArr.forEach( (item, index) => {
+                    if(index % 8 === 0) {
+                        makeForecast(item);
+                    }
+                });
+            }).fail(function (error) {
+                console.error(error);
             });
-        }).fail(function (error) {
-            console.error(error);
-        });
+        }
 
         /**
          *
@@ -125,56 +131,33 @@
     // MAPBOX
 
         mapboxgl.accessToken = mapboxToken;
-
-        var restaurants = [
-            {
-                name: 'Hopdoddy Burger Bar',
-                address: '3227 McKinney Ave Suite 102, Dallas, TX',
-                description: 'Best Burger in '
-            },
-            {
-                name: 'Jin Korean BBQ',
-                address: '3810 S Cooper St #130, Arlington, TX 76015',
-                description: 'Best Korean bbq in '
-            },
-            {
-                name: 'Texas Roadhouse',
-                address: '2490 I-20 Frontage Rd, Grand Prairie, TX 75052',
-                description: 'Best Steak in '
-            }
-        ];
-
+        var coordinates = document.getElementById('coordinates');
         var map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v9',
-            zoom: 0,
-            center: [-97.14, 32.77]
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [0, 0],
+            zoom: 2
         });
 
-        function addRestaurant () {
-            restaurants.forEach( (restaurant, index) => {
-                geocode(restaurant.address, mapboxToken).then( result => {
-                    console.log(result);
+        var marker = new mapboxgl.Marker({
+            draggable: true
+        })
+            .setLngLat([0, 0])
+            .addTo(map);
 
-                    //    add additional code for geocode
-                    geoRestaurant(result, restaurant);
-                });
-            });
+        /**
+         *
+         * @returns {number[]}
+         */
+
+        function onDragEnd() {
+            let lngLat = marker.getLngLat();
+            let latValue = lngLat.lat;
+            let longValue = lngLat.lng;
+            console.log(latValue);
+            console.log(longValue);
+            locationExecution(latValue, longValue);
         }
-
-        function geoRestaurant(result, restaurant) {
-
-            var popup = new mapboxgl.Popup()
-                .setHTML(`<h3>${restaurant.name}<br>${restaurant.address}<br><hr> ${restaurant.description} <em>${restaurant.address.split(',')[1]}</em></h3>`);
-
-            new mapboxgl.Marker()
-                .setLngLat(result)
-                .setPopup(popup)
-                .addTo(map)
-
-        }
-
-        addRestaurant();
-
+         marker.on('dragend', onDragEnd);
     });
 })();
