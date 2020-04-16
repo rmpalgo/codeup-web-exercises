@@ -12,16 +12,20 @@
             }
         }).done(function (data) {
             console.log(data);
-            let firstData = data.list[0];
-            $('#weather-date').text(getDate(firstData));
-            $('#weather-temperatures').append(getTemp(firstData));
-            $('#weather-temperatures').append(getIcon(firstData));
-            $('#weather-description').append(weatherDescription(firstData));
-            $('#weather-wind').text(getWind(firstData));
-            $('#weather-pressure').text(getPressure(firstData));
+            let dataArr = data.list[0];
+            makeForecast(dataArr)
         }).fail(function (error) {
             console.error(error);
         });
+
+        function makeForecast (obj) {
+            $('#weather-date').text(getDate(obj));
+            $('#weather-temperatures').append(getTemp(obj));
+            $('#weather-temperatures').append(getIcon(obj));
+            $('#weather-description').append(weatherDescription(obj));
+            $('#weather-wind').text(getWind(obj));
+            $('#weather-pressure').text(getPressure(obj));
+        }
 
         function getDate (obj) {
             let date = obj.dt_txt.split(" ")[0].split("-");
@@ -48,8 +52,6 @@
             let temp = [];
             temp.push(obj.main.temp_min);
             temp.push(obj.main.temp_max);
-            let icon = getIcon(obj);
-            console.log(icon);
             return `<p>${temp[0]} / ${temp[1]}</p>`
         }
 
