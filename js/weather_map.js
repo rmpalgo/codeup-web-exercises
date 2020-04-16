@@ -13,12 +13,33 @@
         }).done(function (data) {
             console.log(data);
             let dataArr = data.list;
-            for(let i = 0; i < 5; i++) {
-                makeForecast(dataArr[i])
-            }
+            dataArr.forEach( (item, index) => {
+                if(index % 8 === 0) {
+                    console.log(index);
+                    console.log(makeForecast(item));
+                }
+            });
         }).fail(function (error) {
             console.error(error);
         });
+
+        /*
+          lists: [...40]
+          uniqueDates = [];
+          lists.forEach(function (item) {
+            if (d.
+            dataArr.
+                // Get unique dates: if date !== to last date then push index to uniqueDates
+                    code here...
+
+                // use the for loop to loop through the first 5 unique index and render those object content in the page?
+           });
+        */
+
+        // var d = new Date();
+        // console.log(d);
+        // console.log(d.getDay());
+
 
         /**
          *
