@@ -15,31 +15,12 @@
             let dataArr = data.list;
             dataArr.forEach( (item, index) => {
                 if(index % 8 === 0) {
-                    console.log(index);
-                    console.log(makeForecast(item));
+                    makeForecast(item);
                 }
             });
         }).fail(function (error) {
             console.error(error);
         });
-
-        /*
-          lists: [...40]
-          uniqueDates = [];
-          lists.forEach(function (item) {
-            if (d.
-            dataArr.
-                // Get unique dates: if date !== to last date then push index to uniqueDates
-                    code here...
-
-                // use the for loop to loop through the first 5 unique index and render those object content in the page?
-           });
-        */
-
-        // var d = new Date();
-        // console.log(d);
-        // console.log(d.getDay());
-
 
         /**
          *
@@ -140,6 +121,60 @@
         function getIcon (obj) {
             return obj.weather[0].icon;
         }
+
+    // MAPBOX
+
+        mapboxgl.accessToken = mapboxToken;
+
+        var restaurants = [
+            {
+                name: 'Hopdoddy Burger Bar',
+                address: '3227 McKinney Ave Suite 102, Dallas, TX',
+                description: 'Best Burger in '
+            },
+            {
+                name: 'Jin Korean BBQ',
+                address: '3810 S Cooper St #130, Arlington, TX 76015',
+                description: 'Best Korean bbq in '
+            },
+            {
+                name: 'Texas Roadhouse',
+                address: '2490 I-20 Frontage Rd, Grand Prairie, TX 75052',
+                description: 'Best Steak in '
+            }
+        ];
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 0,
+            center: [-97.14, 32.77]
+        });
+
+        function addRestaurant () {
+            restaurants.forEach( (restaurant, index) => {
+                geocode(restaurant.address, mapboxToken).then( result => {
+                    console.log(result);
+
+                    //    add additional code for geocode
+                    geoRestaurant(result, restaurant);
+                });
+            });
+        }
+
+        function geoRestaurant(result, restaurant) {
+
+            var popup = new mapboxgl.Popup()
+                .setHTML(`<h3>${restaurant.name}<br>${restaurant.address}<br><hr> ${restaurant.description} <em>${restaurant.address.split(',')[1]}</em></h3>`);
+
+            new mapboxgl.Marker()
+                .setLngLat(result)
+                .setPopup(popup)
+                .addTo(map)
+
+        }
+
+        addRestaurant();
 
     });
 })();
