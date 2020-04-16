@@ -1,6 +1,7 @@
 "use strict";
 (function(){
     $(document).ready(function() {
+
         function locationExecution (latValue, longValue) {
             let lat = latValue;
             let long = longValue;
@@ -128,6 +129,28 @@
             return obj.weather[0].icon;
         }
 
+        function lngLatFromSearch (result) {
+            locationExecution (result[1], result[0]);
+        }
+
+        function searchCity (address) {
+            if (typeof address !== 'string') {
+                address = '701 Commerce St. Dallas, TX 75202'
+            }
+            geocode(address, mapboxToken).then(function(result) {
+                lngLatFromSearch(result);
+            });
+        }
+
+        $('#submit').click(function (event) {
+            event.preventDefault();
+            let address = $('#address').val();
+            console.log(address);
+            searchCity(address);
+        });
+
+
+
     // MAPBOX
 
         mapboxgl.accessToken = mapboxToken;
@@ -145,7 +168,7 @@
             .setLngLat([-96.79, 32.79])
             .addTo(map);
 
-        function onDragEnd() {
+        function onDragEnd(result) {
             let lngLat = marker.getLngLat();
             let latValue = lngLat.lat;
             let longValue = lngLat.lng;
