@@ -14,6 +14,8 @@
             console.log(data);
             let firstData = data.list[0];
             $('#weather-date').text(getDate(firstData));
+            $('#weather-temperatures').append(getTemp(firstData));
+            $('#weather-temperatures').append(getIcon(firstData));
             $('#weather-description').append(weatherDescription(firstData));
             $('#weather-wind').text(getWind(firstData));
             $('#weather-pressure').text(getPressure(firstData));
@@ -40,6 +42,20 @@
 
         function getPressure (obj) {
             return `Pressure: ${obj.main.pressure}`;
+        }
+
+        function getTemp (obj) {
+            let temp = [];
+            temp.push(obj.main.temp_min);
+            temp.push(obj.main.temp_max);
+            let icon = getIcon(obj);
+            console.log(icon);
+            return `<p>${temp[0]} / ${temp[1]}</p>`
+        }
+
+        function getIcon (obj) {
+            let icon = obj.weather[0].icon;
+            return `<img alt="weather-icon" src="http://openweathermap.org/img/w/${icon}.png">`;
         }
 
 
