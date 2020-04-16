@@ -12,8 +12,10 @@
             }
         }).done(function (data) {
             console.log(data);
-            let dataArr = data.list[0];
-            makeForecast(dataArr)
+            let dataArr = data.list;
+            for(let i = 0; i < 4; i++) {
+                makeForecast(dataArr[i])
+            }
         }).fail(function (error) {
             console.error(error);
         });
@@ -26,7 +28,7 @@
          */
 
         function makeForecast (obj) {
-            let contentHMTL = ``;
+            let contentHTML = ``;
             /*
         <ul id="ul-forecast" class="list-group list-group-flush">
             <li id="weather-date" class="list-group-item text-center">Cras justo odio</li>
@@ -66,8 +68,7 @@
                                 Pressure: ${getPressure(obj)}
                             </li>
                       </ul>`;
-
-            $('#forecast').append(contentHMTL);
+            $('#forecast').append(contentHTML);
         }
 
         /**
