@@ -41,7 +41,7 @@
             // make UL
 
             // make children li's
-            contentHTML = `<ul id="ul-forecast" class="list-group list-group-flush">
+            contentHTML = `<ul id="ul-forecast" class="list-group list-group-flush mb-4">
                             <li id="weather-date" class="list-group-item text-center">
                               ${getDate(obj)}
                             </li>
@@ -55,17 +55,17 @@
                             </li>       
                             <li id="weather-description" class="list-group-item">
                                 <p>
-                                    Description: ${weatherDescription(obj)[0]}
+                                    Description: <strong>${weatherDescription(obj)[0]}</strong>
                                  </p>
                                 <p>
-                                    Humidity: ${weatherDescription(obj)[1]}
+                                    Humidity: <strong>${weatherDescription(obj)[1]}</strong>
                                  </p>
                             </li>
                             <li id="weather-wind" class="list-group-item">
-                               Wind: ${getWind(obj)}
+                               Wind: <strong>${getWind(obj)}</strong>
                             </li>
                             <li id="weather-pressure" class="list-group-item">
-                                Pressure: ${getPressure(obj)}
+                                <p>Pressure: <strong>${getPressure(obj)}</strong></p>
                             </li>
                       </ul>`;
             $('#forecast').append(contentHTML);
