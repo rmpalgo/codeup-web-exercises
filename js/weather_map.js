@@ -37,32 +37,37 @@
          </ul>
              */
             // make UL
-            $('#forecast').append(makeUL());
 
             // make children li's
-            liHTML = `<li id="weather-date" class="list-group-item text-center">${getDate(obj)}</li>
-                      <li id="weather-temperatures" class="list-group-item text-center">
-                      <p>${getTemp(obj)[0]} / ${getTemp(obj)[1]}</p>
-                      <p><img alt="weather-icon" src="http://openweathermap.org/img/w/${getIcon(obj)}.png"></p>
-                      </li>       
-                      <li id="weather-description" class="list-group-item">
-                      <p>Description: ${weatherDescription(obj)[0]}</p>
-                      <p>Humidity: ${weatherDescription(obj)[1]}</p>
-                      </li>
-                        `;
-            $('#weather-date').text(getDate(obj));
-            $('#weather-temperatures').append(getTemp(obj));
-            $('#weather-temperatures').append(getIcon(obj));
-            $('#weather-description').append(weatherDescription(obj));
-            $('#weather-wind').text(getWind(obj));
-            $('#weather-pressure').text(getPressure(obj));
-        }
+            liHTML = `<ul id="ul-forecast" class="list-group list-group-flush">
+                            <li id="weather-date" class="list-group-item text-center">
+                              ${getDate(obj)}
+                            </li>
+                            <li id="weather-temperatures" class="list-group-item text-center">
+                                <p>
+                                    ${getTemp(obj)[0]} / ${getTemp(obj)[1]}
+                                </p>
+                                <p>
+                                    <img alt="weather-icon" src="http://openweathermap.org/img/w/${getIcon(obj)}.png">
+                                </p>
+                            </li>       
+                            <li id="weather-description" class="list-group-item">
+                                <p>
+                                    Description: ${weatherDescription(obj)[0]}
+                                 </p>
+                                <p>
+                                    Humidity: ${weatherDescription(obj)[1]}
+                                 </p>
+                            </li>
+                            <li id="weather-wind" class="list-group-item">
+                               Wind: ${getWind(obj)}
+                            </li>
+                            <li id="weather-pressure" class="list-group-item">
+                                Pressure: ${getPressure(obj)}
+                            </li>
+                      </ul>`;
 
-        /**
-         * @returns {string} string to append ul in HTML
-         */
-        function makeUL () {
-            return `<ul id="ul-forecast" class="list-group list-group-flush"></ul>`
+            $('#forecast').append(liHTML);
         }
 
         /**
