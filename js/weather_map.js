@@ -147,6 +147,7 @@
             let address = $('#address').val();
             console.log(address);
             searchCity(address);
+            $('#address').val('');
         });
 
 
