@@ -1,6 +1,15 @@
 "use strict";
 (function(){
     $(document).ready(function() {
+        var latValue = 0;
+         var longValue = 0;
+
+        function initLocation () {
+            latValue = 32.79;
+            longValue = -96.79;
+        }
+
+        initLocation();
 
         function locationExecution (latValue, longValue) {
             let lat = latValue;
@@ -139,6 +148,7 @@
             }
             geocode(address, mapboxToken).then(function(result) {
                 lngLatFromSearch(result);
+                map.setCenter(result);
             });
         }
 
@@ -159,17 +169,17 @@
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
-            center: [-96.79, 32.79],
+            center: [longValue, latValue ],
             zoom: 5
         });
 
         var marker = new mapboxgl.Marker({
             draggable: true
         })
-            .setLngLat([-96.79, 32.79])
+            .setLngLat([longValue, latValue ])
             .addTo(map);
 
-        function onDragEnd(result) {
+        function onDragEnd() {
             let lngLat = marker.getLngLat();
             let latValue = lngLat.lat;
             let longValue = lngLat.lng;
