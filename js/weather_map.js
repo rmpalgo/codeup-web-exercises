@@ -26,7 +26,7 @@
          */
 
         function makeForecast (obj) {
-            let liHTML = ``;
+            let contentHMTL = ``;
             /*
         <ul id="ul-forecast" class="list-group list-group-flush">
             <li id="weather-date" class="list-group-item text-center">Cras justo odio</li>
@@ -39,7 +39,7 @@
             // make UL
 
             // make children li's
-            liHTML = `<ul id="ul-forecast" class="list-group list-group-flush">
+            contentHTML = `<ul id="ul-forecast" class="list-group list-group-flush">
                             <li id="weather-date" class="list-group-item text-center">
                               ${getDate(obj)}
                             </li>
@@ -67,7 +67,7 @@
                             </li>
                       </ul>`;
 
-            $('#forecast').append(liHTML);
+            $('#forecast').append(contentHMTL);
         }
 
         /**
