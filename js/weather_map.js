@@ -13,7 +13,7 @@
         }).done(function (data) {
             console.log(data);
             let dataArr = data.list;
-            for(let i = 0; i < 4; i++) {
+            for(let i = 0; i < 5; i++) {
                 makeForecast(dataArr[i])
             }
         }).fail(function (error) {
@@ -29,45 +29,33 @@
 
         function makeForecast (obj) {
             let contentHTML = ``;
-            /*
-        <ul id="ul-forecast" class="list-group list-group-flush">
-            <li id="weather-date" class="list-group-item text-center">Cras justo odio</li>
-            <li id="weather-temperatures" class="list-group-item text-center"></li>
-            <li id="weather-description" class="list-group-item"></li>
-            <li id="weather-wind" class="list-group-item"></li>
-            <li id="weather-pressure" class="list-group-item"></li>
-         </ul>
-             */
-            // make UL
-
-            // make children li's
-            contentHTML = `<ul id="ul-forecast" class="list-group list-group-flush mb-4">
-                            <li id="weather-date" class="list-group-item text-center">
+            contentHTML = `<div><ul id="ul-forecast" class="list-group list-group-flush mb-4">
+                                <li id="weather-date" class="list-group-item text-center">
                               ${getDate(obj)}
-                            </li>
-                            <li id="weather-temperatures" class="list-group-item text-center">
+                                </li>
+                                <li id="weather-temperatures" class="list-group-item text-center">
                                 <p>
                                     ${getTemp(obj)[0]} / ${getTemp(obj)[1]}
                                 </p>
                                 <p>
                                     <img alt="weather-icon" src="http://openweathermap.org/img/w/${getIcon(obj)}.png">
                                 </p>
-                            </li>       
-                            <li id="weather-description" class="list-group-item">
+                                </li>       
+                                <li id="weather-description" class="list-group-item">
                                 <p>
                                     Description: <strong>${weatherDescription(obj)[0]}</strong>
                                  </p>
                                 <p>
                                     Humidity: <strong>${weatherDescription(obj)[1]}</strong>
                                  </p>
-                            </li>
-                            <li id="weather-wind" class="list-group-item">
+                                </li>
+                                <li id="weather-wind" class="list-group-item">
                                Wind: <strong>${getWind(obj)}</strong>
-                            </li>
-                            <li id="weather-pressure" class="list-group-item">
+                                 </li>
+                                <li id="weather-pressure" class="list-group-item">
                                 <p>Pressure: <strong>${getPressure(obj)}</strong></p>
-                            </li>
-                      </ul>`;
+                                </li>
+                             </ul></div>`;
             $('#forecast').append(contentHTML);
         }
 
@@ -130,7 +118,6 @@
          */
         function getIcon (obj) {
             return obj.weather[0].icon;
-            // return `<img alt="weather-icon" src="http://openweathermap.org/img/w/${icon}.png">`;
         }
 
     });
