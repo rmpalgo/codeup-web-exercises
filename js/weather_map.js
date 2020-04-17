@@ -185,8 +185,20 @@
                     .setLngLat(result)
                     .addTo(map);
                 map.setCenter(result);
+                map.flyTo({center: [result[0], result[1]], zoom: 9});
             });
         }
+
+        /*
+        function onDragEnd() {
+            let lngLat = marker.getLngLat();
+            let latValue = lngLat.lat;
+            let longValue = lngLat.lng;
+            console.log(latValue);
+            console.log(longValue);
+            locationExecution(latValue, longValue);
+        }
+         */
 
         $('#submit').click(function (event) {
             event.preventDefault();
