@@ -27,6 +27,7 @@
                 $('#forecast').empty();
                 console.log(data);
                 let dataArr = data.list;
+                setCity(data);
                 dataArr.forEach( (item, index) => {
                     if(index % 8 === 0) {
                         makeForecast(item);
@@ -75,6 +76,10 @@
                                 </li>
                              </ul></div>`;
             $('#forecast').append(contentHTML);
+        }
+
+        function setCity (obj) {
+            console.log($('#city').text(`City: ${obj.city.name}`));;
         }
 
         /**
@@ -148,6 +153,9 @@
             }
             geocode(address, mapboxToken).then(function(result) {
                 lngLatFromSearch(result);
+                new mapboxgl.Marker({draggable: true})
+                    .setLngLat(result)
+                    .addTo(map);
                 map.setCenter(result);
             });
         }
@@ -165,7 +173,6 @@
     // MAPBOX
 
         mapboxgl.accessToken = mapboxToken;
-        var coordinates = document.getElementById('coordinates');
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
@@ -188,5 +195,20 @@
             locationExecution(latValue, longValue);
         }
          marker.on('dragend', onDragEnd);
+
+        /*
+        function geoRestaurant(result, restaurant) {
+
+            var popup = new mapboxgl.Popup()
+                .setHTML(`<h3>${restaurant.name}<br>${restaurant.address}<br><hr> ${restaurant.description} <em>${restaurant.address.split(',')[1]}</em></h3>`);
+
+            new mapboxgl.Marker(option)
+                .setLngLat(result)
+                .setPopup(popup)
+                .addTo(map)
+
+        }
+         */
+
     });
 })();
