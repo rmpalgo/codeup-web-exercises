@@ -184,16 +184,21 @@
                 address = '701 Commerce St. Dallas, TX 75202'
             }
             geocode(address, mapboxToken).then(function(result) {
-                marker.remove();
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/streets-v9',
+                    zoom: 16,
+                    showCompass: true
+                });
                 lngLatFromSearch(result);
-                new mapboxgl.Marker({
-                    draggable: true
-                })
-                    .setLngLat([result[0], result[1] ])
+                marker = new mapboxgl.Marker({draggable: true})
+                    .setLngLat(result)
                     .addTo(map);
+                map.setCenter(result);
                 map.flyTo({center: [result[0], result[1]], zoom: 9});
             });
         }
+
 
         /*
         function onDragEnd() {
