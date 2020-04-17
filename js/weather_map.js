@@ -2,7 +2,7 @@
 (function(){
     $(document).ready(function() {
         var latValue = 0;
-         var longValue = 0;
+        var longValue = 0;
 
         function initLocation () {
             latValue = 32.79;
@@ -10,6 +10,34 @@
         }
 
         initLocation();
+
+        // MAPBOX ==========================================================>
+
+        mapboxgl.accessToken = mapboxToken;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [longValue, latValue ],
+            zoom: 5
+        });
+
+        var marker = new mapboxgl.Marker({
+            draggable: true
+        })
+            .setLngLat([longValue, latValue ])
+            .addTo(map);
+
+        function onDragEnd() {
+            let lngLat = marker.getLngLat();
+            let latValue = lngLat.lat;
+            let longValue = lngLat.lng;
+            console.log(latValue);
+            console.log(longValue);
+            locationExecution(latValue, longValue);
+        }
+
+        // MAPBOX ==========================================================>
+
 
         function locationExecution (latValue, longValue) {
             let lat = latValue;
@@ -48,7 +76,7 @@
 
         function makeForecast (obj) {
             let contentHTML = ``;
-            contentHTML = `<div><ul id="ul-forecast" class="list-group list-group-flush mb-4">
+            contentHTML = `<div id="cards"><ul id="ul-forecast" class="list-group list-group-flush mb-4">
                                 <li id="weather-date" class="list-group-item text-center">
                               ${getDate(obj)}
                                 </li>
@@ -168,34 +196,6 @@
             $('#address').val('');
         });
 
-
-
-    // MAPBOX
-
-        mapboxgl.accessToken = mapboxToken;
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [longValue, latValue ],
-            zoom: 5
-        });
-
-        var marker = new mapboxgl.Marker({
-            draggable: true
-        })
-            .setLngLat([longValue, latValue ])
-            .addTo(map);
-
-        function onDragEnd() {
-            let lngLat = marker.getLngLat();
-            let latValue = lngLat.lat;
-            let longValue = lngLat.lng;
-            console.log(latValue);
-            console.log(longValue);
-            locationExecution(latValue, longValue);
-        }
-         marker.on('dragend', onDragEnd);
-
         /*
         function geoRestaurant(result, restaurant) {
 
@@ -209,6 +209,6 @@
 
         }
          */
-
+        marker.on('dragend', onDragEnd);
     });
 })();
