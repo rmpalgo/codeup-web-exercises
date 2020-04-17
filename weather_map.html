@@ -9,15 +9,13 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css' rel='stylesheet' />
     <style>
         body {
-            background: #221b73;
+            background: #100c3c;
         }
-
         .navbar {
             background: #29245e;
         }
 
         .container {
-            border: 1px solid black;
             background: #100c3c;
         }
 
@@ -33,13 +31,13 @@
 </head>
 <body>
 
+<nav class="navbar navbar-light">
+    <a class="navbar-brand text-white" href="#">
+        Weather App
+    </a>
+    <span id="city">Dallas, TX</span>
+</nav>
 <div class="container">
-    <nav class="navbar navbar-light">
-        <a class="navbar-brand text-white" href="#">
-            Weather App
-        </a>
-        <span id="city">Dallas, TX</span>
-    </nav>
     <div id="forecast" class="container row d-flex justify-content-between"></div>
     <input id='address' type="text">
     <input id='submit' type="submit" class="mt-5">
