@@ -107,7 +107,11 @@
         }
 
         function setCity (obj) {
-            console.log($('#city').text(`City: ${obj.city.name}`));;
+            if (obj.city.name === undefined) {
+                $('#city').text(`City: Your are probably lost in the middle of the ocean!`);
+            } else {
+                console.log($('#city').text(`City: ${obj.city.name}`));
+            }
         }
 
         /**
