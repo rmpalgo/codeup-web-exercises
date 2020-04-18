@@ -12,29 +12,38 @@
         initLocation();
 
         // MAPBOX ==========================================================>
+        var marker = {};
+        function createMapBox (mapboxToken, result) {
+            if(result !== undefined) {
+                longValue = result[0];
+                latValue = result[1];
+            }
+            mapboxgl.accessToken = mapboxToken;
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [0, 0 ],
+                zoom: 5
+            });
 
-        mapboxgl.accessToken = mapboxToken;
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [longValue, latValue ],
-            zoom: 5
-        });
+            var marker = new mapboxgl.Marker({
+                draggable: true
+            })
+                .setLngLat([longValue, latValue ])
+                .addTo(map);
+            map.flyTo({center: [longValue, latValue], zoom: 9});
 
-        var marker = new mapboxgl.Marker({
-            draggable: true
-        })
-            .setLngLat([longValue, latValue ])
-            .addTo(map);
-
-        function onDragEnd() {
-            let lngLat = marker.getLngLat();
-            let latValue = lngLat.lat;
-            let longValue = lngLat.lng;
-            console.log(latValue);
-            console.log(longValue);
-            locationExecution(latValue, longValue);
+            function onDragEnd() {
+                let lngLat = marker.getLngLat();
+                let latValue = lngLat.lat;
+                let longValue = lngLat.lng;
+                console.log(latValue);
+                console.log(longValue);
+                locationExecution(latValue, longValue);
+            }
+            marker.on('dragend', onDragEnd);
         }
+        createMapBox(mapboxToken);
 
         // MAPBOX ==========================================================>
 
@@ -190,12 +199,16 @@
                     zoom: 16,
                     showCompass: true
                 });
+                console.log(result);
                 lngLatFromSearch(result);
                 marker = new mapboxgl.Marker({draggable: true})
                     .setLngLat(result)
                     .addTo(map);
                 map.setCenter(result);
                 map.flyTo({center: [result[0], result[1]], zoom: 9});
+                marker.remove();
+                createMapBox (mapboxToken, result);
+
             });
         }
 
@@ -232,6 +245,5 @@
 
         }
          */
-        marker.on('dragend', onDragEnd);
     });
 })();
