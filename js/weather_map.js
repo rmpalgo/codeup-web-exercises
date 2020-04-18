@@ -4,14 +4,13 @@
         var latValue = 0;
         var longValue = 0;
 
-        function initLocation () {
+        (function initLocation () {
             latValue = 32.79;
             longValue = -96.79;
-        }
-
-        initLocation();
+        })();
 
         // MAPBOX ==========================================================>
+
         var marker = {};
         function createMapBox (mapboxToken, result) {
             if(result !== undefined) {
@@ -19,14 +18,14 @@
                 latValue = result[1];
             }
             mapboxgl.accessToken = mapboxToken;
-            var map = new mapboxgl.Map({
+            let map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',
                 center: [-96.79, 32.79],
                 zoom: 5
             });
 
-            var marker = new mapboxgl.Marker({
+            let marker = new mapboxgl.Marker({
                 draggable: true
             })
                 .setLngLat([longValue, latValue ])
@@ -46,7 +45,6 @@
         createMapBox(mapboxToken);
 
         // MAPBOX ==========================================================>
-
 
         function locationExecution (latValue, longValue) {
             let lat = latValue;
@@ -81,18 +79,6 @@
          * @param {object} obj
          * @returns {string} HTML rendering of forecast weather
          *
-         */
-
-        /*
-        <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
          */
 
         function makeForecast (obj) {
@@ -216,13 +202,12 @@
                 address = '701 Commerce St. Dallas, TX 75202'
             }
             geocode(address, mapboxToken).then(function(result) {
-                var map = new mapboxgl.Map({
+                 let map = new mapboxgl.Map({
                     container: 'map',
                     style: 'mapbox://styles/mapbox/streets-v9',
                     zoom: 16,
                     showCompass: true
                 });
-                console.log(result);
                 lngLatFromSearch(result);
                 marker = new mapboxgl.Marker({draggable: true})
                     .setLngLat(result)
@@ -235,38 +220,21 @@
             });
         }
 
-
-        /*
-        function onDragEnd() {
-            let lngLat = marker.getLngLat();
-            let latValue = lngLat.lat;
-            let longValue = lngLat.lng;
-            console.log(latValue);
-            console.log(longValue);
-            locationExecution(latValue, longValue);
-        }
-         */
-
         $('#submit').click(function (event) {
             event.preventDefault();
             let address = $('#address').val();
-            console.log(address);
             searchCity(address);
             $('#address').val('');
         });
 
-        /*
-        function geoRestaurant(result, restaurant) {
+        $('#address').keypress(function (e) {
+            var key = e.which;
+            if(key == 13) {
+                let address = $('#address').val();
+                searchCity(address);
+                $(this).val('');
+            }
+        });
 
-            var popup = new mapboxgl.Popup()
-                .setHTML(`<h3>${restaurant.name}<br>${restaurant.address}<br><hr> ${restaurant.description} <em>${restaurant.address.split(',')[1]}</em></h3>`);
-
-            new mapboxgl.Marker(option)
-                .setLngLat(result)
-                .setPopup(popup)
-                .addTo(map)
-
-        }
-         */
     });
 })();
