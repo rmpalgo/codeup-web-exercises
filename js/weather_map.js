@@ -106,7 +106,7 @@
                                     ${getTemp(obj)[0]} / ${getTemp(obj)[1]}
                                 </p>
                                 <p>
-                                    <img alt="weather-icon" src="http://openweathermap.org/img/w/${getIcon(obj)}.png">
+                                    <img alt="weather-icon" src="${getIcon(obj)}">
                                 </p>
                                 </h6>       
                                 <h5 id="weather-description" class="card-text">
@@ -193,7 +193,18 @@
          * @returns {string}
          */
         function getIcon (obj) {
-            return obj.weather[0].icon;
+            let weatherDescription = obj.weather[0].description;
+            if (weatherDescription.indexOf('clear sky') !== -1) {
+                return 'imgs/sunny.png'
+            } else if (weatherDescription.indexOf('few clouds') !== -1 || obj.weather[0].description === 'scattered clouds' || obj.weather[0].description === 'overcast clouds' ) {
+                return 'imgs/overcast.png'
+            } else if (weatherDescription === 'broken clouds') {
+                return 'imgs/broken-cloud.png'
+            } else if (weatherDescription.indexOf('rain') !== -1 ||  weatherDescription.indexOf('thunderstorm') !== -1 || weatherDescription.indexOf('mist') !== -1) {
+                return 'imgs/rain.png'
+            } else if (weatherDescription.indexOf('snow') !== -1) {
+                return 'imgs/snow.png'
+            }
         }
 
         function lngLatFromSearch (result) {
