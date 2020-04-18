@@ -83,35 +83,47 @@
          *
          */
 
+        /*
+        <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+         */
+
         function makeForecast (obj) {
             let contentHTML = ``;
-            contentHTML = `<div id="cards"><ul id="ul-forecast" class="list-group list-group-flush mb-4">
-                                <li id="weather-date" class="list-group-item text-center">
+            contentHTML = `<div id="cards" class="mt-3 mb-5 card text-white"><div id="ul-forecast" class="card-body mb-4">
+                                <h5 id="weather-date" class="card-title text-center">
                               ${getDate(obj)}
-                                </li>
-                                <li id="weather-temperatures" class="list-group-item text-center">
+                                </h5>
+                                <h6 id="weather-temperatures" class="card-subtitle text-center">
                                 <p>
                                     ${getTemp(obj)[0]} / ${getTemp(obj)[1]}
                                 </p>
                                 <p>
                                     <img alt="weather-icon" src="http://openweathermap.org/img/w/${getIcon(obj)}.png">
                                 </p>
-                                </li>       
-                                <li id="weather-description" class="list-group-item">
+                                </h6>       
+                                <h5 id="weather-description" class="card-text">
                                 <p>
                                     Description: <strong>${weatherDescription(obj)[0]}</strong>
                                  </p>
                                 <p>
                                     Humidity: <strong>${weatherDescription(obj)[1]}</strong>
                                  </p>
-                                </li>
-                                <li id="weather-wind" class="list-group-item">
+                                </h5>
+                                <h5 id="weather-wind" class="card-text">
                                Wind: <strong>${getWind(obj)}</strong>
-                                 </li>
-                                <li id="weather-pressure" class="list-group-item">
+                                 </h5>
+                                <h5 id="weather-pressure" class="card-text">
                                 <p>Pressure: <strong>${getPressure(obj)}</strong></p>
-                                </li>
-                             </ul></div>`;
+                                </h5>
+                             </div></div>`;
             $('#forecast').append(contentHTML);
         }
 
