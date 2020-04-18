@@ -22,7 +22,7 @@
             var map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',
-                center: [0, 0 ],
+                center: [-96.79, 32.79],
                 zoom: 5
             });
 
@@ -119,7 +119,7 @@
             if (obj.city.name === undefined) {
                 $('#city').text(`City: Your are probably lost in the middle of the ocean!`);
             } else {
-                console.log($('#city').text(`City: ${obj.city.name}`));
+                console.log($('#city').text(`Current City: ${obj.city.name}`));
             }
         }
 
