@@ -223,10 +223,10 @@
             let imgs = '';
             if (weatherDescription.indexOf('clear sky') !== -1) {
                 imgs = 'imgs/sunny-short.png'
+            } else if (weatherDescription === 'broken clouds') {
+                imgs = 'imgs/cloud-short.png'
             } else if (weatherDescription.indexOf('clouds') !== -1 ) {
                 imgs = 'imgs/overcast-short.png'
-            } else if (weatherDescription === 'broken clouds') {
-                imgs = 'imgs/broken-cloud-short.png'
             } else if (weatherDescription.indexOf('rain') !== -1 ||  weatherDescription.indexOf('thunderstorm') !== -1 || weatherDescription.indexOf('mist') !== -1) {
                 imgs = 'imgs/rain-short.png'
             } else if (weatherDescription.indexOf('snow') !== -1) {
