@@ -5,6 +5,7 @@
 
 body {
     background: #100c3c;
+    font-family: 'Montserrat', sans-serif;
 }
 .navbar {
     background: #29245e;
@@ -26,8 +27,8 @@ span {
 input#address {
     background: #29245e;
     border: transparent;
-    border-radius: 10px;
-    padding: 0 20px;
+    border-radius: 25px;
+    padding: 3px 40px;
 }
 
 input#submit {
@@ -38,7 +39,7 @@ input#submit {
 
 div#cards {
     height: 400px;
-    width: 200px;
+    width: 210px;
     background: #100c3c;
 }
 
@@ -48,6 +49,27 @@ div#ul-forecast {
 }
 
 #cards img {
+    display: block;
     width: 10em;
+    height: 50%;
     padding: 0;
+}
+
+p#date {
+    font-weight: lighter;
+}
+
+.small-description {
+    font-weight: lighter;
+    font-size: 13px;
+    display: block;
+    width: 100%;
+}
+
+.small-data {
+    font-size: 12px;
+}
+
+span#temperature {
+    font-size: 2em;
 }

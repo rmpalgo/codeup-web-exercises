@@ -82,32 +82,31 @@
         function makeForecast (obj) {
             let contentHTML = ``;
             contentHTML = `<div id="cards" class="mt-3 mb-5 card text-white"><div id="ul-forecast" class="card-body mb-4">
-                                <h5 id="weather-date" class="card-title text-center">
+                                <h4 id="weather-date" class="card-title text-center mb-0">
                               ${getDayDate(obj)}
-                                </h5>
-                                <h6 class="text-center">${getDayMonth(obj)}</h6>
+                                </h4>
+                                <p id="date" class="text-center">${getDayMonth(obj)}</p>
                                 <h6 id="weather-temperatures" class="card-subtitle text-center">
                                 <p>
-                                    ${getTemp(obj)[0]} / ${getTemp(obj)[1]}
+                                   <span id="temperature">${Math.floor(getTemp(obj)[0])} &#8457</span> 
                                 </p>
                                 <p>
                                     <img alt="weather-icon" src="${getIcon(obj)}">
+                                    <span>${weatherDescription(obj)[0]}</span>
                                 </p>
-                                </h6>       
-                                <h5 id="weather-description" class="card-text">
-                                <p>
-                                    Description: <strong>${weatherDescription(obj)[0]}</strong>
-                                 </p>
-                                <p>
-                                    Humidity: <strong>${weatherDescription(obj)[1]}</strong>
-                                 </p>
-                                </h5>
-                                <h5 id="weather-wind" class="card-text">
-                               Wind: <strong>${getWind(obj)}</strong>
-                                 </h5>
-                                <h5 id="weather-pressure" class="card-text">
-                                <p>Pressure: <strong>${getPressure(obj)}</strong></p>
-                                </h5>
+                                </h6>  
+                                    
+                                <div id="weather-description" class="card-text row d-flex flex-row">
+                                 <div class="col-4 p-0 pr-1 text-center border-right">
+                                    <span class="small-description">humidity</span><span class="small-data">${weatherDescription(obj)[1]}</span>
+                                 </div>
+                                <div id="weather-wind" class="col-4 p-0 text-center border-right">
+                               <span class="small-description">wind</span> <span class="small-data">${getWind(obj)}</span>
+                                 </div>
+                                <div id="weather-pressure" class="col-4 p-0 text-center">
+                                <span class="small-description">pressure</span> <span class="small-data">${getPressure(obj)}</span>
+                                </div>
+                                </div>
                              </div></div>`;
             $('#forecast').append(contentHTML);
         }
@@ -222,17 +221,19 @@
          */
         function getIcon (obj) {
             let weatherDescription = obj.weather[0].description;
+            let imgs = '';
             if (weatherDescription.indexOf('clear sky') !== -1) {
-                return 'imgs/sunny.png'
-            } else if (weatherDescription.indexOf('few clouds') !== -1 || obj.weather[0].description === 'scattered clouds' || obj.weather[0].description === 'overcast clouds' ) {
-                return 'imgs/overcast.png'
+                imgs = 'imgs/sunny.png'
+            } else if (weatherDescription.indexOf('clouds') !== -1 ) {
+                imgs = 'imgs/overcast.png'
             } else if (weatherDescription === 'broken clouds') {
-                return 'imgs/broken-cloud.png'
+                imgs = 'imgs/broken-cloud.png'
             } else if (weatherDescription.indexOf('rain') !== -1 ||  weatherDescription.indexOf('thunderstorm') !== -1 || weatherDescription.indexOf('mist') !== -1) {
-                return 'imgs/rain.png'
+                imgs = 'imgs/rain.png'
             } else if (weatherDescription.indexOf('snow') !== -1) {
-                return 'imgs/snow.png'
+                imgs = 'imgs/snow.png'
             }
+            return imgs;
         }
 
         function lngLatFromSearch (result) {
