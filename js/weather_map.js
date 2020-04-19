@@ -36,8 +36,6 @@
                 let lngLat = marker.getLngLat();
                 let latValue = lngLat.lat;
                 let longValue = lngLat.lng;
-                console.log(latValue);
-                console.log(longValue);
                 locationExecution(latValue, longValue);
             }
             marker.on('dragend', onDragEnd);
@@ -60,8 +58,8 @@
                 }
             }).done(function (data) {
                 $('#forecast').empty();
-                console.log(data);
                 let dataArr = data.list;
+                console.log(dataArr);
                 setCity(data);
                 dataArr.forEach( (item, index) => {
                     if(index % 8 === 0) {
@@ -117,7 +115,7 @@
             if (obj.city.name === undefined) {
                 $('#city').text(`City: Your are probably lost in the middle of the ocean!`);
             } else {
-                console.log($('#city').text(`Current City: ${obj.city.name}`));
+                $('#city').text(`Current City: ${obj.city.name}`);
             }
         }
 
@@ -127,8 +125,22 @@
          * @returns {string} date in mm/dd/year format
          */
         function getDate (obj) {
-            let date = obj.dt_txt.split(" ")[0].split("-");
-            return `${date[1]} / ${date[2]} / ${date[0]}`
+            let dayDate = new Date(obj.dt_txt);
+            let day = dayDate.getDay();
+            console.log(dayDate);
+            if (day === 0) {
+                return 'Sunday';
+            } else if (day === 1) {
+                return 'Monday'
+            } else if (day === 2) {
+                return 'Tuesday'
+            } else if (day === 3) {
+                return 'Wednesday'
+            } else if (day === 4) {
+                return 'Thursday'
+            } else if (day === 5) {
+                return 'Saturday'
+            }
         }
 
         /**
@@ -198,9 +210,6 @@
         }
 
         function searchCity (address) {
-            if (typeof address !== 'string') {
-                address = '701 Commerce St. Dallas, TX 75202'
-            }
             geocode(address, mapboxToken).then(function(result) {
                  let map = new mapboxgl.Map({
                     container: 'map',
@@ -228,7 +237,7 @@
         });
 
         $('#address').keypress(function (e) {
-            var key = e.which;
+            let key = e.which;
             if(key == 13) {
                 let address = $(this).val();
                 searchCity(address);
