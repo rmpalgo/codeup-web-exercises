@@ -230,7 +230,7 @@
         $('#address').keypress(function (e) {
             var key = e.which;
             if(key == 13) {
-                let address = $('#address').val();
+                let address = $(this).val();
                 searchCity(address);
                 $(this).val('');
             }
