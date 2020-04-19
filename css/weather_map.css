@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #100c3c;
+}
+.navbar {
+    background: #29245e;
+}
+
+.container {
+    background: #100c3c;
+    width: 100vw;
+}
+
+span {
+    color: #FFFFFF;
+}
+
+#ul-forecast {
+    background: #29245e;
+}
+
+input#address {
+    background: #29245e;
+    border: transparent;
+    border-radius: 10px;
+    padding: 0 20px;
+}
+
+input#submit {
+    padding: 0 9px;
+    background: #29245e;
+    border: transparent;
+}
+
+div#cards {
+    height: 400px;
+    width: 200px;
+    background: #100c3c;
+}
+
+div#ul-forecast {
+    border-radius: 20px;
+    background: #29245e;
+}
+
+#cards img {
+    width: 10em;
+    padding: 0;
+}
