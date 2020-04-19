@@ -81,21 +81,20 @@
 
         function makeForecast (obj) {
             let contentHTML = ``;
-            contentHTML = `<div id="cards" class="mt-3 mb-5 card text-white"><div id="ul-forecast" class="card-body mb-4">
+            contentHTML = `<div id="cards" class="mt-3 mb-5 card text-white"><div id="ul-forecast" class="card-body">
                                 <h4 id="weather-date" class="card-title text-center mb-0">
                               ${getDayDate(obj)}
                                 </h4>
                                 <p id="date" class="text-center">${getDayMonth(obj)}</p>
                                 <h6 id="weather-temperatures" class="card-subtitle text-center">
-                                <p>
-                                   <span id="temperature">${Math.floor(getTemp(obj)[0])} &#8457</span> 
-                                </p>
-                                <p>
+                                <p class="mb-0">
                                     <img alt="weather-icon" src="${getIcon(obj)}">
                                     <span>${weatherDescription(obj)[0]}</span>
                                 </p>
                                 </h6>  
-                                    
+                                     <p class="text-center mb-0">
+                                   <span id="temperature">${Math.floor(getTemp(obj)[0])} &#8457</span> 
+                                </p>
                                 <div id="weather-description" class="card-text row d-flex flex-row">
                                  <div class="col-4 p-0 pr-1 text-center border-right">
                                     <span class="small-description">humidity</span><span class="small-data">${weatherDescription(obj)[1]}</span>
@@ -223,15 +222,15 @@
             let weatherDescription = obj.weather[0].description;
             let imgs = '';
             if (weatherDescription.indexOf('clear sky') !== -1) {
-                imgs = 'imgs/sunny.png'
+                imgs = 'imgs/sunny-short.png'
             } else if (weatherDescription.indexOf('clouds') !== -1 ) {
-                imgs = 'imgs/overcast.png'
+                imgs = 'imgs/overcast-short.png'
             } else if (weatherDescription === 'broken clouds') {
-                imgs = 'imgs/broken-cloud.png'
+                imgs = 'imgs/broken-cloud-short.png'
             } else if (weatherDescription.indexOf('rain') !== -1 ||  weatherDescription.indexOf('thunderstorm') !== -1 || weatherDescription.indexOf('mist') !== -1) {
-                imgs = 'imgs/rain.png'
+                imgs = 'imgs/rain-short.png'
             } else if (weatherDescription.indexOf('snow') !== -1) {
-                imgs = 'imgs/snow.png'
+                imgs = 'imgs/snow-short.png'
             }
             return imgs;
         }

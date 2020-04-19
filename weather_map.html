@@ -7,7 +7,7 @@
 <!--    Mapbox Links-->
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css' rel='stylesheet' />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/weather_map.css">
 </head>
 <body>
@@ -18,21 +18,21 @@
     </a>
     <span id="city">Dallas, TX</span>
 </nav>
-<div class="container">
+<main>
+
     <div class="box mb-5 text-center">
         <label for="address" class="text-white"><span class="pr-2">Place</span></label>
         <input id='address' type="text" class="text-white" placeholder="Dallas, TX">
         <input id='submit' type="submit" class="mt-5 ml-2 rounded text-white">
     </div>
-    <div id="forecast" class="container row d-flex justify-content-between"></div>
-</div>
+    <div id="forecast" class="m-3 row d-flex justify-content-around"></div>
 
 
 
-<footer class="container mt-6">
-    <div id='map' style='width: 100%; height: 400px;'></div>
-    <pre id="coordinates" class="coordinates"></pre>
-</footer>
+
+
+    <div id='map' style='width: 98%; height: 400px;' class="m-3"></div>
+</main>
 
 <script src="js/keys.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
