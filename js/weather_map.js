@@ -83,8 +83,9 @@
             let contentHTML = ``;
             contentHTML = `<div id="cards" class="mt-3 mb-5 card text-white"><div id="ul-forecast" class="card-body mb-4">
                                 <h5 id="weather-date" class="card-title text-center">
-                              ${getDate(obj)}
+                              ${getDayDate(obj)}
                                 </h5>
+                                <h6 class="text-center">${getDayMonth(obj)}</h6>
                                 <h6 id="weather-temperatures" class="card-subtitle text-center">
                                 <p>
                                     ${getTemp(obj)[0]} / ${getTemp(obj)[1]}
@@ -124,10 +125,9 @@
          * @param {object} obj
          * @returns {string} date in mm/dd/year format
          */
-        function getDate (obj) {
+        function getDayDate (obj) {
             let dayDate = new Date(obj.dt_txt);
             let day = dayDate.getDay();
-            console.log(dayDate);
             if (day === 0) {
                 return 'Sunday';
             } else if (day === 1) {
@@ -141,6 +141,36 @@
             } else if (day === 5) {
                 return 'Saturday'
             }
+        }
+
+        function getDayMonth (obj) {
+            let dayDate = new Date(obj.dt_txt);
+            let day = parseInt(dayDate.getMonth());
+            let dayNum = dayDate.getDate();
+            let monthArray = ['January', 'February', 'March' ,'April', 'May' , 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            let month = '';
+            monthArray.forEach( function (item, index) {
+                if (index === day) {
+                    month = item;
+                }
+            });
+            return month + " " + nthDate(dayNum);
+        }
+
+        function nthDate(d) {
+            if (d === 1 || d === 21 || d === 31 ) {
+                return d + '<sup>st</sup>';
+            }
+            if ( d > 3 && d < 21 ) {
+                return d + '<sup>th</sup>';
+            }
+            if (d === 22) {
+                return d + '<sup>nd</sup>';
+            }
+            if (d === 23) {
+                return d + '<sup>rd</sup>';
+            }
+            return d + '<sup>th</sup>';
         }
 
         /**
