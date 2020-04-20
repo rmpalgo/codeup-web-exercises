@@ -93,7 +93,7 @@
                                 </p>
                                 </h6>  
                                      <p class="text-center mb-0">
-                                   <span id="temperature">${Math.floor(getTemp(obj)[0])} &#8457</span> 
+                                   <span id="temperature">${Math.round(getTemp(obj)[0])} &#8457</span> 
                                 </p>
                                 <div id="weather-description" class="card-text row d-flex flex-row">
                                  <div class="col-4 p-0 pr-1 text-center border-right">
@@ -137,6 +137,8 @@
             } else if (day === 4) {
                 return 'Thursday'
             } else if (day === 5) {
+                return 'Friday'
+            } else if (day === 6) {
                 return 'Saturday'
             }
         }
@@ -165,7 +167,7 @@
             if (d === 22) {
                 return d + '<sup>nd</sup>';
             }
-            if (d === 23) {
+            if (d === 23 || d === 3) {
                 return d + '<sup>rd</sup>';
             }
             return d + '<sup>th</sup>';
