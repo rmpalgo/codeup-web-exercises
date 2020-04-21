@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6 lecture</title>
+</head>
+<body>
+
+
+<script>
+    "use strict";
+
+    console.log(Math.pow(2, 2));
+    console.log( 2 ** 2);
+
+    let names = ['Fer', 'Douglas', 'Sam'];
+    for (let oneName of names) {
+        console.log(oneName);
+    }
+
+    // const sayHello = function (name) {
+    //     return 'Hello, ' + name + '!';
+    // };
+    // same as
+    const sayHello = (name) => 'Hello, ' + name + '!';
+    console.log(sayHello('milo'));
+
+    // old way
+    function tellMeAbout(person) {
+        var name = person.name;
+        var age = person.age;
+        console.log(name); // 'codeup'
+        console.log(age); // 4
+    }
+
+    const person = {name: 'codeup', age: 4};
+    tellMeAbout(person);
+
+    // new way
+    function tellMeAbout({name, age}) {
+        console.log(name); // 'codeup'
+        console.log(age); // 4
+    }
+
+    const person = {name: 'codeup', age: 4};
+    tellMeAbout(person);
+
+</script>
+</body>
+</html>
