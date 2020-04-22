@@ -30,13 +30,17 @@ function makeRequest(username) {
 /* WAIT Exercise */
 
 function wait(ms) {
+    parseInt(ms);
     return new Promise( (resolve, reject) => {
         setTimeout( () => {
-            resolve(`You will see this after ${ms} seconds!`);
-            reject('An error occurred!');
+            if (typeof ms === 'number') {
+                resolve(`You will see this after ${ms} seconds!`);
+            } else {
+                reject( `An error occurred! ${ms} is not a number.`);
+            }
         }, ms)
     } );
 }
 
-wait(1000).then( result => console.log(result) );
-wait(3000).then( result => console.log(result) );
+wait(1000).then( result => console.log(result) ).catch( error => console.log(error) );
+wait('asd').then( result => console.log(result) ).catch( error => console.log(error) );
