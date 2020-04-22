@@ -1,25 +1,31 @@
 "use strict";
 
 let githubToken = GITHUB_TOKEN;
-let owner = 'rmpalgo';
-let repo = 'codeup-web-exercises';
-let url = `https://api.github.com/users/${owner}/events`;
+let owner = '';
+let url = `https://api.github.com/users/events`;
 
-const lastCommitPromise = fetch(url, {headers: {'Authorization': `token ${githubToken}`}});
+let username = document.getElementById('username');
+let submit = document.getElementById('submit');
+let renderDate = document.getElementById('lastCommit');
 
-lastCommitPromise.then( response => response.json()
-    .then( data => {
+submit.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log(owner);
+    owner = username.value;
+    makeRequest(owner);
+});
+
+
+function makeRequest(username) {
+    url = `https://api.github.com/users/${username}/events`;
+    const lastCommitPromise = fetch(url, {headers: {'Authorization': `token ${githubToken}`}});
+    lastCommitPromise.then( response => response.json()
+        .then( data => {
             let lastCommit = data[0]['created_at'];
-            let renderDate = document.getElementById('lastCommit');
-            let username = document.getElementById('username');
-            let submit = document.getElementById('submit');
+            renderDate.innerHTML = lastCommit;
+        }) );
 
-            submit.addEventListener('click', (e) => {
-                e.preventDefault();
-               console.log(username.value);
-            });
+    lastCommitPromise.catch( error => console.error(error));
+}
 
-    }) );
-
-lastCommitPromise.catch( error => console.error(error));
 
