@@ -5,8 +5,9 @@ let owner = 'rmpalgo';
 let repo = 'codeup-web-exercises';
 let url = `https://api.github.com/repos/${owner}/${repo}/commits/master`;
 
-var lastCommitPromise = fetch(url, {headers: {'Authorization': `token ${githubToken}`}});
+const lastCommitPromise = fetch(url, {headers: {'Authorization': `token ${githubToken}`}});
 
-lastCommitPromise.then( response => console.log(response));
+lastCommitPromise.then( response => response.json().then( data => console.log(data)) );
+
 lastCommitPromise.catch( error => console.error(error));
 
