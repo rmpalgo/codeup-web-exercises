@@ -10,7 +10,6 @@ let renderDate = document.getElementById('lastCommit');
 
 submit.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log(owner);
     owner = username.value;
     makeRequest(owner);
 });
@@ -21,10 +20,23 @@ function makeRequest(username) {
     const lastCommitPromise = fetch(url, {headers: {'Authorization': `token ${githubToken}`}});
     lastCommitPromise.then( response => response.json()
         .then( data => {
+            console.log(data);
             let lastCommit = data[0]['created_at'];
             renderDate.innerHTML = new Date(lastCommit);
         }) );
     lastCommitPromise.catch( error => console.error(error));
 }
 
+/* WAIT Exercise */
 
+function wait(ms) {
+    return new Promise( (resolve, reject) => {
+        setTimeout( () => {
+            resolve(`You will see this after ${ms} seconds!`);
+            reject('An error occurred!');
+        }, ms)
+    } );
+}
+
+wait(1000).then( result => console.log(result) );
+wait(3000).then( result => console.log(result) );
