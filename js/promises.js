@@ -22,9 +22,8 @@ function makeRequest(username) {
     lastCommitPromise.then( response => response.json()
         .then( data => {
             let lastCommit = data[0]['created_at'];
-            renderDate.innerHTML = lastCommit;
+            renderDate.innerHTML = new Date(lastCommit);
         }) );
-
     lastCommitPromise.catch( error => console.error(error));
 }
 
