@@ -29,41 +29,23 @@ const users = [
   }
 ];
 
-// TODO: fill in your name and email and add some programming languages you know
-// to the languages array
-// users.push({
-//   name: 'Ron',
-//   email: 'ron@gmail.com',
-//   languages: ['html', 'css', 'javascript']
-// });
-
-console.log(users);
-
-// TODO: replace the `var` keyword with `const`, then try to reassign a variable
-// declared as `const`
 const name = 'Ron';
 const email = 'ron@gmail.com';
 const languages = ['html', 'css', 'javascript'];
-// name = 'myName';
-// email = 'hehe@gmail.com';
-// languages = ['js', 'java', 'python'];
 
-// TODO: rewrite the object literal using object property shorthand
 users.push({
   name,
   email,
   languages
 });
 
-// TODO: replace `var` with `let` in the following variable declarations
 let emails = [];
 let names = [];
 
-// TODO: rewrite the following using arrow functions
 users.forEach( user => emails.push(user.email) );
 users.forEach( user => names.push(user.name) );
 
-console.log(emails)
+console.log(emails);
 console.log(names);
 
 // TODO: replace `var` with `let` in the following declaration
