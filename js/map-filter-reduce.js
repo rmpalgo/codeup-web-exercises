@@ -63,10 +63,22 @@ const longestEmails = users.reduce( (longest, user) => {
 }, '' );
 
 console.log(longestEmails);
+ 
 const listOfUsersSingleString = users.map( person => person.name).reduce( (total, username) => total +=  username + ", "
 , 'Your instructors are: ' );
 
 console.log(listOfUsersSingleString.replace('justin,', 'justin.'));
+
+
+/*
+const everyone = users.reduce((names, user, index) => {
+    if (names !== '') {
+        return names += user.name + ', ';
+    }
+}, 'Your instructors are: ' );
+
+console.log(everyone);
+*/
 
 const allLanguages = users.reduce( (languages, user) => {
     user.languages.forEach( (language) => {
