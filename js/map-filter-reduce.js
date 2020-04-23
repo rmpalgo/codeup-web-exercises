@@ -42,3 +42,9 @@ console.log(userThreeLanguages);
 
 const userEmail = users.map( person => person.email );
 console.log(userEmail);
+
+const totalExperience = users.reduce( (total, person) => {
+    return total + person.yearsOfExperience
+}, 0 );
+
+console.log(totalExperience / users.length);
