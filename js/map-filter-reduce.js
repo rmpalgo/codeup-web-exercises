@@ -37,4 +37,5 @@ const users = [
     }
 ];
 
-
+const userThreeLanguages = users.filter( person => person.languages.length >= 3 );
+console.log(userThreeLanguages);
