@@ -49,16 +49,32 @@ const totalExperience = users.reduce( (total, person) => {
 
 console.log(totalExperience / users.length);
 
+/*
 const longestEmails = users.map( person => person.email ).reduce( (total, user) => total.length > user.length ? total : user, '');
 console.log(longestEmails);
+*/
 
+const longestEmails = users.reduce( (longest, user) => {
+    if (user.email.length > longest.length) {
+        return user.email;
+    } else {
+        return longest;
+    }
+}, '' );
+
+console.log(longestEmails);
 const listOfUsersSingleString = users.map( person => person.name).reduce( (total, username) => total +=  username + ", "
 , 'Your instructors are: ' );
 
 console.log(listOfUsersSingleString.replace('justin,', 'justin.'));
 
+const allLanguages = users.reduce( (languages, user) => {
+    user.languages.forEach( (language) => {
+        if(!languages.includes(language)) {
+            languages.push(language)
+        }
+    });
+    return languages;
+}, []);
 
-
-
-
-// console.log(listOfUsersSingleString.split(' '));
+console.log(allLanguages);
