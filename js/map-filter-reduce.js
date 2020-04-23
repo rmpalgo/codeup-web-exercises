@@ -38,13 +38,24 @@ const users = [
 ];
 
 const userThreeLanguages = users.filter( person => person.languages.length >= 3 );
-console.log(userThreeLanguages);
+// console.log(userThreeLanguages);
 
 const userEmail = users.map( person => person.email );
-console.log(userEmail);
+// console.log(userEmail);
 
 const totalExperience = users.reduce( (total, person) => {
     return total + person.yearsOfExperience
 }, 0 );
 
-console.log(totalExperience / users.length);
+// console.log(totalExperience / users.length);
+
+// function sortNumber(a, b) {
+//     return a - b;
+// }
+//
+const longestEmails = users.map( person => person.email ).reduce( (a, b) => a.length > b.length ? a : b, '');
+console.log(longestEmails);
+
+// var plorp = ["bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"];
+// var longest = plorp.reduce((a, b) => a.length > b.length ? a : b, '');
+// console.log(longest);
