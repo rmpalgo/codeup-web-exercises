@@ -49,13 +49,16 @@ const totalExperience = users.reduce( (total, person) => {
 
 console.log(totalExperience / users.length);
 
-const longestEmails = users.map( person => person.email ).reduce( (a, b) => a.length > b.length ? a : b, '');
+const longestEmails = users.map( person => person.email ).reduce( (total, user) => total.length > user.length ? total : user, '');
 console.log(longestEmails);
 
 const listOfUsersSingleString = users.map( person => person.name).reduce( (total, username) => total +=  username + ", "
 , 'Your instructors are: ' );
 
 console.log(listOfUsersSingleString.replace('justin,', 'justin.'));
+
+
+
 
 
 // console.log(listOfUsersSingleString.split(' '));
