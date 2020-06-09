@@ -38,10 +38,6 @@ $(document).ready(function(){
 
     //BONUS
 
-    $('.btn-img').click(function() {
-        console.log($(this).parent().next().children().first());
-        console.log($(this).prev());
-    });
 
     //jQuery Effects Exercise
 
@@ -70,6 +66,57 @@ $(document).ready(function(){
         $('#myModal').modal();
     }, 8000);
 
+    //Bonus
+    $("#btn-left").click( function() {
+        let thisPic = $(this).prev().attr("src");
+        let thisReference= this;
+        let centerPic = $(this).parent().next().children().first().attr("src");
+        $(this).prev().attr("src", centerPic);
+        setCenterPicFromTheLeft(thisPic, thisReference);
+    });
+
+    function setCenterPicFromTheLeft(srcImg, thisReference) {
+        console.log(srcImg)
+        $(thisReference).parent().next().children().first().attr("src", srcImg);
+    }
+
+    $("#btn-right").click( function() {
+        let thisPic = $(this).prev().attr("src");
+        let thisReference = this;
+        let centerPic = $(this).parent().prev().children().first().attr("src");
+        $(this).prev().attr("src", centerPic);
+        setCenterPicFromTheRight(thisPic, thisReference);
+    });
+
+    function setCenterPicFromTheRight(srcImg, thisReference) {
+        $(thisReference).parent().prev().children().first().attr("src", srcImg);
+    }
+
+    $("#btn-center").click(function () {
+       let random =  Math.round(Math.random()) + 1;
+       let thisPic = $(this).prev().attr("src");
+       let thisReference = this;
+       if(random === 1) {
+           let rightPic = $(thisReference).parent().next().children().first().attr("src");
+           console.log(rightPic);
+           $(thisReference).prev().attr("src", rightPic);
+           setRightPicFromCenter(thisPic, thisReference);
+       } else if (random === 2) {
+           let leftPic = $(thisReference).parent().prev().children().first().attr("src");
+           console.log(leftPic);
+           $(thisReference).prev().attr("src", leftPic);
+           setLeftPicFromCenter(thisPic, thisReference);
+       }
+
+    });
+
+    function setRightPicFromCenter(srcImg, thisReference) {
+        $(thisReference).parent().next().children().first().attr("src", srcImg);
+    }
+
+    function setLeftPicFromCenter(srcImg, thisReference) {
+        $(thisReference).parent().prev().children().first().attr("src", srcImg);
+    }
 
 
 
